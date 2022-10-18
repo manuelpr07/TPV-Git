@@ -1,4 +1,84 @@
-﻿  main.cpp
+﻿  Game.cpp
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(6,11): error C3646: 'pos': especificador de invalidación desconocido
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(6,14): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(12,7): error C2061: error de sintaxis: identificador 'Vector2D'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(12,75): error C2065: 'position': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(12,93): error C2065: 'h': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(12,71): error C2614: 'Wall': inicialización de miembro no válida: 'pos' no es una base o miembro
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(17,16): error C2065: 'pos': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(18,16): error C2065: 'pos': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.h(23,152): error C2059: error de sintaxis: ';'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.h(24,1): error C2059: error de sintaxis: '}'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.h(24,1): error C2143: error de sintaxis: falta ';' delante de '}'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.h(25,12): error C2143: error de sintaxis: falta ';' delante de '{'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.h(25,12): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(3,1): error C2653: 'Game': no es un nombre de clase o espacio de nombres
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(3,14): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(7,2): error C2065: 'window': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(9,2): error C2065: 'renderer': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(9,32): error C2065: 'window': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(10,6): error C2065: 'window': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(10,27): error C2065: 'renderer': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(11,3): error C2065: 'cout': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(11,35): error C2065: 'endl': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(13,13): error C2065: 'win': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(13,24): error C2659: '=': función como operando izquierdo
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(14,25): error C2065: 'renderer': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(19,3): error C2065: 'textures': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(19,29): error C2065: 'renderer': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(22,2): error C2065: 'walls': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(22,18): error C3861: 'Vector2D': no se encontró el identificador
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(22,34): error C2065: 'WIN_HEIGTH': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(22,58): error C2065: 'textures': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(23,1): warning C4508: 'Game': la función debe devolver un valor; se supone que el tipo de valor devuelto es 'void'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(24,1): error C2653: 'Game': no es un nombre de clase o espacio de nombres
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(24,8): error C2523: '<Desconocido>::~Game': etiqueta de destructor sin correspondencia
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(24,15): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(24,12): error C2084: la función 'int Game(void)' ya tiene un cuerpo
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(3): message : vea la definición anterior de 'Game'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(25,16): error C2440: 'delete': no se puede realizar la conversión de 'TextureName' a 'void*'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(25,9): message : Se requiere una expresión de tipo de puntero
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(26,14): error C2440: 'delete': no se puede realizar la conversión de 'TextureName' a 'void*'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(26,9): message : Se requiere una expresión de tipo de puntero
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(27,14): error C2440: 'delete': no se puede realizar la conversión de 'TextureName' a 'void*'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(27,9): message : Se requiere una expresión de tipo de puntero
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(28,22): error C2065: 'renderer': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(29,20): error C2065: 'window': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(33,6): error C2653: 'Game': no es un nombre de clase o espacio de nombres
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(37,9): warning C4551: la llamada a la función no tiene lista de argumentos
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(37,32): error C2065: 'win': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(38,3): error C3861: 'handleEvents': no se encontró el identificador
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(41,4): error C3861: 'update': no se encontró el identificador
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(44,3): error C3861: 'render': no se encontró el identificador
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(47,6): error C2653: 'Game': no es un nombre de clase o espacio de nombres
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(48,18): error C2065: 'renderer': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(51,3): error C2065: 'walls': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(58,2): error C2065: 'blockMap': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(62,20): error C2065: 'renderer': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(64,6): error C2653: 'Game': no es un nombre de clase o espacio de nombres
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(67,6): error C2653: 'Game': no es un nombre de clase o espacio de nombres
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(70,6): error C2653: 'Game': no es un nombre de clase o espacio de nombres
+  main.cpp
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\crtdbg.h(307,1): warning C4005: '_malloca': redefinición de macro
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\malloc.h(124): message : vea la definición anterior de '_malloca'
-  HolaSDL.vcxproj -> C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\ProyectosSDL\ProyectosSDL\bin\HolaSDLDebug.exe
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Texture.h(27,18): warning C4003: no hay suficientes argumentos para la invocación de macro "free" de tipo función
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Texture.h(28,10): warning C4003: no hay suficientes argumentos para la invocación de macro "free" de tipo función
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Texture.h(28,10): error C2059: error de sintaxis: ','
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Texture.h(27,18): error C2143: error de sintaxis: falta ')' delante de ','
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Texture.h(27,16): error C2059: error de sintaxis: ')'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(6,11): error C3646: 'pos': especificador de invalidación desconocido
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(6,14): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(12,7): error C2061: error de sintaxis: identificador 'Vector2D'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(12,75): error C2065: 'position': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(12,93): error C2065: 'h': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(12,71): error C2614: 'Wall': inicialización de miembro no válida: 'pos' no es una base o miembro
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(17,16): error C2065: 'pos': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(18,16): error C2065: 'pos': identificador no declarado
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.h(23,152): error C2059: error de sintaxis: ';'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.h(24,1): error C2059: error de sintaxis: '}'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.h(24,1): error C2143: error de sintaxis: falta ';' delante de '}'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.h(25,12): error C2143: error de sintaxis: falta ';' delante de '{'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.h(25,12): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
+  Texture.cpp
+  Wall.cpp
+  Generando código...
