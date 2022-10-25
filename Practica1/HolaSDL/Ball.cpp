@@ -7,5 +7,5 @@ void Ball::render()
 	destRect.y = pos.getY();
 	destRect.h = heigth;
 	destRect.w = width;
-	texture->render(destRect);
+	tex->render(destRect);
 }

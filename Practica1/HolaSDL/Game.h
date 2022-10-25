@@ -6,8 +6,8 @@
 using namespace std;
 using uint = unsigned int;
 
-const uint winWidth = 800;
-const uint winHeight = 600;
+const uint WIN_WIDTH = 800;
+const uint WIN_HEIGTH = 600;
 const uint FRAME_RATE = 5;
 const uint WALL_WIDTH = 15;
 const uint NUM_TEXTURES = 8;
@@ -32,8 +32,8 @@ private:
 		bool gameOver, win, exit;
 		Paddle* paddle = nullptr;
 		Ball* ball = nullptr;
-		BlockMap* blockMap = nullptr;
-		Wall walls[3];
+		//BlockMap* blockMap = nullptr;
+		Wall walls[2];
 		Texture* textures[NUM_TEXTURES];
 		
 public:

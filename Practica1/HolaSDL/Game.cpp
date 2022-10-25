@@ -6,7 +6,7 @@ Game::Game() {
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Check Memory Leaks
 	SDL_Init(SDL_INIT_EVERYTHING);
 	window = SDL_CreateWindow("First test with SDL", SDL_WINDOWPOS_CENTERED,
-		SDL_WINDOWPOS_CENTERED, winWidth, winHeight, SDL_WINDOW_SHOWN);
+		SDL_WINDOWPOS_CENTERED, WIN_WIDTH, WIN_HEIGTH, SDL_WINDOW_SHOWN);
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 	if (window == nullptr || renderer == nullptr)
 		cout << "Error cargando SDL" << endl;
@@ -21,10 +21,13 @@ Game::Game() {
 	}
 
 	walls[0] = Wall(Vector2D(0, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
+	walls[1] = Wall(Vector2D(20, 0), WIN_HEIGTH-WALL_WIDTH, WALL_WIDTH, textures[sideWall]);
+	walls[2] = Wall(Vector2D(20, 0), WIN_HEIGTH-WALL_WIDTH, WALL_WIDTH, textures[sideWall]);
+
+	//ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50), );
 }
 Game::~Game() {
 	delete(paddle);
-	delete(ball);
 	delete(ball);
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
@@ -56,7 +59,7 @@ void Game::render() {
 	//Paddle
 	paddle->render();
 	//BlockMap
-	blockMap->render();
+	//blockMap->render();
 
 
 
