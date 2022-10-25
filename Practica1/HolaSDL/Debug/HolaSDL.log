@@ -1,22 +1,11 @@
-﻿  Ball.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(6,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Game.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(4,14): error C2512: 'Wall': no hay disponible un constructor predeterminado adecuado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(3,7): message : vea la declaración de 'Wall'
+﻿  Game.cpp
   main.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\crtdbg.h(307,1): warning C4005: '_malloca': redefinición de macro
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\malloc.h(124): message : vea la definición anterior de '_malloca'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Texture.h(27,18): warning C4003: no hay suficientes argumentos para la invocación de macro "free" de tipo función
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Texture.h(28,10): warning C4003: no hay suficientes argumentos para la invocación de macro "free" de tipo función
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Texture.h(28,10): error C2059: error de sintaxis: ','
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Texture.h(27,18): error C2143: error de sintaxis: falta ')' delante de ','
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Texture.h(27,16): error C2059: error de sintaxis: ')'
-  Paddle.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(6,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Texture.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\crtdbg.h(307,1): warning C4005: '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\malloc.h(124): message : vea la definición anterior de '_malloca'
   Wall.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.cpp(6,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pk\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Wall.cpp(6,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pk\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Wall.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   Generando código...
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppCommon.targets(1094,5): error MSB6006: "link.exe" salió con el código 1120.
+Game.obj : error LNK2019: símbolo externo "public: __thiscall Wall::Wall(void)" (??0Wall@@QAE@XZ) sin resolver al que se hace referencia en la función "public: __thiscall Game::Game(void)" (??0Game@@QAE@XZ)
+C:\Users\pk\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\bin\HolaSDLDebug.exe : fatal error LNK1120: 1 externos sin resolver
