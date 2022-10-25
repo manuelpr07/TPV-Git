@@ -22,7 +22,7 @@ Game::Game() {
 
 	walls[0] = Wall(Vector2D(0, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
 	walls[1] = Wall(Vector2D(20, 0), WIN_HEIGTH-WALL_WIDTH, WALL_WIDTH, textures[sideWall]);
-	walls[2] = Wall(Vector2D(20, 0), WIN_HEIGTH-WALL_WIDTH, WALL_WIDTH, textures[sideWall]);
+	walls[2] = Wall(Vector2D(20, WIN_WIDTH), WIN_HEIGTH-WALL_WIDTH, WALL_WIDTH, textures[sideWall]);
 
 	//ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50), );
 }
@@ -55,9 +55,9 @@ void Game::render() {
 		walls[i].render();
 	}
 	//Ball
-	ball->render();
+	//ball->render();
 	//Paddle
-	paddle->render();
+	//paddle->render();
 	//BlockMap
 	//blockMap->render();
 

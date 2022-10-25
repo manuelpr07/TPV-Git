@@ -8,7 +8,7 @@ private:
 	unsigned int width;
 	Texture* texture = nullptr;
 public:
-	Wall();
+	Wall(){};
 	Wall(Vector2D position, unsigned int h, unsigned w, Texture* text) : pos(position), heigth(h), width(w), texture(text) {}
 	void render();
 };
