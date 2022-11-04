@@ -55,7 +55,7 @@ void Game::render() {
 	{
 		walls[i].render();
 	}
-	//Ball
+	//Ball;
 	//ball->render();
 	//Paddle
 	paddle->render();

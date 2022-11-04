@@ -1,4 +1,2 @@
-﻿  Paddle.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(6,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(19): error C4700: se utilizó la variable local 'event' sin inicializar
+﻿  Game.cpp
+  HolaSDL.vcxproj -> C:\Users\pk\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\bin\HolaSDLDebug.exe
