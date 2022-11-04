@@ -20,11 +20,12 @@ Game::Game() {
 		textures[i] = new Texture(renderer, desc.filename, desc.vframes, desc.hframes);
 	}
 
-	walls[0] = Wall(Vector2D(0, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
-	walls[1] = Wall(Vector2D(20, 0), WIN_HEIGTH-WALL_WIDTH, WALL_WIDTH, textures[sideWall]);
-	walls[2] = Wall(Vector2D(20, WIN_WIDTH), WIN_HEIGTH-WALL_WIDTH, WALL_WIDTH, textures[sideWall]);
+	walls[0] = Wall(Vector2D(WIN_WIDTH-20, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
+	walls[1] = Wall(Vector2D(5, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
+	walls[2] = Wall(Vector2D(0, 0), WALL_WIDTH, WIN_WIDTH, textures[topWall]);
 
 	//ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50), );
+	paddle = new Paddle(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 20), 5, 20, textures[4]);
 }
 Game::~Game() {
 	delete(paddle);
@@ -39,7 +40,7 @@ void Game::run()
 	uint32_t  startTime, frameTime;
 	startTime = SDL_GetTicks();
 	while (!exit && !gameOver && !win) {
-		handleEvents();
+		paddle->handdleEvents();
 		frameTime = SDL_GetTicks();
 		if (frameTime >= FRAME_RATE) {
 			update();
@@ -57,7 +58,7 @@ void Game::render() {
 	//Ball
 	//ball->render();
 	//Paddle
-	//paddle->render();
+	paddle->render();
 	//BlockMap
 	//blockMap->render();
 

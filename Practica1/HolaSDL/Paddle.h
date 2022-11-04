@@ -13,5 +13,7 @@ public:
 	Paddle(Vector2D position, unsigned int h, unsigned w, Texture* text) : pos(position), heigth(h), width(w), texture(text) {}
 
 	void render();
+	void update();
+	void handdleEvents();
 
 };

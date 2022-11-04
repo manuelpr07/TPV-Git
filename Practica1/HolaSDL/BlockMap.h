@@ -1,1 +1,39 @@
-#pragma once
+#include "Vector2D.h"
+#include "Texture.h"
+#include "Block.h"
+class BlockMap
+{
+private:
+	Vector2D pos = { 0, 0 };
+	unsigned int cellHeigth;
+	unsigned int cellWidth;
+	unsigned int winHeigth;
+	unsigned int winWidth;
+	unsigned int nColumnas;
+	unsigned int nFilas;
+	unsigned int color;
+	Block** matriz = new Block* [nColumnas];
+
+
+
+public:
+
+	BlockMap(Vector2D position, unsigned int ch, unsigned int cw, unsigned int wh, unsigned int ww, unsigned int cl, unsigned int nfil, unsigned int ncol, Texture* text) :cellHeigth(ch), cellWidth(cw), winHeigth(wh), winWidth(ww), color(cl), nFilas(nfil), nColumnas(ncol)
+	{
+		for (int i = 0; i < nColumnas; i++) {
+			matriz[i] = new Block[nFilas];
+		}
+	}
+	~BlockMap()
+	{
+		for (int i = 0; i < nColumnas; i++) {
+			delete[] matriz[i];
+		}
+		delete[] matriz;
+	}
+	void render();
+	void readMap();
+	//int getBlocks();
+	//void update();
+
+};
