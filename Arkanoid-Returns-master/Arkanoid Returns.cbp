@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Arkanoid Returns" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Arkanoid Returns" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add directory="../../../../../usr/include/allegro5" />
+					<Add directory="src" />
+				</Compiler>
+				<Linker>
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro.so" />
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro_acodec.so" />
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro_audio.so" />
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro_color.so" />
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro_dialog.so" />
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro_font.so" />
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro_image.so" />
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro_main.so" />
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro_memfile.so" />
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro_physfs.so" />
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro_primitives.so" />
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro_ttf.so" />
+					<Add library="../../../../../lib/x86_64-linux-gnu/liballegro_video.so" />
+					<Add directory="../../../../../usr/lib/x86_64-linux-gnu" />
+					<Add directory="src" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Arkanoid Returns" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add directory="../../../../../../Libs/allegro-5.0.10-mingw-4.7.0/include" />
+					<Add directory="src" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="../../../../../../Libs/allegro-5.0.10-mingw-4.7.0/lib/liballegro-5.0.10-monolith-mt.a" />
+					<Add directory="../../../../../../Libs/allegro/lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="main.cpp" />
+		<Unit filename="src/About.cpp" />
+		<Unit filename="src/About.hpp" />
+		<Unit filename="src/Actor.cpp" />
+		<Unit filename="src/Actor.hpp" />
+		<Unit filename="src/ActorManager.cpp" />
+		<Unit filename="src/ActorManager.hpp" />
+		<Unit filename="src/AllegroException.cpp" />
+		<Unit filename="src/AllegroException.hpp" />
+		<Unit filename="src/Application.cpp" />
+		<Unit filename="src/Application.hpp" />
+		<Unit filename="src/Ball.cpp" />
+		<Unit filename="src/Ball.hpp" />
+		<Unit filename="src/Block.cpp" />
+		<Unit filename="src/Block.hpp" />
+		<Unit filename="src/Bonus.cpp" />
+		<Unit filename="src/Bonus.hpp" />
+		<Unit filename="src/Border.cpp" />
+		<Unit filename="src/Border.hpp" />
+		<Unit filename="src/BorderItem.cpp" />
+		<Unit filename="src/BorderItem.hpp" />
+		<Unit filename="src/Bullet.cpp" />
+		<Unit filename="src/Bullet.hpp" />
+		<Unit filename="src/Button.cpp" />
+		<Unit filename="src/Button.hpp" />
+		<Unit filename="src/Control.cpp" />
+		<Unit filename="src/Control.hpp" />
+		<Unit filename="src/ControlManager.cpp" />
+		<Unit filename="src/ControlManager.hpp" />
+		<Unit filename="src/ControllableActor.cpp" />
+		<Unit filename="src/ControllableActor.hpp" />
+		<Unit filename="src/ControllableObject.cpp" />
+		<Unit filename="src/ControllableObject.hpp" />
+		<Unit filename="src/Exception.cpp" />
+		<Unit filename="src/Exception.hpp" />
+		<Unit filename="src/FileScores.cpp" />
+		<Unit filename="src/FileScores.hpp" />
+		<Unit filename="src/Frame.cpp" />
+		<Unit filename="src/Frame.hpp" />
+		<Unit filename="src/Gallery.cpp" />
+		<Unit filename="src/Gallery.hpp" />
+		<Unit filename="src/Game.cpp" />
+		<Unit filename="src/Game.hpp" />
+		<Unit filename="src/GameOver.cpp" />
+		<Unit filename="src/GameOver.hpp" />
+		<Unit filename="src/Help.cpp" />
+		<Unit filename="src/Help.hpp" />
+		<Unit filename="src/HighScores.cpp" />
+		<Unit filename="src/HighScores.hpp" />
+		<Unit filename="src/Interface.cpp" />
+		<Unit filename="src/Interface.hpp" />
+		<Unit filename="src/IntroductionLevel.cpp" />
+		<Unit filename="src/IntroductionLevel.hpp" />
+		<Unit filename="src/Keyboard.cpp" />
+		<Unit filename="src/Keyboard.hpp" />
+		<Unit filename="src/Level.cpp" />
+		<Unit filename="src/Level.hpp" />
+		<Unit filename="src/Menu.cpp" />
+		<Unit filename="src/Menu.hpp" />
+		<Unit filename="src/Mouse.cpp" />
+		<Unit filename="src/Mouse.hpp" />
+		<Unit filename="src/Options.cpp" />
+		<Unit filename="src/Options.hpp" />
+		<Unit filename="src/Pause.cpp" />
+		<Unit filename="src/Pause.hpp" />
+		<Unit filename="src/Peripheral.cpp" />
+		<Unit filename="src/Peripheral.hpp" />
+		<Unit filename="src/R.cpp" />
+		<Unit filename="src/R.hpp" />
+		<Unit filename="src/ResourceNotLoaded.cpp" />
+		<Unit filename="src/ResourceNotLoaded.hpp" />
+		<Unit filename="src/Score.cpp" />
+		<Unit filename="src/Score.hpp" />
+		<Unit filename="src/Sound.cpp" />
+		<Unit filename="src/Sound.hpp" />
+		<Unit filename="src/Sprite.cpp" />
+		<Unit filename="src/Sprite.hpp" />
+		<Unit filename="src/StageManager.cpp" />
+		<Unit filename="src/StageManager.hpp" />
+		<Unit filename="src/Utils.cpp" />
+		<Unit filename="src/Utils.hpp" />
+		<Unit filename="src/Vaus.cpp" />
+		<Unit filename="src/Vaus.hpp" />
+		<Unit filename="src/Vector2.cpp" />
+		<Unit filename="src/Vector2.hpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<lib_finder disable_auto="1" />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
