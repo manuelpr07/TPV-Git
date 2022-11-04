@@ -11,7 +11,7 @@ private:
 	Texture* tex = nullptr;
 	Game* game;
 public:
-
+	Ball() {};
 	Ball(Vector2D position, unsigned int h, unsigned w, Vector2D vel, Texture* text, Game* game) : pos(position), heigth(h), width(w), velocity(vel), tex(), game() {}
 	void render();
 	//void update();
