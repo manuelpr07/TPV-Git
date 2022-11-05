@@ -21,8 +21,9 @@ private:
 
 public:
 
-	BlockMap(unsigned int ch, unsigned int cw, unsigned int wh, unsigned int ww, unsigned int nfil, unsigned int ncol, Texture* text) :cellHeigth(ch), cellWidth(cw), winHeigth(wh), winWidth(ww),nFilas(nfil), nColumnas(ncol), tex(text)
+	BlockMap(unsigned int wh, unsigned int ww, unsigned int nfil, unsigned int ncol, Texture* text) :winHeigth(wh), winWidth(ww),nFilas(nfil), nColumnas(ncol), tex(text)
 	{
+
 		for (int i = 0; i < nColumnas; i++) {
 			matriz[i] = new Block*[nFilas];
 		}
