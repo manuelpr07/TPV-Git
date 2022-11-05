@@ -79,8 +79,8 @@ void Game::collides() {
 void Game::handleEvents() {
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
-		if (event.type == SDL_QUIT)
-			exit = true;
+		/*if (event.type == SDL_QUIT)
+			exit = true;*/
 		if (event.type == SDL_KEYDOWN)
 		{
 			if (event.key.keysym.sym == SDLK_a) {
@@ -88,6 +88,9 @@ void Game::handleEvents() {
 			}
 			if (event.key.keysym.sym == SDLK_d) {
 				paddle->handdleEvents(1);
+			}
+			if (event.key.keysym.sym == SDLK_p) {
+				exit = true;
 			}
 		}
 		else if (event.type == SDL_KEYUP)
