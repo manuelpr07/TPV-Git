@@ -1,6 +1,9 @@
 #include "Vector2D.h"
 #include "Texture.h"
 #include "Block.h"
+#include <iostream>
+#include <fstream>
+#include <string>
 class BlockMap
 {
 private:
@@ -12,16 +15,16 @@ private:
 	unsigned int nColumnas;
 	unsigned int nFilas;
 	unsigned int color;
-	Block** matriz = new Block* [nColumnas];
-
+	Block*** matriz = new Block** [nColumnas];
+	Texture* tex = nullptr;
 
 
 public:
 
-	BlockMap(Vector2D position, unsigned int ch, unsigned int cw, unsigned int wh, unsigned int ww, unsigned int cl, unsigned int nfil, unsigned int ncol, Texture* text) :cellHeigth(ch), cellWidth(cw), winHeigth(wh), winWidth(ww), color(cl), nFilas(nfil), nColumnas(ncol)
+	BlockMap(unsigned int ch, unsigned int cw, unsigned int wh, unsigned int ww, unsigned int nfil, unsigned int ncol, Texture* text) :cellHeigth(ch), cellWidth(cw), winHeigth(wh), winWidth(ww),nFilas(nfil), nColumnas(ncol), tex(text)
 	{
 		for (int i = 0; i < nColumnas; i++) {
-			matriz[i] = new Block[nFilas];
+			matriz[i] = new Block*[nFilas];
 		}
 	}
 	~BlockMap()
@@ -33,7 +36,7 @@ public:
 	}
 	void render();
 	void readMap();
-	//int getBlocks();
+	int getBlocks();
 	//void update();
 
 };

@@ -26,6 +26,8 @@ Game::Game() {
 
 	//ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50), );
 	paddle = new Paddle(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 20), 5, 20, textures[4]);
+	blockMap = new BlockMap(40, 80, WIN_HEIGTH, WIN_WIDTH, 10, 10, textures[bricks]);
+	blockMap->readMap();
 }
 Game::~Game() {
 	delete(paddle);
@@ -60,7 +62,7 @@ void Game::render() {
 	//Paddle
 	paddle->render();
 	//BlockMap
-	//blockMap->render();
+	blockMap->render();
 
 
 

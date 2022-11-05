@@ -12,7 +12,7 @@ const uint FRAME_RATE = 5;
 const uint WALL_WIDTH = 15;
 const uint NUM_TEXTURES = 8;
 
-enum TextureName{ball, bricks, digit, gameOver, paddle, sideWall, topWall, winner};
+enum TextureName{ballT, bricks, digit, gameOver, paddle, sideWall, topWall, winner};
 
 typedef struct {
 	string filename;
@@ -33,7 +33,7 @@ private:
 		bool gameOver, win, exit;
 		Paddle* paddle = nullptr;
 		Ball* ball = nullptr;
-		//BlockMap* blockMap = nullptr;
+		BlockMap* blockMap = nullptr;
 		Wall walls[3];
 		Texture* textures[NUM_TEXTURES];
 		
