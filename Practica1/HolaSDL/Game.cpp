@@ -71,7 +71,7 @@ void Game::render() {
 void Game::update() {
 
 	paddle->update();
-	//ball->update();
+	ball->update();
 }
 void Game::collides() {
 

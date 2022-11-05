@@ -1,4 +1,4 @@
-﻿  Game.cpp
-C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(27,21): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(33,21): warning C4018: '<': no coinciden signed/unsigned
+﻿  Ball.cpp
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(6,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   HolaSDL.vcxproj -> C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\bin\HolaSDLDebug.exe

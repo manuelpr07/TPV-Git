@@ -12,6 +12,22 @@ void Ball::render()
 
 void Ball::update()
 {
+    pos = pos + velocity;
 
-
+    if (pos.getX() < 15)//golpea izq
+    {
+        velocity = { -velocity.getX(), velocity.getY()};
+    }
+    else if (pos.getX() > 765)//golpea drc
+    {
+        velocity = { -velocity.getX(), velocity.getY() };
+    }
+    if (pos.getY() > 560)//golpea arriba
+    {
+        velocity = { velocity.getX(), -velocity.getY() };
+    }
+    else if (pos.getY() < 0)
+    {
+        velocity = { velocity.getX(), -velocity.getY() };//perder
+    }
 }
