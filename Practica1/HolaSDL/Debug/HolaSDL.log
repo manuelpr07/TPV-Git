@@ -1,10 +1,4 @@
-﻿  BlockMap.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(27,21): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(33,21): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(6,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(7,27): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(23,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(24,27): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(38,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(39,27): warning C4018: '<': no coinciden signed/unsigned
-  HolaSDL.vcxproj -> C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\bin\HolaSDLDebug.exe
+﻿  Game.cpp
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(27,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(33,21): warning C4018: '<': no coinciden signed/unsigned
+  HolaSDL.vcxproj -> C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\bin\HolaSDLDebug.exe
