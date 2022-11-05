@@ -20,7 +20,7 @@ typedef struct {
 } TextureDescription;
 const TextureDescription TEXT_DESCRIPT[NUM_TEXTURES]
 {
-	{"../images/ball2.png",1,1},{"../images/bricks2.png",2,3},{"../images/digits2.jpeg",3,4},{"../images/gameover1.png",1,1},
+	{"../images/ball2.png",1,1},{"../images/bricks2.png",3,2},{"../images/digits2.jpeg",3,4},{"../images/gameover1.png",1,1},
 	{"../images/paddle2.png",2,3},{"../images/side2.png",1,10},{"../images/topside.png",10,1},{"../images/youwin.png",1,1}
 };
 class Game {

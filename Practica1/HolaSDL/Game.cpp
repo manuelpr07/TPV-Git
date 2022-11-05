@@ -24,7 +24,7 @@ Game::Game() {
 	walls[1] = Wall(Vector2D(5, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
 	walls[2] = Wall(Vector2D(0, 0), WALL_WIDTH, WIN_WIDTH, textures[topWall]);
 
-	ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50),1,1,Vector2D(0,1),textures[0]);
+	ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50),1,1,Vector2D(0,1),textures[0], this);
 	paddle = new Paddle(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 20), 20, 100, textures[4]);
 	blockMap = new BlockMap(WIN_HEIGTH, WIN_WIDTH, 10, 10, textures[bricks]);
 	blockMap->readMap();
