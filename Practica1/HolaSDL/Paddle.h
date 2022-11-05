@@ -14,6 +14,6 @@ public:
 
 	void render();
 	void update();
-	void handdleEvents();
+	void handdleEvents(int n);
 
 };

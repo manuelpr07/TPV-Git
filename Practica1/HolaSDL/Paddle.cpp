@@ -1,5 +1,4 @@
 #include "Paddle.h"
-
 void Paddle::render()
 {
 	SDL_Rect destRect;
@@ -11,22 +10,19 @@ void Paddle::render()
 }
 void Paddle::update()
 {
-    pos = pos + dir*10;
-}
-void Paddle::handdleEvents()
-{
-    SDL_Event event;
-    while (SDL_PollEvent(&event)) {
-        /*if (event.type == SDL_QUIT)
-            game->setUserExit();*/
-        if (event.type == SDL_KEYDOWN)
-        {
-            if (event.key.keysym.sym == SDLK_a) {
-                dir = { -1,0 };
-            }
-            if (event.key.keysym.sym == SDLK_d) {
-                dir = { 1,0 };
-            }
-        }
+    pos = pos + dir;
+
+    if(pos.getX() < 15)
+    {
+        pos = {15, pos.getY()};
     }
+    else if (pos.getX() > 685)
+    {
+        pos = { 685, pos.getY() };
+    }
+
+}
+void Paddle::handdleEvents(int n)
+{
+    dir = Vector2D(n, 0);
 }

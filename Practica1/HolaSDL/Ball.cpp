@@ -9,3 +9,9 @@ void Ball::render()
 	destRect.w = width;
 	tex->render(destRect);
 }
+
+void Ball::update()
+{
+
+
+}

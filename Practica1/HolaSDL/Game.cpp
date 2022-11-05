@@ -42,8 +42,8 @@ void Game::run()
 	uint32_t  startTime, frameTime;
 	startTime = SDL_GetTicks();
 	while (!exit && !gameOver && !win) {
-		paddle->handdleEvents();
 		frameTime = SDL_GetTicks();
+		handleEvents();
 		if (frameTime >= FRAME_RATE) {
 			update();
 			startTime = SDL_GetTicks();
@@ -70,10 +70,31 @@ void Game::render() {
 }
 void Game::update() {
 
+	paddle->update();
+	//ball->update();
 }
 void Game::collides() {
 
 }
 void Game::handleEvents() {
+	SDL_Event event;
+	while (SDL_PollEvent(&event)) {
+		if (event.type == SDL_QUIT)
+			exit = true;
+		if (event.type == SDL_KEYDOWN)
+		{
+			if (event.key.keysym.sym == SDLK_a) {
+				paddle->handdleEvents(-1);
+			}
+			if (event.key.keysym.sym == SDLK_d) {
+				paddle->handdleEvents(1);
+			}
+		}
+		else if (event.type == SDL_KEYUP)
+		{
+			paddle->handdleEvents(0);
+		}
+	}
+
 
 }
