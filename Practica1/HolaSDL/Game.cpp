@@ -73,7 +73,9 @@ void Game::update() {
 	paddle->update();
 	ball->update();
 }
-void Game::collides() {
+void Game::collides(Vector2D pos, int size) {
+
+	blockMap->colides(pos, size);
 
 }
 void Game::handleEvents() {

@@ -43,3 +43,48 @@ int BlockMap::getBlocks()
     }
     return n;
 }
+
+Vector2D BlockMap::colides(Vector2D pos, int size)
+{
+    Vector2D bloque;
+    for (int i = 0; i < nColumnas; i++) {
+        for (int j = 0; j < nFilas; j++) {
+            if (matriz[i][j] != nullptr)
+            {
+                bloque = Vector2D(cellWidth * j + 20, cellHeigth * i + 15);
+                //arriba o abajo
+                if ((pos.getX() + size >= bloque.getX() && pos.getX() <= bloque.getX()) || (pos.getX() >= bloque.getX() && pos.getX() + size <= bloque.getX() + cellWidth) || (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth))
+                {
+                    if (pos.getY() >= bloque.getY() + cellHeigth && pos.getY() + size <= bloque.getY() + cellHeigth)// golpea por abajo
+                    {
+
+                        return{ 0, -1 };
+
+                    }
+                    else if (pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY())// golpea por arriba
+                    {
+
+                        return{ 0, 1 };
+
+                    }
+                }
+                //derecha o izquierda
+                else if ((pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY()) || (pos.getY() >= bloque.getY() && pos.getY() + size <= bloque.getY() + cellHeigth) || (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth))
+                {
+                    if (pos.getX() <= bloque.getX() && pos.getX() + size >= bloque.getX())// golpea por izquieda
+                    {
+
+                        return{ -1, 0 };
+
+                    }
+                    else if (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getY() + cellWidth)// golpea por derecha
+                    {
+
+                        return{ 1, 0 };
+
+                    }
+                }
+            }
+        }
+    }
+}

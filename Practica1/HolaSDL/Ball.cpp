@@ -12,6 +12,7 @@ void Ball::render()
 
 void Ball::update()
 {
+    game->collides(pos, heigth);
     pos = pos + velocity;
 
     if (pos.getX() < 15)//golpea izq
@@ -22,7 +23,7 @@ void Ball::update()
     {
         velocity = { -velocity.getX(), velocity.getY() };
     }
-    if (pos.getY() > 560)//golpea arriba
+    if (pos.getY() > 600)//golpea arriba
     {
         velocity = { velocity.getX(), -velocity.getY() };
     }

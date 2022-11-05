@@ -38,6 +38,7 @@ public:
 	void render();
 	void readMap();
 	int getBlocks();
+	Vector2D colides(Vector2D pos, int size);
 	//void update();
 
 };
