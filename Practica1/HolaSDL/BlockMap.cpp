@@ -12,7 +12,7 @@ void BlockMap::render()
 void BlockMap::readMap()
 {
     std::ifstream in("../Mapas/level01.DAT");
-    //auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
+    auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
     if (in.fail())
         throw std::string(" fichero de mapa de bloques no encontrado o no valido " );
     int aux;
@@ -30,7 +30,7 @@ void BlockMap::readMap()
             else matriz[j][i] = nullptr;
         }
     } //Block(Vector2D position, unsigned int h, unsigned int w, unsigned int cl, unsigned int fil, unsigned int col, Texture* text)
-    //std::cin.rdbuf(cinbuf); 
+    std::cin.rdbuf(cinbuf); 
 }
 int BlockMap::getBlocks()
 {
@@ -44,7 +44,7 @@ int BlockMap::getBlocks()
     return n;
 }
 
-bool BlockMap::colides(Vector2D& pos, int size)
+bool BlockMap::colides(Vector2D& pos, int size, int& angle)
 {
     Vector2D bloque;
     for (int i = 0; i < nColumnas; i++) {

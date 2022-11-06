@@ -45,6 +45,6 @@ public:
 	void run();
 	void render();
 	void update();
-	bool collides(Vector2D& pos, int size);
+	bool collides(Vector2D& pos, int size, int& angle);
 	void handleEvents();
 };

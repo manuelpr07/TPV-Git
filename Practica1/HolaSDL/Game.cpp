@@ -75,34 +75,38 @@ void Game::update() {
 	paddle->update();
 	ball->update();
 }
-bool Game::collides(Vector2D& pos, int size) {
-	
+bool Game::collides(Vector2D& pos, int size, int& angle) {
+
 	//colision con bloques
 	bool colisiona = false;
-	colisiona = blockMap->colides(pos, size);
+	//colisiona = blockMap->colides(pos, size, angle);
 
 	//colision con la pala
-	colisiona = paddle->colides(pos, size);
+	//colisiona = paddle->colides(pos, size, angle);
 
 	//colision con las paredes
-	if (pos.getX() < 15)//golpea izq
+	if (pos.getX() < 15)//golpea por izq
 	{
 		pos = { 1, 0 };
+		angle = 180;
 		colisiona = true;
 	}
-	else if (pos.getX() > 765)//golpea drc
+	else if (pos.getX() > 765)//golpea por drc
 	{
 		pos = { -1, 0 };
+		angle = 0;
 		colisiona = true;
 	}
-	if (pos.getY() < 0)//golpea abajo
+	if (pos.getY() < 0)//golpea por abajo
 	{
 		pos = { 0, -1 };
+		angle = 270;
 		colisiona = true;
 	}
 	else if (pos.getY() > 600)//perder
-	{
+	{//game over
 		pos = { 0, 1 };
+		angle = 90;
 		colisiona = true;
 	}
 
