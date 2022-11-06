@@ -18,7 +18,7 @@ void BlockMap::readMap()
     int aux;
     std::cin >> nFilas >> nColumnas;
 
-    cellHeigth = (winHeigth - 120)/nFilas;
+    cellHeigth = (winHeigth - 200)/nFilas;
     cellWidth = (winWidth - 40)/nColumnas;
     for (int i = 0; i < nFilas; i++) {
         for (int j = 0; j < nColumnas; j++) {
@@ -49,36 +49,47 @@ bool BlockMap::colides(Vector2D& pos, int size, int& angle)
     Vector2D bloque;
     for (int i = 0; i < nColumnas; i++) {
         for (int j = 0; j < nFilas; j++) {
-            if (matriz[i][j] != nullptr) {
-                bloque = Vector2D(cellWidth * j + 20, cellHeigth * i + 15);
+            if (matriz[j][i] != nullptr) {
+                bloque = Vector2D(cellWidth * j +15, cellHeigth * i + 20);
                 //arriba o abajo
-                if ((pos.getX() + size >= bloque.getX() && pos.getX() <= bloque.getX()) || (pos.getX() >= bloque.getX() && pos.getX() + size <= bloque.getX() + cellWidth) || (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth)){
-                    if (pos.getY() >= bloque.getY() + cellHeigth && pos.getY() + size <= bloque.getY() + cellHeigth)// golpea por abajo
+                if ((pos.getX() + size >= bloque.getX() && pos.getX() <= bloque.getX()) ||
+                    (pos.getX() >= bloque.getX() && pos.getX() + size <= bloque.getX() + cellWidth) ||
+                    (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth)){
+                    if (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth)// golpea por abajo
                     {
-                        pos = { 0, -1 };
-                        matriz[i][j] = nullptr;
+                       
+                        pos = { 0, 1 };
+                        angle = -1;
+                        matriz[j][i] = nullptr;
                         return true;
                     }
                     else if (pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY())// golpea por arriba
                     {
-                        pos = { 0, 1 };
-                        matriz[i][j] = nullptr;
+                        pos = { 0, -1 };
+                        angle = -1;
+                        matriz[j][i] = nullptr;
                         return true;
                     }
                 }
                 //derecha o izquierda
-                else if ((pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY()) || (pos.getY() >= bloque.getY() && pos.getY() + size <= bloque.getY() + cellHeigth) || (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth)){
+                else if ((pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY()) ||
+                    (pos.getY() >= bloque.getY() && pos.getY() + size <= bloque.getY() + cellHeigth) ||
+                    (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth))
+                {
+
                     if (pos.getX() <= bloque.getX() && pos.getX() + size >= bloque.getX())// golpea por izquieda
                     {
-                        pos = { -1, 0 };
-                        matriz[i][j] = nullptr;
+                        pos = { 1, 0 };
+                        angle = -1;
+                        matriz[j][i] = nullptr;
                         return true;
                     }
-                    else if (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getY() + cellWidth)// golpea por derecha
+                    else if (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth)// golpea por derecha
                     {
 
-                        pos = { 1, 0 };
-                        matriz[i][j] = nullptr;
+                        pos = { -1, 0 };
+                        angle = 1;
+                        matriz[j][i] = nullptr;
                         return true;
                     }
                 }

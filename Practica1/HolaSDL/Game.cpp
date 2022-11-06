@@ -26,7 +26,7 @@ Game::Game() {
 	walls[1] = Wall(Vector2D(5, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
 	walls[2] = Wall(Vector2D(0, 0), WALL_WIDTH, WIN_WIDTH, textures[topWall]);
 
-	ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50),20,20,Vector2D(0,1), textures[ballT], this);
+	ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50),20,20,Vector2D(1,1), textures[ballT], this);
 	paddle = new Paddle(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 20), 20, 100, textures[4]);
 	blockMap = new BlockMap(WIN_HEIGTH, WIN_WIDTH, 10, 10, textures[bricks]);
 	blockMap->readMap();
@@ -77,37 +77,40 @@ void Game::update() {
 }
 bool Game::collides(Vector2D& pos, int size, int& angle) {
 
-	//colision con bloques
 	bool colisiona = false;
-	//colisiona = blockMap->colides(pos, size, angle);
+
+	//colision con bloques
+	colisiona = blockMap->colides(pos, size, angle);
 
 	//colision con la pala
 	//colisiona = paddle->colides(pos, size, angle);
 
 	//colision con las paredes
-	if (pos.getX() < 15)//golpea por izq
-	{
-		pos = { 1, 0 };
-		angle = 180;
-		colisiona = true;
-	}
-	else if (pos.getX() > 765)//golpea por drc
-	{
-		pos = { -1, 0 };
-		angle = 0;
-		colisiona = true;
-	}
-	if (pos.getY() < 0)//golpea por abajo
-	{
-		pos = { 0, -1 };
-		angle = 270;
-		colisiona = true;
-	}
-	else if (pos.getY() > 600)//perder
-	{//game over
-		pos = { 0, 1 };
-		angle = 90;
-		colisiona = true;
+	if (!colisiona) {
+		if (pos.getX() < 15)//golpea pared izq
+		{
+			pos = { 1, 0 };
+			angle = -1;
+			colisiona = true;
+		}
+		else if (pos.getX() > 765)//golpea pared drc
+		{
+			pos = { -1, 0 };
+			angle = 1;
+			colisiona = true;
+		}
+		if (pos.getY() < 0)//golpea pared arriba
+		{
+			pos = { 0, -1 };
+			angle = -1;
+			colisiona = true;
+		}
+		else if (pos.getY() > 600)//perder
+		{//game over
+			pos = { 0, 1 };
+			angle = 1;
+			colisiona = true;
+		}
 	}
 
 	return colisiona;
