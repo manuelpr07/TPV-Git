@@ -17,8 +17,8 @@ int main(int argc, char* argv[]) {
         Game game;
         game.run();
     }
-    catch (const string& e) {
-        cout << e;
+    catch (const std::string& e) {
+        std::cout << e << '\n';
     }
 
     return 0;

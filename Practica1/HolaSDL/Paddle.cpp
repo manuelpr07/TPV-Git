@@ -26,3 +26,16 @@ void Paddle::handdleEvents(int n)
 {
     dir = Vector2D(n, 0);
 }
+
+bool Paddle::colides(Vector2D& _pos, int size)
+{
+    if ((_pos.getX() + size >= pos.getX() && _pos.getX() <= pos.getX()) || (_pos.getX() >= pos.getX() && _pos.getX() + size <= pos.getX() + width) || (_pos.getX() <= pos.getX() + width && _pos.getX() + size >= pos.getX() + width))
+    {
+        if (_pos.getY() <= pos.getY() && _pos.getY() + size >= pos.getY())// golpea por arriba
+        {
+
+            _pos = { 0,1 };
+            return true;
+        }
+    }
+}

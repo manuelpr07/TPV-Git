@@ -82,7 +82,7 @@ bool Game::collides(Vector2D& pos, int size) {
 	colisiona = blockMap->colides(pos, size);
 
 	//colision con la pala
-	colisiona = blockMap->colides(pos, size);
+	colisiona = paddle->colides(pos, size);
 
 	//colision con las paredes
 	if (pos.getX() < 15)//golpea izq

@@ -14,6 +14,7 @@ public:
 
 	void render();
 	void update();
+	bool colides(Vector2D& pos, int size);
 	void handdleEvents(int n);
 
 };
