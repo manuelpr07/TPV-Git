@@ -44,7 +44,7 @@ int BlockMap::getBlocks()
     return n;
 }
 
-Vector2D BlockMap::colides(Vector2D pos, int size)
+bool BlockMap::colides(Vector2D& pos, int size)
 {
     Vector2D bloque;
     for (int i = 0; i < nColumnas; i++) {
@@ -58,13 +58,15 @@ Vector2D BlockMap::colides(Vector2D pos, int size)
                     if (pos.getY() >= bloque.getY() + cellHeigth && pos.getY() + size <= bloque.getY() + cellHeigth)// golpea por abajo
                     {
 
-                        return{ 0, -1 };
+                        pos = { 0, -1 };
+                        return true;
 
                     }
                     else if (pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY())// golpea por arriba
                     {
 
-                        return{ 0, 1 };
+                        pos = { 0, 1 };
+                        return true;
 
                     }
                 }
@@ -74,17 +76,20 @@ Vector2D BlockMap::colides(Vector2D pos, int size)
                     if (pos.getX() <= bloque.getX() && pos.getX() + size >= bloque.getX())// golpea por izquieda
                     {
 
-                        return{ -1, 0 };
+                        pos = { -1, 0 };
+                        return true;
 
                     }
                     else if (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getY() + cellWidth)// golpea por derecha
                     {
 
-                        return{ 1, 0 };
+                        pos = { 1, 0 };
+                        return true;
 
                     }
                 }
             }
         }
     }
+    return false;
 }

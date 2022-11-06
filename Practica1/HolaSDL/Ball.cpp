@@ -1,4 +1,4 @@
-#include "Ball.h"
+﻿#include "Ball.h"
 
 void Ball::render()
 {
@@ -12,23 +12,15 @@ void Ball::render()
 
 void Ball::update()
 {
-    game->collides(pos, heigth);
-    pos = pos + velocity;
+	//colision con bloques
+	Vector2D normal = pos;
+	bool coli;
+	coli = game->collides(normal, heigth);
+	if (coli)
+	{
+		// aqui va la formula de reflexión
+		//velocity = velocity − 2 ∗ (¿¿A?? ∗ normal) ∗ normal
+	}
 
-    if (pos.getX() < 15)//golpea izq
-    {
-        velocity = { -velocity.getX(), velocity.getY()};
-    }
-    else if (pos.getX() > 765)//golpea drc
-    {
-        velocity = { -velocity.getX(), velocity.getY() };
-    }
-    if (pos.getY() > 600)//golpea arriba
-    {
-        velocity = { velocity.getX(), -velocity.getY() };
-    }
-    else if (pos.getY() < 0)
-    {
-        velocity = { velocity.getX(), -velocity.getY() };//perder
-    }
+    pos = pos + velocity;
 }

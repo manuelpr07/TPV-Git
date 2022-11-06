@@ -73,10 +73,38 @@ void Game::update() {
 	paddle->update();
 	ball->update();
 }
-void Game::collides(Vector2D pos, int size) {
+bool Game::collides(Vector2D& pos, int size) {
+	
+	//colision con bloques
+	bool colisiona = false;
+	colisiona = blockMap->colides(pos, size);
 
-	blockMap->colides(pos, size);
+	//colision con la pala
+	colisiona = blockMap->colides(pos, size);
 
+	//colision con las paredes
+	if (pos.getX() < 15)//golpea izq
+	{
+		pos = { 1, 0 };
+		colisiona = true;
+	}
+	else if (pos.getX() > 765)//golpea drc
+	{
+		pos = { -1, 0 };
+		colisiona = true;
+	}
+	if (pos.getY() < 0)//golpea abajo
+	{
+		pos = { 0, -1 };
+		colisiona = true;
+	}
+	else if (pos.getY() > 600)//perder
+	{
+		pos = { 0, 1 };
+		colisiona = true;
+	}
+
+	return colisiona;
 }
 void Game::handleEvents() {
 	SDL_Event event;

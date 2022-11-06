@@ -3,6 +3,7 @@
 #include "Wall.h"
 #include "BlockMap.h"
 
+
 using namespace std;
 using uint = unsigned int;
 
@@ -44,6 +45,6 @@ public:
 	void run();
 	void render();
 	void update();
-	void collides(Vector2D pos, int size);
+	bool collides(Vector2D& pos, int size);
 	void handleEvents();
 };
