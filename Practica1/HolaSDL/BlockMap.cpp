@@ -1,5 +1,4 @@
 #include "BlockMap.h"
-class Game;
 
 void BlockMap::render()
 {

@@ -1,8 +1,8 @@
 #include "Paddle.h"
-#include "Ball.h"
 #include "Wall.h"
 #include "BlockMap.h"
 
+class Ball;
 
 using namespace std;
 using uint = unsigned int;

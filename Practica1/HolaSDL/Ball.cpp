@@ -1,4 +1,5 @@
 ﻿#include "Ball.h"
+#include "Game.h"
 
 void Ball::render()
 {

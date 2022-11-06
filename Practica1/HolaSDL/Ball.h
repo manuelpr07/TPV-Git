@@ -1,6 +1,7 @@
 #include "Vector2D.h"
 #include "Texture.h"
 
+class Game;
 
 class Ball
 {
