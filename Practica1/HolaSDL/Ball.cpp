@@ -16,20 +16,14 @@ void Ball::update()
 	//colision con bloques
 	Vector2D normal = pos;
 	bool coli;
-	int angle = 0;
+	double angle = 0;
 	coli = game->collides(normal, heigth, angle);
 	if (coli)
 	{
 		// aqui va la formula de reflexión
 		velocity = { velocity.getX() - ((normal.getX() * angle) * normal.getX()) * 2, velocity.getY() - ((normal.getY() * angle) * normal.getY()) * 2 };
-		if (velocity.getX() > 1)
-			velocity = { 1,velocity.getY() };
-		if (velocity.getX() < -1)
-			velocity = { -1,velocity.getY() };
-		if (velocity.getY() > 1)
-			velocity = {velocity.getX(), 1 };
-		if (velocity.getY() < -1)
-			velocity = {velocity.getX(), -1 };
+		velocity.normalize();
+
 	}
     pos = pos + velocity;
 }

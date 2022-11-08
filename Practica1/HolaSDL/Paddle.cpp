@@ -27,15 +27,33 @@ void Paddle::handdleEvents(int n)
     dir = Vector2D(n, 0);
 }
 
-bool Paddle::colides(Vector2D& _pos, int size, int& angle)
+bool Paddle::colides(Vector2D& _pos, int size, double& angle)
 {
-    if ((_pos.getX() + size >= pos.getX() && _pos.getX() <= pos.getX()) || (_pos.getX() >= pos.getX() && _pos.getX() + size <= pos.getX() + width) || (_pos.getX() <= pos.getX() + width && _pos.getX() + size >= pos.getX() + width))
-    {
-        if (_pos.getY() <= pos.getY() && _pos.getY() + size >= pos.getY())// golpea por arriba
+    if ((_pos.getX() + size >= pos.getX() && _pos.getX() <= pos.getX()) ||
+        (_pos.getX() >= pos.getX() && _pos.getX() + size <= pos.getX() + width) ||
+        (_pos.getX() <= pos.getX() + width && _pos.getX() + size >= pos.getX() + width)) {
+        if (_pos.getY() + size >= pos.getY() && _pos.getY() <= pos.getY())// golpea por arriba
         {
 
-            _pos = { 0,1 };
+            float dif = (_pos.getX() + (size / 2))- (pos.getX() + (width / 2));
+            if (dif < 0)
+            {
+                angle = 1 + ((width / 2) * dif) / 10000;
+                
+            }
+            else if (dif > 0)
+            {
+                angle = 1 + ((width / 2) * dif) / 10000;
+            }
+            else if (dif == 0)
+            {
+                angle = 1;
+            }
+             
+
+            _pos = { 0, -1 };
             return true;
         }
     }
+    return false;
 }

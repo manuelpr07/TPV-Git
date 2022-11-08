@@ -18,7 +18,7 @@ void BlockMap::readMap()
     int aux;
     std::cin >> nFilas >> nColumnas;
 
-    cellHeigth = (winHeigth - 200)/nFilas;
+    cellHeigth = (winHeigth - 300)/nFilas;
     cellWidth = (winWidth - 40)/nColumnas;
     for (int i = 0; i < nFilas; i++) {
         for (int j = 0; j < nColumnas; j++) {
@@ -44,7 +44,7 @@ int BlockMap::getBlocks()
     return n;
 }
 
-bool BlockMap::colides(Vector2D& pos, int size, int& angle)
+bool BlockMap::colides(Vector2D& pos, int size, double& angle)
 {
     Vector2D bloque;
     for (int i = 0; i < nColumnas; i++) {
@@ -66,7 +66,7 @@ bool BlockMap::colides(Vector2D& pos, int size, int& angle)
                     else if (pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY())// golpea por arriba
                     {
                         pos = { 0, -1 };
-                        angle = -1;
+                        angle = 1;
                         matriz[j][i] = nullptr;
                         return true;
                     }
