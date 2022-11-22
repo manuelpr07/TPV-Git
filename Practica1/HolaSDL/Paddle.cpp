@@ -1,4 +1,5 @@
 #include "Paddle.h"
+#include "Game.h"
 void Paddle::render()
 {
 	SDL_Rect destRect;

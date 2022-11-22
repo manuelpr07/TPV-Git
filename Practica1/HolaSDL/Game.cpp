@@ -1,6 +1,8 @@
 #include"Game.h"
 #include"Ball.h"
-#include <iostream>
+#include"Paddle.h"
+#include"BlockMap.h"
+#include<iostream>
 
 
 Game::Game() {

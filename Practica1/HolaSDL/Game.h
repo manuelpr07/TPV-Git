@@ -1,7 +1,7 @@
-#include "Paddle.h"
 #include "Wall.h"
-#include "BlockMap.h"
 
+class BlockMap;
+class Paddle;
 class Ball;
 
 using namespace std;
