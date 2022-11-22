@@ -36,7 +36,7 @@ public:
 		delete[] matriz;
 	}
 	void render();
-	void readMap();
+	void readMap(int level);
 	int getBlocks();
 	bool colides(Vector2D& pos, int size, double& angle);
 	//void update();

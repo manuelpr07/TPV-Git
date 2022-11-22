@@ -9,9 +9,9 @@ void BlockMap::render()
         }
     }
 }
-void BlockMap::readMap()
+void BlockMap::readMap(int level)
 {
-    std::ifstream in("../Mapas/level01.DAT");
+    std::ifstream in("../Mapas/level0" + std::to_string(level)+".DAT");
     auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
     if (in.fail())
         throw std::string(" fichero de mapa de bloques no encontrado o no valido " );
