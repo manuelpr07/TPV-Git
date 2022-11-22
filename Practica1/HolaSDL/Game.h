@@ -12,6 +12,13 @@ const uint WIN_HEIGTH = 600;
 const uint FRAME_RATE = 5;
 const uint WALL_WIDTH = 15;
 const uint NUM_TEXTURES = 8;
+const uint BLOCK_HEIGHT = 20;
+const uint BLOCK_WIDTH = 15;
+const uint BALL_SIZE = 20;
+const uint PADDLE_HEIGHT = 20;
+const uint PADDLE_WIDTH = 100;
+
+
 
 enum TextureName{ballT, bricks, digit, gameOver, paddle, sideWall, topWall, winner};
 
@@ -37,6 +44,7 @@ private:
 		BlockMap* blockMap = nullptr;
 		Wall walls[3];
 		Texture* textures[NUM_TEXTURES];
+		int level = 1;
 		
 public:
 

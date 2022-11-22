@@ -18,14 +18,14 @@ void BlockMap::readMap()
     int aux;
     std::cin >> nFilas >> nColumnas;
 
-    cellHeigth = (winHeigth - 300)/nFilas;
-    cellWidth = (winWidth - 40)/nColumnas;
+    cellHeigth = (WIN_HEIGTH/2)/nFilas;
+    cellWidth = (WIN_WIDTH - BLOCK_HEIGHT*2)/nColumnas;
     for (int i = 0; i < nFilas; i++) {
         for (int j = 0; j < nColumnas; j++) {
             std::cin >> aux;
             if (aux != 0)
             {
-                matriz[j][i] = new Block(Vector2D(cellWidth * j + 20, cellHeigth * i + 15), cellHeigth, cellWidth, aux, i, j, tex);
+                matriz[j][i] = new Block(Vector2D(cellWidth * j + BLOCK_HEIGHT, cellHeigth * i + BLOCK_WIDTH), cellHeigth, cellWidth, aux, i, j, tex);
             }
             else matriz[j][i] = nullptr;
         }
@@ -50,7 +50,7 @@ bool BlockMap::colides(Vector2D& pos, int size, double& angle)
     for (int i = 0; i < nColumnas; i++) {
         for (int j = 0; j < nFilas; j++) {
             if (matriz[j][i] != nullptr) {
-                bloque = Vector2D(cellWidth * j +15, cellHeigth * i + 20);
+                bloque = Vector2D(cellWidth * j + BLOCK_WIDTH, cellHeigth * i + BLOCK_HEIGHT);
                 //arriba o abajo
                 if ((pos.getX() + size >= bloque.getX() && pos.getX() <= bloque.getX()) ||
                     (pos.getX() >= bloque.getX() && pos.getX() + size <= bloque.getX() + cellWidth) ||
