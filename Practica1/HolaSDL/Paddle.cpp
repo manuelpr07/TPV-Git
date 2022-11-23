@@ -17,9 +17,9 @@ void Paddle::update()
     {
         pos = { WALL_WIDTH, pos.getY()};
     }
-    else if (pos.getX() > WIN_WIDTH - WALL_WIDTH - PADDLE_WIDTH)
+    else if (pos.getX() > WIN_WIDTH - WALL_WIDTH - width)
     {
-        pos = { WIN_WIDTH - WALL_WIDTH - PADDLE_WIDTH, pos.getY() };
+        pos = { WIN_WIDTH - WALL_WIDTH - width, pos.getY() };
     }
 
 }
@@ -52,7 +52,8 @@ bool Paddle::colides(Vector2D& _pos, int size, double& angle)
             }
              
 
-            _pos = { 0, -1 };
+            _pos = { angle, -2.5 };
+            pos.normalize();//noralizar 
             return true;
         }
     }

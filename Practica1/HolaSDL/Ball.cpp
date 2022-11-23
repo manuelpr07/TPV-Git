@@ -14,14 +14,14 @@ void Ball::render()
 void Ball::update()
 {
 	//colision con bloques
-	Vector2D normal = pos;
+	Vector2D normal;
 	bool coli;
-	double angle = 0;
-	coli = game->collides(normal, heigth, angle);
+	coli = game->collides(pos, heigth, normal);
 	if (coli)
 	{
 		// aqui va la formula de reflexión
-		velocity = { velocity.getX() - ((normal.getX() * angle) * normal.getX()) * 2, velocity.getY() - ((normal.getY() * angle) * normal.getY()) * 2 };
+		// velocidad = velocidad - 2 * (velocidad * colisión * colisión)
+		velocity = { velocity.getX() - ((normal.getX()) * normal.getX()) * 2, velocity.getY() - ((normal.getY()) * normal.getY()) * 2 };
 		velocity.normalize();
 
 	}

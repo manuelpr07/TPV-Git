@@ -1,8 +1,12 @@
 #include "Wall.h"
+#include"Ball.h"
+#include"Paddle.h"
+#include"BlockMap.h"
+#include<iostream>
 
-class BlockMap;
-class Paddle;
-class Ball;
+//class BlockMap;
+//class Paddle;
+//class Ball;
 
 using namespace std;
 using uint = unsigned int;
@@ -53,6 +57,6 @@ public:
 	void run();
 	void render();
 	void update();
-	bool collides(Vector2D& pos, int size, double& angle);
+	bool collides(Vector2D pos, int size, Vector2D& collision_vector);
 	void handleEvents();
 };

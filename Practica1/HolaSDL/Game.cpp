@@ -1,8 +1,5 @@
 #include"Game.h"
-#include"Ball.h"
-#include"Paddle.h"
-#include"BlockMap.h"
-#include<iostream>
+
 
 
 Game::Game() {
@@ -77,9 +74,33 @@ void Game::update() {
 	paddle->update();
 	ball->update();
 }
-bool Game::collides(Vector2D& pos, int size, double& angle) {
+bool Game::collides(Vector2D pos, int size, Vector2D& collision_vector) {
 
 	bool colisiona = false;
+
+	// Paredes
+	if (pos.getX() <= WALL_WIDTH)//golpea pared izq
+	{
+		collision_vector = { 1, 0 };
+		return true;
+	}
+	else if (pos.getX() >= WIN_WIDTH - WALL_WIDTH - BALL_SIZE)//golpea pared drc
+	{
+		collision_vector = { -1, 0 };
+		return true;
+	}
+	else if (pos.getY() <= 0)//golpea pared arriba
+	{
+		collision_vector = { 0, 1 };
+		return true;
+	}
+	else if (pos.getY() >= WIN_HEIGTH - BALL_SIZE)//perder
+	{
+		//pos = { 0, 1 };
+		//angle = 1;
+		//colisiona = true;
+		gameOver = true;
+	}
 
 	//colision con bloques
 	colisiona = blockMap->colides(pos, size, angle);
@@ -88,35 +109,6 @@ bool Game::collides(Vector2D& pos, int size, double& angle) {
 	{
 		//colision con la pala
 		colisiona = paddle->colides(pos, size, angle);
-
-		//colision con las paredes
-		if (!colisiona) {
-			if (pos.getX() <= WALL_WIDTH)//golpea pared izq
-			{
-				pos = { 1, 0 };
-				angle = -1;
-				colisiona = true;
-			}
-			else if (pos.getX() >= WIN_WIDTH-WALL_WIDTH-BALL_SIZE)//golpea pared drc
-			{
-				pos = { -1, 0 };
-				angle = 1;
-				colisiona = true;
-			}
-			else if (pos.getY() <= 0)//golpea pared arriba
-			{
-				pos = { 0, -1 };
-				angle = -1;
-				colisiona = true;
-			}
-			else if (pos.getY() >= WIN_HEIGTH- BALL_SIZE)//perder
-			{
-				//pos = { 0, 1 };
-				//angle = 1;
-				//colisiona = true;
-				gameOver = true;
-			}
-		}
 	}
 	if (blockMap->getBlocks() == 0)
 	{

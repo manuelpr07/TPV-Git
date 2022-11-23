@@ -1,5 +1,4 @@
 #include "BlockMap.h"
-#include "Game.h"
 void BlockMap::render()
 {
     for (int i = 0; i < nColumnas; i++) {
