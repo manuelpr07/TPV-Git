@@ -13,13 +13,13 @@ void Paddle::update()
 {
     pos = pos + dir;
 
-    if(pos.getX() < WALL_WIDTH)
+    if (pos.getX() < WALL_WIDTH)
     {
-        pos = { WALL_WIDTH, pos.getY()};
+        pos = { WALL_WIDTH, pos.getY() };
     }
-    else if (pos.getX() > WIN_WIDTH - WALL_WIDTH - PADDLE_WIDTH)
+    else if (pos.getX() > WIN_WIDTH - WALL_WIDTH - width)
     {
-        pos = { WIN_WIDTH - WALL_WIDTH - PADDLE_WIDTH, pos.getY() };
+        pos = { WIN_WIDTH - WALL_WIDTH - width, pos.getY() };
     }
 
 }
