@@ -15,7 +15,6 @@
 		Vector2D operator-(const Vector2D& v) const;
 		Vector2D operator*(double d) const;
 		double operator*(const Vector2D& d) const;
-		//producto vectorial 2v
 		friend std::ostream& operator<<(std::ostream& os, const Vector2D& v);
 	};
 #endif
