@@ -19,3 +19,8 @@ void Block::render()
 	destRect.w = width;
 	tex->renderFrame(destRect, fil, col);
 }
+
+bool Block::colides(Vector2D pos, int size, Vector2D& collision_vector)
+{
+	return false;
+}

@@ -19,7 +19,7 @@ void Paddle::update()
     }
     else if (pos.getX() > WIN_WIDTH - WALL_WIDTH - width)
     {
-        pos = { WIN_WIDTH - WALL_WIDTH - width, pos.getY() };
+        pos = { WIN_WIDTH - (double)WALL_WIDTH - width, pos.getY() };
     }
 
 }
@@ -36,23 +36,31 @@ bool Paddle::colides(Vector2D _pos, int size, Vector2D& collision_vector)
         if (_pos.getY() + size >= pos.getY() && _pos.getY() <= pos.getY())// golpea por arriba
         {
 
-            float dif = (_pos.getX() + (size / 2))- (pos.getX() + (width / 2));
-            if (dif < 0)
-            {
-                collision_vector = 1 + ((width / 2) * dif) / 10000;
-                
-            }
-            else if (dif > 0)
-            {
-                collision_vector = 1 + ((width / 2) * dif) / 10000;
-            }
-            else if (dif == 0)
-            {
-                collision_vector = 1;
-            }
-             
+            //float dif = (_pos.getX() + (size / 2))- (pos.getX() + (width / 2));
+            //if (dif < 0)
+            //{
+            //    angle = 1 + ((width / 2) * dif) / 10000;
+            //    collision_vector = {-2.5, -angle };
+            //}
+            //else if (dif > 0)
+            //{
+            //    angle = 1 + ((width / 2) * dif) / 10000;
+            //    collision_vector = {2.5,-angle };
+            //}
+            //else if (dif == 0)
+            //{
+            //    angle = 0;
+            //    collision_vector = { angle, -2.5 };
+            //}
 
-            _pos = { 0, -1 };
+            double ballpos = _pos.getX() + (size / 2);
+            double angle = (ballpos - (pos.getX() + width / 2)) / (width / 2); //Cálculo del ángulo de reflexión
+            collision_vector = { angle, -2.5 };
+            collision_vector.normalize();
+            return true;
+
+
+            collision_vector.normalize();//noralizar
             return true;
         }
     }

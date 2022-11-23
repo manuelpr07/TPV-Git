@@ -33,9 +33,16 @@ Vector2D Vector2D::operator*(double d) const {
 	r.y = y * d;
 	return r;
 }
-double Vector2D::operator*(const Vector2D& d) const {
-	return d.x * x + d.y * y;
+Vector2D Vector2D::operator*(Vector2D d) const
+{
+	Vector2D r;
+	r.x = x * d.x;
+	r.y = y * d.y;
+	return r;
 }
+//double Vector2D::operator*(const Vector2D& d) const {
+//	return d.x * x + d.y * y;
+//}
 std::ostream& operator<<(std::ostream& os, const Vector2D& v) {
 	os << "(" << v.x << "," << v.y << ")";
 	return os;

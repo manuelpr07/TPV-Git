@@ -99,10 +99,9 @@ bool Game::collides(Vector2D pos, int size, Vector2D& collision_vector) {
 	}
 	else if (pos.getY() >= WIN_HEIGTH - BALL_SIZE)//perder
 	{
-		//pos = { 0, 1 };
-		//angle = 1;
-		//colisiona = true;
-		gameOver = true;
+		collision_vector = { 0, -1 };
+		//gameOver = true;
+		return true;
 	}
 
 	//colision con bloques
