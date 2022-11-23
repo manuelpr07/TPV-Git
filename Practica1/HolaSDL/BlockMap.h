@@ -38,7 +38,7 @@ public:
 	void render();
 	void readMap(int level);
 	int getBlocks();
-	bool colides(Vector2D& pos, int size, double& angle);
+	bool colides(Vector2D pos, int size, Vector2D& collision_vector);
 	//void update();
 
 };

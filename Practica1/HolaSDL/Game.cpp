@@ -106,12 +106,12 @@ bool Game::collides(Vector2D pos, int size, Vector2D& collision_vector) {
 	}
 
 	//colision con bloques
-	colisiona = blockMap->colides(pos, size, angle);
+	colisiona = blockMap->colides(pos, size, collision_vector);
 
 	if (!colisiona)
 	{
 		//colision con la pala
-		colisiona = paddle->colides(pos, size, angle);
+		colisiona = paddle->colides(pos, size, collision_vector);
 	}
 	if (blockMap->getBlocks() == 0)
 	{
