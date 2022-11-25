@@ -28,7 +28,7 @@ void Paddle::handdleEvents(int n)
     dir = Vector2D(n, 0);
 }
 
-bool Paddle::colides(Vector2D _pos, int size, Vector2D& collision_vector)
+bool Paddle::colides(Vector2D _pos, int size, Vector2D& collision_vector, const Vector2D& velocity)
 {
     if ((_pos.getX() + size >= pos.getX() && _pos.getX() <= pos.getX()) ||
         (_pos.getX() >= pos.getX() && _pos.getX() + size <= pos.getX() + width) ||

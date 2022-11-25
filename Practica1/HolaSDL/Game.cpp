@@ -77,7 +77,7 @@ void Game::update() {
 	paddle->update();
 	ball->update();
 }
-bool Game::collides(Vector2D pos, int size, Vector2D& collision_vector) {
+bool Game::collides(Vector2D pos, int size, Vector2D& collision_vector, const Vector2D& velocity) {
 
 	bool colisiona = false;
 
@@ -105,12 +105,12 @@ bool Game::collides(Vector2D pos, int size, Vector2D& collision_vector) {
 	}
 
 	//colision con bloques
-	colisiona = blockMap->colides(pos, size, collision_vector);
+	colisiona = blockMap->colides(pos, size, collision_vector, velocity);
 
 	if (!colisiona)
 	{
 		//colision con la pala
-		colisiona = paddle->colides(pos, size, collision_vector);
+		colisiona = paddle->colides(pos, size, collision_vector, velocity);
 	}
 	if (blockMap->getBlocks() == 0)
 	{

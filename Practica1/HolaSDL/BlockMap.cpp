@@ -44,7 +44,7 @@ int BlockMap::getBlocks()
     return n;
 }
 
-bool BlockMap::colides(Vector2D pos, int size, Vector2D& collision_vector)
+bool BlockMap::colides(Vector2D pos, int size, Vector2D& collision_vector, const Vector2D& velocity)
 {
     Vector2D bloque;
     for (int i = 0; i < nColumnas; i++) {
@@ -54,17 +54,20 @@ bool BlockMap::colides(Vector2D pos, int size, Vector2D& collision_vector)
                 //arriba o abajo
                 if ((pos.getX() + size >= bloque.getX() && pos.getX() <= bloque.getX()) ||
                     (pos.getX() >= bloque.getX() && pos.getX() + size <= bloque.getX() + cellWidth) ||
-                    (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth)){
-                    if (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth)// golpea por abajo
+                    (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth))
+                {
+                    if (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth &&
+                        velocity.getY() < 0)// golpea por abajo
                     {
                        
                         collision_vector = { 0, 1 };
                         matriz[j][i] = nullptr;
                         return true;
                     }
-                    else if (pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY())// golpea por arriba
+                    else if (pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY() &&
+                        velocity.getY() > 0)// golpea por arriba
                     {
-                        pos = { 0, -1 };
+                        collision_vector = { 0, -1 };
                         matriz[j][i] = nullptr;
                         return true;
                     }
@@ -77,7 +80,7 @@ bool BlockMap::colides(Vector2D pos, int size, Vector2D& collision_vector)
 
                     if (pos.getX() <= bloque.getX() && pos.getX() + size >= bloque.getX())// golpea por izquieda
                     {
-                        collision_vector = { -1, 0 };
+                        collision_vector = { 1, 0 };
                         matriz[j][i] = nullptr;
                         return true;
                     }

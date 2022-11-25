@@ -53,6 +53,6 @@ public:
 	void run();
 	void render();
 	void update();
-	bool collides(Vector2D pos, int size, Vector2D& collision_vector);
+	bool collides(Vector2D pos, int size, Vector2D& collision_vector, const Vector2D& velocity);
 	void handleEvents();
 };

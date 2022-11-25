@@ -15,16 +15,16 @@ void Ball::update()
 {
 	//colision con bloques
 	Vector2D collision_vector;
-	bool coli;
-	coli = game->collides(pos, heigth, collision_vector);
-	if (coli)
+	//bool coli;
+	//coli = game->collides(pos, heigth, collision_vector);
+	if (game->collides(pos, heigth, collision_vector, velocity))
 	{
 		// aqui va la formula de reflexión
 		// velocidad = velocidad - 2 * (velocidad * colisión * colisión)
 		
 		
 		velocity = velocity - (velocity * collision_vector * collision_vector)*2;
-
+		
 		//Vector2D primeraOp = collision_vector * collision_vector;
 		//Vector2D segundaOp = velocity * primeraOp;
 		//velocity = velocity - segundaOp*2;
