@@ -73,7 +73,7 @@ bool BlockMap::colides(Vector2D pos, int size, Vector2D& collision_vector, const
                     }
                 }
                 //derecha o izquierda
-                else if ((pos.getY() <= bloque.getY() && pos.getY() + size >= bloque.getY()) ||
+                if ((pos.getY() <= bloque.getY() && pos.getY() + size >= bloque.getY()) ||
                     (pos.getY() >= bloque.getY() && pos.getY() + size <= bloque.getY() + cellHeigth) ||
                     (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth))
                     {

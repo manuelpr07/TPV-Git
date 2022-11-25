@@ -35,24 +35,6 @@ bool Paddle::colides(Vector2D _pos, int size, Vector2D& collision_vector, const 
         (_pos.getX() <= pos.getX() + width && _pos.getX() + size >= pos.getX() + width)) {
         if (_pos.getY() + size >= pos.getY() && _pos.getY() <= pos.getY())// golpea por arriba
         {
-
-            //float dif = (_pos.getX() + (size / 2))- (pos.getX() + (width / 2));
-            //if (dif < 0)
-            //{
-            //    angle = 1 + ((width / 2) * dif) / 10000;
-            //    collision_vector = {-2.5, -angle };
-            //}
-            //else if (dif > 0)
-            //{
-            //    angle = 1 + ((width / 2) * dif) / 10000;
-            //    collision_vector = {2.5,-angle };
-            //}
-            //else if (dif == 0)
-            //{
-            //    angle = 0;
-            //    collision_vector = { angle, -2.5 };
-            //}
-
             double ballpos = _pos.getX() + (size / 2);
             double angle = (ballpos - (pos.getX() + width / 2)) / (width / 2); //Cálculo del ángulo de reflexión
             collision_vector = { angle, -2.5 };

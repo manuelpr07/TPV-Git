@@ -114,7 +114,8 @@ bool Game::collides(Vector2D pos, int size, Vector2D& collision_vector, const Ve
 	}
 	if (blockMap->getBlocks() == 0)
 	{
-		win = true;//cambiar cambio de nivel
+		win = true;
+		//level++;
 	}
 	return colisiona;
 }
