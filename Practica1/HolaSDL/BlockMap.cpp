@@ -73,24 +73,24 @@ bool BlockMap::colides(Vector2D pos, int size, Vector2D& collision_vector, const
                     }
                 }
                 //derecha o izquierda
-                else if ((pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY()) ||
+                else if ((pos.getY() <= bloque.getY() && pos.getY() + size >= bloque.getY()) ||
                     (pos.getY() >= bloque.getY() && pos.getY() + size <= bloque.getY() + cellHeigth) ||
                     (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth))
-                {
+                    {
 
-                    if (pos.getX() <= bloque.getX() && pos.getX() + size >= bloque.getX())// golpea por izquieda
-                    {
-                        collision_vector = { 1, 0 };
-                        matriz[j][i] = nullptr;
-                        return true;
+                        if (pos.getX() <= bloque.getX() && pos.getX() + size >= bloque.getX())// golpea por izquieda
+                        {
+                            collision_vector = { 1, 0 };
+                            matriz[j][i] = nullptr;
+                            return true;
+                        }
+                        else if (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth)// golpea por derecha
+                        {
+                            collision_vector = { 1, 0 };
+                            matriz[j][i] = nullptr;
+                            return true;
+                        }
                     }
-                    else if (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth)// golpea por derecha
-                    {
-                        collision_vector = { 1, 0 };
-                        matriz[j][i] = nullptr;
-                        return true;
-                    }
-                }
             }
         }
     }
