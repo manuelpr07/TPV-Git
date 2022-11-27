@@ -1,11 +1,29 @@
 #include "BlockMap.h"
 #include "Game.h"
+
+BlockMap::BlockMap(unsigned int nfil, unsigned int ncol, Texture* text) : ArcanoidObject(Vector2D{0,0}, 0, 0, nullptr)
+{
+    nFilas = nfil;
+    nColumnas = ncol;
+    texture = text;
+    for (int i = 0; i < nColumnas; i++) {
+        matriz[i] = new Block * [nFilas];
+    }
+}
+
+BlockMap::~BlockMap()
+{
+    for (int i = 0; i < nColumnas; i++) {
+        delete[] matriz[i];
+    }
+    delete[] matriz;
+}
 void BlockMap::render()
 {
     for (int i = 0; i < nColumnas; i++) {
         for (int j = 0; j < nFilas; j++) {
             if(matriz[j][i]!= nullptr)
-            matriz[j][i]->render();
+            matriz[j][i]->Block::render();
         }
     }
 }
@@ -25,7 +43,7 @@ void BlockMap::readMap(int level)
             std::cin >> aux;
             if (aux != 0)
             {
-                matriz[j][i] = new Block(Vector2D(cellWidth * j + BLOCK_HEIGHT, cellHeigth * i + BLOCK_WIDTH), cellHeigth, cellWidth, aux, i, j, tex);
+                matriz[j][i] = new Block(Vector2D(cellWidth * j + BLOCK_HEIGHT, cellHeigth * i + BLOCK_WIDTH), cellHeigth, cellWidth, aux, i, j, texture);
             }
             else matriz[j][i] = nullptr;
         }

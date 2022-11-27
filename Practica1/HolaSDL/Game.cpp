@@ -127,10 +127,10 @@ void Game::handleEvents() {
 		if (event.type == SDL_KEYDOWN)
 		{
 			if (event.key.keysym.sym == SDLK_a) {
-				paddle->handdleEvents(-1);
+				paddle->handdleEvents(event);
 			}
 			if (event.key.keysym.sym == SDLK_d) {
-				paddle->handdleEvents(1);
+				paddle->handdleEvents(event);
 			}
 			if (event.key.keysym.sym == SDLK_p) {
 				exit = true;
@@ -138,7 +138,7 @@ void Game::handleEvents() {
 		}
 		else if (event.type == SDL_KEYUP)
 		{
-			paddle->handdleEvents(0);
+			paddle->handdleEvents(event);
 		}
 	}
 

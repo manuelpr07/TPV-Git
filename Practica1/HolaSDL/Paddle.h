@@ -15,6 +15,6 @@ public:
 	void render();
 	void update();
 	bool colides(Vector2D _pos, int size, Vector2D& collision_vector, const Vector2D& velocity);
-	void handdleEvents(int n);
+	void handdleEvents(SDL_Event event);
 
 };

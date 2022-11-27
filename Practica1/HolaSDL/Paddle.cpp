@@ -23,9 +23,17 @@ void Paddle::update()
     }
 
 }
-void Paddle::handdleEvents(int n)
+void Paddle::handdleEvents(SDL_Event event)
 {
-    dir = Vector2D(n, 0);
+    if (event.key.keysym.sym == SDLK_a) {
+        dir = Vector2D(-1, 0);
+    }
+    else if (event.key.keysym.sym == SDLK_d) {
+        dir = Vector2D(1, 0);
+    }
+    else if (event.type == SDL_KEYUP) {
+        dir = Vector2D(0, 0);
+    }
 }
 
 bool Paddle::colides(Vector2D _pos, int size, Vector2D& collision_vector, const Vector2D& velocity)
