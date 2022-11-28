@@ -1,7 +1,9 @@
 #include "BlockMap.h"
 #include "Game.h"
-
-BlockMap::BlockMap(unsigned int nfil, unsigned int ncol, Texture* text) //: ArcanoidObject(Vector2D{0,0}, 0, 0, nullptr)
+#include <iostream>
+#include <fstream>
+#include <string>
+BlockMap::BlockMap(unsigned int nfil, unsigned int ncol, Texture* text) : ArcanoidObject(Vector2D{0,0}, 0, 0, nullptr)
 {
     nFilas = nfil;
     nColumnas = ncol;
@@ -23,7 +25,7 @@ void BlockMap::render()
     for (int i = 0; i < nColumnas; i++) {
         for (int j = 0; j < nFilas; j++) {
             if(matriz[j][i]!= nullptr)
-            matriz[j][i]->Block::render();
+            matriz[j][i]->render();
         }
     }
 }

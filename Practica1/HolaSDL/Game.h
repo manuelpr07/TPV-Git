@@ -1,4 +1,7 @@
+#pragma once
+
 #include "Wall.h"
+#include"ArcanoidObject.h"
 #include <list>
 
 
@@ -48,7 +51,7 @@ private:
 		Texture* textures[NUM_TEXTURES];
 		int level = 1;
 		list<ArcanoidObject*> gObjects;
-		
+		bool nextLevel = false;
 public:
 
 	Game();

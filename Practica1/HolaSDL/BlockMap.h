@@ -1,3 +1,5 @@
+#pragma once
+
 #include "ArcanoidObject.h"
 #include "Block.h"
 class BlockMap: public ArcanoidObject

@@ -2,8 +2,6 @@
 #include"Ball.h"
 #include"Paddle.h"
 #include"BlockMap.h"
-#include"ArcanoidObject.h"
-
 #include<iostream>
 
 
@@ -34,10 +32,10 @@ Game::Game() {
 	blockMap = new BlockMap(10, 10, textures[bricks]);
 	blockMap->readMap(level);
 
-	gObjects.push_back(walls[0]);
-	gObjects.push_back(walls[1]);
-	gObjects.push_back(walls[2]);
-	gObjects.push_back(blockMap);
+	//gObjects.push_back(walls[0]);
+	//gObjects.push_back(walls[1]);
+	//gObjects.push_back(walls[2]);
+	//gObjects.push_back(blockMap);
 	//gObjects.push_back(ball);
 	//gObjects.push_back(paddle);
 
@@ -55,6 +53,11 @@ void Game::run()
 	uint32_t  startTime, frameTime;
 	startTime = SDL_GetTicks();
 	while (!exit && !gameOver && !win) {
+		if (nextLevel)
+		{
+			blockMap->readMap(level);
+			nextLevel = false;
+		}
 		frameTime = SDL_GetTicks();
 		handleEvents();
 		if (frameTime- startTime >= FRAME_RATE) {
@@ -122,8 +125,10 @@ bool Game::collides(Vector2D pos, int size, Vector2D& collision_vector, const Ve
 	}
 	if (blockMap->getBlocks() == 0)
 	{
-		win = true;
-		//level++;
+		//win = true;
+		level++;
+		nextLevel = true;
+		
 	}
 	return colisiona;
 }
