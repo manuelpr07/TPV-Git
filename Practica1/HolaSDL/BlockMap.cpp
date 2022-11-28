@@ -1,7 +1,7 @@
 #include "BlockMap.h"
 #include "Game.h"
 
-BlockMap::BlockMap(unsigned int nfil, unsigned int ncol, Texture* text) : ArcanoidObject(Vector2D{0,0}, 0, 0, nullptr)
+BlockMap::BlockMap(unsigned int nfil, unsigned int ncol, Texture* text) //: ArcanoidObject(Vector2D{0,0}, 0, 0, nullptr)
 {
     nFilas = nfil;
     nColumnas = ncol;
@@ -69,46 +69,34 @@ bool BlockMap::colides(Vector2D pos, int size, Vector2D& collision_vector, const
         for (int j = 0; j < nFilas; j++) {
             if (matriz[j][i] != nullptr) {
                 bloque = Vector2D(cellWidth * j + BLOCK_WIDTH, cellHeigth * i + BLOCK_HEIGHT);
-                //arriba o abajo
-                if ((pos.getX() + size >= bloque.getX() && pos.getX() <= bloque.getX()) ||
-                    (pos.getX() >= bloque.getX() && pos.getX() + size <= bloque.getX() + cellWidth) ||
-                    (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth))
-                {
-                    if (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth &&
-                        velocity.getY() < 0)// golpea por abajo
+                if ((pos.getX() + size >= bloque.getX() && pos.getX() <= bloque.getX()) || (pos.getX() >= bloque.getX() && pos.getX() + size <= bloque.getX() + cellWidth) || (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth)) { //arriba o abajo
+                    if (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth && velocity.getY() < 0)// golpea por abajo
                     {
-                       
                         collision_vector = { 0, 1 };
                         matriz[j][i] = nullptr;
                         return true;
                     }
-                    else if (pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY() &&
-                        velocity.getY() > 0)// golpea por arriba
+                    else if (pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY() && velocity.getY() > 0)// golpea por arriba
                     {
                         collision_vector = { 0, -1 };
                         matriz[j][i] = nullptr;
                         return true;
                     }
                 }
-                //derecha o izquierda
-                if ((pos.getY() <= bloque.getY() && pos.getY() + size >= bloque.getY()) ||
-                    (pos.getY() >= bloque.getY() && pos.getY() + size <= bloque.getY() + cellHeigth) ||
-                    (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth))
+                if ((pos.getY() <= bloque.getY() && pos.getY() + size >= bloque.getY()) || (pos.getY() >= bloque.getY() && pos.getY() + size <= bloque.getY() + cellHeigth) || (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth)){//derecha o izquierda
+                    if (pos.getX() <= bloque.getX() && pos.getX() + size >= bloque.getX())// golpea por izquieda
                     {
-
-                        if (pos.getX() <= bloque.getX() && pos.getX() + size >= bloque.getX())// golpea por izquieda
-                        {
-                            collision_vector = { 1, 0 };
-                            matriz[j][i] = nullptr;
-                            return true;
-                        }
-                        else if (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth)// golpea por derecha
-                        {
-                            collision_vector = { 1, 0 };
-                            matriz[j][i] = nullptr;
-                            return true;
-                        }
+                        collision_vector = { 1, 0 };
+                        matriz[j][i] = nullptr;
+                        return true;
                     }
+                    else if (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth)// golpea por derecha
+                    {
+                        collision_vector = { 1, 0 };
+                        matriz[j][i] = nullptr;
+                        return true;
+                    }
+                }
             }
         }
     }

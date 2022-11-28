@@ -12,18 +12,18 @@ private:
 
 public:
 	//constructora
-	ArcanoidObject(Vector2D position, unsigned int h, unsigned int w, Texture* text);
+	//ArcanoidObject(Vector2D position, unsigned int h, unsigned int w, Texture* text);
 	ArcanoidObject() {};
-	~ArcanoidObject();
+	virtual ~ArcanoidObject();
 
 	//metodos de gameObject
-	void render();
-	virtual void update() = 0;
-	virtual void handdleEvents(SDL_Event event) = 0;
+	virtual void render();// si se pone const es en todos los render
+	virtual void update(){};
+	virtual void handdleEvents(SDL_Event event){};
 
 	//metodos de la propia clase
-	string loadFromFile(string str);
-	void saveToFile(string level);
-	SDL_Rect getRect();
+	virtual string loadFromFile(string str);
+	virtual void saveToFile(string level);
+	virtual SDL_Rect getRect();
 
 };

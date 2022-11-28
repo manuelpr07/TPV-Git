@@ -1,64 +1,39 @@
-﻿  Ball.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(8,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+﻿  ArcanoidObject.cpp
+  Ball.cpp
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Ball.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Ball.cpp(8,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   BlockMap.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(4,1): error C2011: 'GameObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(3): message : vea la declaración de 'GameObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6,21): error C2011: 'ArcanoidObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6): message : vea la declaración de 'ArcanoidObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(4,1): error C2504: 'ArcanoidObject': clase base sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(5,1): error C2027: uso del tipo 'ArcanoidObject' sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6): message : vea la declaración de 'ArcanoidObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(9,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(15,1): error C2027: uso del tipo 'ArcanoidObject' sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6): message : vea la declaración de 'ArcanoidObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(19,20): error C2541: 'delete': no se pueden eliminar objetos que no sean punteros
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(21,16): error C2227: el operando izquierdo de '->render' debe señalar al tipo class/struct/union/generic
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(26,34): error C2227: el operando izquierdo de '->render' debe señalar al tipo class/struct/union/generic
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(41,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(42,27): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(56,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(57,27): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(68,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(69,27): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\GameObject.h(4,1): error C2011: 'GameObject': nueva definición del tipo 'class'
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\GameObject.h(3): message : vea la declaración de 'GameObject'
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6,21): error C2011: 'ArcanoidObject': nueva definición del tipo 'class'
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6): message : vea la declaración de 'ArcanoidObject'
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Wall.h(3,1): error C2504: 'ArcanoidObject': clase base sin definir
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(5,1): error C2027: uso del tipo 'ArcanoidObject' sin definir
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6): message : vea la declaración de 'ArcanoidObject'
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(9,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(15,1): error C2027: uso del tipo 'ArcanoidObject' sin definir
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6): message : vea la declaración de 'ArcanoidObject'
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(19,20): error C2541: 'delete': no se pueden eliminar objetos que no sean punteros
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(21,16): error C2227: el operando izquierdo de '->render' debe señalar al tipo class/struct/union/generic
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(26,34): error C2227: el operando izquierdo de '->render' debe señalar al tipo class/struct/union/generic
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(41,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(42,27): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(56,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(57,27): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(68,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(69,27): warning C4018: '<': no coinciden signed/unsigned
   Game.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(4,1): error C2011: 'GameObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(3): message : vea la declaración de 'GameObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6,21): error C2011: 'ArcanoidObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6): message : vea la declaración de 'ArcanoidObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(4,1): error C2504: 'ArcanoidObject': clase base sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(40,29): error C2665: 'std::list<ArcanoidObject *,std::allocator<ArcanoidObject *>>::push_back': ninguna de las 2 sobrecargas pudo convertir todos los tipos de argumento
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\list(1234,10): message : puede ser 'void std::list<ArcanoidObject *,std::allocator<ArcanoidObject *>>::push_back(const _Ty &)'
-          with
-          [
-              _Ty=ArcanoidObject *
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\list(957,10): message : o       'void std::list<ArcanoidObject *,std::allocator<ArcanoidObject *>>::push_back(_Ty &&)'
-          with
-          [
-              _Ty=ArcanoidObject *
-          ]
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(40,10): message : 'void std::list<ArcanoidObject *,std::allocator<ArcanoidObject *>>::push_back(_Ty &&)': el argumento 1 no puede convertirse de 'BlockMap *' a '_Ty &&'
-          with
-          [
-              _Ty=ArcanoidObject *
-          ]
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(40,29): message : Razón: no se puede realizar la conversión de 'BlockMap *' a '_Ty'
-          with
-          [
-              _Ty=ArcanoidObject *
-          ]
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(40,21): message : Los tipos señalados no están relacionados; la conversión requiere reinterpret_cast, conversión de estilo de C o conversión de estilo de función entre paréntesis
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\list(957,10): message : vea la declaración de 'std::list<ArcanoidObject *,std::allocator<ArcanoidObject *>>::push_back'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(40,29): message : al hacer coincidir la lista de argumentos '(BlockMap *)'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(78,1): error C2027: uso del tipo 'ArcanoidObject' sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6): message : vea la declaración de 'ArcanoidObject'
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\GameObject.h(4,1): error C2011: 'GameObject': nueva definición del tipo 'class'
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\GameObject.h(3): message : vea la declaración de 'GameObject'
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6,21): error C2011: 'ArcanoidObject': nueva definición del tipo 'class'
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(6): message : vea la declaración de 'ArcanoidObject'
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.h(4,1): error C2504: 'ArcanoidObject': clase base sin definir
   GameObject.cpp
   main.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\crtdbg.h(307,1): warning C4005: '_malloca': redefinición de macro
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\malloc.h(124): message : vea la definición anterior de '_malloca'
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\crtdbg.h(307,1): warning C4005: '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\malloc.h(124): message : vea la definición anterior de '_malloca'
   Paddle.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(6,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Paddle.cpp(6,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Paddle.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   Wall.cpp
   Generando código...
