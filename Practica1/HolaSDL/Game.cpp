@@ -30,6 +30,7 @@ Game::Game() {
 	ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50),20,20,Vector2D(1,1), textures[ballT], this);
 	paddle = new Paddle(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 20), 20, 100, textures[4]);
 	blockMap = new BlockMap(10, 10, textures[bricks]);
+
 	blockMap->readMap(level);
 
 	//gObjects.push_back(walls[0]);
@@ -145,6 +146,10 @@ void Game::handleEvents() {
 			}
 			if (event.key.keysym.sym == SDLK_d) {
 				paddle->handdleEvents(event);
+			}
+			if (event.key.keysym.sym == SDLK_s) {
+				// Llamar al safetofile
+				system("pause");
 			}
 			if (event.key.keysym.sym == SDLK_p) {
 				exit = true;

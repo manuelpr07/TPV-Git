@@ -26,7 +26,6 @@ public:
 		case longP: fil = 3;//C fila 3
 		case shortP: fil = 4; break;//S fila 4
 		}
-
 		col = 0;
 
 	};

@@ -56,5 +56,4 @@ bool Paddle::collides(Vector2D _pos, int size, Vector2D& collision_vector, const
 
 void Paddle::GetReward(rewardType type)
 {
-
 }
