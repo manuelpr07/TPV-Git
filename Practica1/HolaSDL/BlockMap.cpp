@@ -64,7 +64,7 @@ int BlockMap::getBlocks()
     return n;
 }
 
-bool BlockMap::colides(Vector2D pos, int size, Vector2D& collision_vector, const Vector2D& velocity)
+bool BlockMap::collides(Vector2D pos, int size, Vector2D& collision_vector, const Vector2D& velocity)
 {
     Vector2D bloque;
     for (int i = 0; i < nColumnas; i++) {

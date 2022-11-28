@@ -1,2 +1,12 @@
-﻿Game.obj : error LNK2019: símbolo externo "public: __thiscall Wall::Wall(class Vector2D,unsigned int,unsigned int,class Texture *)" (??0Wall@@QAE@VVector2D@@IIPAVTexture@@@Z) sin resolver al que se hace referencia en la función "public: __thiscall Game::Game(void)" (??0Game@@QAE@XZ)
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\bin\HolaSDLDebug.exe : fatal error LNK1120: 1 externos sin resolver
+﻿  Game.cpp
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.h(24,17): error C2061: error de sintaxis: identificador 'rewardType'
+  Paddle.cpp
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.h(24,17): error C2061: error de sintaxis: identificador 'rewardType'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(8,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(57,14): error C2511: 'void Paddle::GetReward(rewardType)': la función miembro sobrecargada no se ha encontrado en 'Paddle'
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.h(5): message : vea la declaración de 'Paddle'
+  Reward.cpp
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(10,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(11,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+  Generando código...

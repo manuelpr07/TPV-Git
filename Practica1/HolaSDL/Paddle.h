@@ -2,6 +2,9 @@
 
 #include "Vector2D.h"
 #include "Texture.h"
+
+class reward; 
+
 class Paddle
 {
 private:
@@ -16,7 +19,7 @@ public:
 
 	void render();
 	void update();
-	bool colides(Vector2D _pos, int size, Vector2D& collision_vector, const Vector2D& velocity);
+	bool collides(Vector2D _pos, int size, Vector2D& collision_vector, const Vector2D& velocity);
 	void handdleEvents(SDL_Event event);
-
+	void GetReward(rewardType type);
 };

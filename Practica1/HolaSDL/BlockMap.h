@@ -21,7 +21,7 @@ public:
 	void render();
 	void readMap(int level);
 	int getBlocks();
-	bool colides(Vector2D pos, int size, Vector2D& collision_vector, const Vector2D& velocity);
+	bool collides(Vector2D pos, int size, Vector2D& collision_vector, const Vector2D& velocity);
 	
 	
 	void update() {};

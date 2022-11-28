@@ -1,6 +1,14 @@
 ﻿#include "Ball.h"
 #include "Game.h"
 
+
+/*Ball::Ball(Vector2D position, unsigned int h, unsigned w, Vector2D vel, Texture* text, Game* _game) /*{
+
+	game = _game;
+	iniPos = pos;
+	iniVel = vel;
+
+}*/
 void Ball::render()
 {
 	SDL_Rect destRect;
@@ -33,4 +41,10 @@ void Ball::update()
 
 	}
     pos = pos + velocity;
+}
+
+void Ball::setIni()
+{
+	pos = iniPos;
+	velocity = iniVel;
 }

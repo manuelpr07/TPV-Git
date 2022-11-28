@@ -55,6 +55,7 @@ void Game::run()
 	while (!exit && !gameOver && !win) {
 		if (nextLevel)
 		{
+			ball->setIni();
 			blockMap->readMap(level);
 			nextLevel = false;
 		}
@@ -116,12 +117,12 @@ bool Game::collides(Vector2D pos, int size, Vector2D& collision_vector, const Ve
 	}
 
 	//colision con bloques
-	colisiona = blockMap->colides(pos, size, collision_vector, velocity);
+	colisiona = blockMap->collides(pos, size, collision_vector, velocity);
 
 	if (!colisiona)
 	{
 		//colision con la pala
-		colisiona = paddle->colides(pos, size, collision_vector, velocity);
+		colisiona = paddle->collides(pos, size, collision_vector, velocity);
 	}
 	if (blockMap->getBlocks() == 0)
 	{

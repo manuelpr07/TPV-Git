@@ -50,8 +50,8 @@ private:
 		Wall* walls[3];
 		Texture* textures[NUM_TEXTURES];
 		int level = 1;
-		list<ArcanoidObject*> gObjects;
 		bool nextLevel = false;
+		list<ArcanoidObject*> gObjects;
 public:
 
 	Game();
