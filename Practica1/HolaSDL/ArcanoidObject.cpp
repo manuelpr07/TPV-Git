@@ -1,15 +1,15 @@
 #include "ArcanoidObject.h"
 
 
-ArcanoidObject::ArcanoidObject(Vector2D position, unsigned int h, unsigned int w, Texture* text)
+/*ArcanoidObject::ArcanoidObject(Vector2D position, unsigned int h, unsigned int w, Texture* text)
 {
-	rect.x = position.getX();
+	/*rect.x = position.getX();
 	rect.y = position.getY();
 	rect.w = w;
 	rect.h = h;
  
 	texture = text;
-}
+}*/
 
 ArcanoidObject::~ArcanoidObject()
 {
