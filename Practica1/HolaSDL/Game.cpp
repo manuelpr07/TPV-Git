@@ -2,6 +2,8 @@
 #include"Ball.h"
 #include"Paddle.h"
 #include"BlockMap.h"
+#include"ArcanoidObject.h"
+
 #include<iostream>
 
 
@@ -24,14 +26,21 @@ Game::Game() {
 		textures[i] = new Texture(renderer, desc.filename, desc.vframes, desc.hframes);
 	}
 
-	walls[0] = Wall(Vector2D(WIN_WIDTH-20, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
-	walls[1] = Wall(Vector2D(5, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
-	walls[2] = Wall(Vector2D(0, 0), WALL_WIDTH, WIN_WIDTH, textures[topWall]);
-
+	walls[0] = new Wall(Vector2D(WIN_WIDTH-20, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
+	walls[1] = new Wall(Vector2D(5, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
+	walls[2] = new Wall(Vector2D(0, 0), WALL_WIDTH, WIN_WIDTH,	textures[topWall]);
 	ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50),20,20,Vector2D(1,1), textures[ballT], this);
 	paddle = new Paddle(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 20), 20, 100, textures[4]);
 	blockMap = new BlockMap(10, 10, textures[bricks]);
 	blockMap->readMap(level);
+
+	gObjects.push_back(walls[0]);
+	gObjects.push_back(walls[1]);
+	gObjects.push_back(walls[2]);
+	gObjects.push_back(blockMap);
+	//gObjects.push_back(ball);
+	//gObjects.push_back(paddle);
+
 }
 Game::~Game() {
 	delete(paddle);
@@ -57,18 +66,17 @@ void Game::run()
 }
 void Game::render() {
 	SDL_RenderClear(renderer);
-	for (int i = 0; i < 3;i++)
-	{
-		walls[i].render();
-	}
+
 	//Ball;
 	ball->render();
 	//Paddle
 	paddle->render();
-	//BlockMap
-	blockMap->render();
 
 
+	for each (auto it in gObjects)
+	{
+		it->render();
+	}
 
 	SDL_RenderPresent(renderer);
 }

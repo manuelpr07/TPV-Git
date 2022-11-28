@@ -1,4 +1,6 @@
 #include "Wall.h"
+#include <list>
+
 
 class BlockMap;
 class Paddle;
@@ -42,9 +44,10 @@ private:
 		Paddle* paddle = nullptr;
 		Ball* ball = nullptr;
 		BlockMap* blockMap = nullptr;
-		Wall walls[3];
+		Wall* walls[3];
 		Texture* textures[NUM_TEXTURES];
 		int level = 1;
+		list<ArcanoidObject*> gObjects;
 		
 public:
 

@@ -1,4 +1,5 @@
 #include "ArcanoidObject.h"
+
 class Wall: public ArcanoidObject
 {
 private:

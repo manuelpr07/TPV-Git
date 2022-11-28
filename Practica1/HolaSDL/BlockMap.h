@@ -20,6 +20,9 @@ public:
 	void readMap(int level);
 	int getBlocks();
 	bool colides(Vector2D pos, int size, Vector2D& collision_vector, const Vector2D& velocity);
-	//void update();
+	
+	
+	void update() {};
+	virtual void handdleEvents(SDL_Event event) {};
 
 };
