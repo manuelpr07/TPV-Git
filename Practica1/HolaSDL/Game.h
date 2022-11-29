@@ -1,5 +1,5 @@
 #pragma once
-
+#include"SDL/SDL_ttf.h"
 #include "Wall.h"
 #include"ArcanoidObject.h"
 #include <list>
@@ -22,6 +22,7 @@ const uint BLOCK_WIDTH = 15;
 const uint BALL_SIZE = 20;
 const uint PADDLE_HEIGHT = 20;
 const uint PADDLE_WIDTH = 100;
+const int NUMMENU = 3;
 
 
 
@@ -52,6 +53,7 @@ private:
 		int level = 1;
 		bool nextLevel = false;
 		list<ArcanoidObject*> gObjects;
+		SDL_Surface* menus[NUMMENU];
 public:
 
 	Game();
@@ -61,4 +63,5 @@ public:
 	void update();
 	bool collides(Vector2D pos, int size, Vector2D& collision_vector, const Vector2D& velocity);
 	void handleEvents();
+	void Showmenu();
 };

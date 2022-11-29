@@ -15,6 +15,7 @@ int main(int argc, char* argv[]) {
 
     try {
         Game game;
+        game.Showmenu();
         game.run();
     }
     catch (const std::string& e) {

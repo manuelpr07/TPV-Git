@@ -4,6 +4,12 @@
 #include"BlockMap.h"
 #include<iostream>
 
+void Game::Showmenu()/*buscar sdl_ttf para la font*/
+{
+
+
+	return 0;
+}
 
 Game::Game() {
 
@@ -166,3 +172,5 @@ void Game::handleEvents() {
 
 
 }
+
+
