@@ -1,4 +1,3 @@
-#pragma once
 
 #include "Wall.h"
 #include"ArcanoidObject.h"

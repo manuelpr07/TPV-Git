@@ -1,4 +1,3 @@
-#pragma once
 
 #include "ArcanoidObject.h"
 #include "Block.h"

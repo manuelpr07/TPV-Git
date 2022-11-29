@@ -2,30 +2,28 @@
 #include "Game.h"
 
 
-/*Ball::Ball(Vector2D position, unsigned int h, unsigned w, Vector2D vel, Texture* text, Game* _game) /*{
-
+Ball::Ball(Vector2D position, unsigned int h, unsigned w, Vector2D vel, Texture* text, Game* _game) : MovingObject(position, h, h, text, vel)
+{
 	game = _game;
-	iniPos = pos;
-	iniVel = vel;
+	iniPos = getPos();
+	iniVel = getDir();
+}
 
-}*/
 void Ball::render()
 {
-	SDL_Rect destRect;
-	destRect.x = pos.getX();
-	destRect.y = pos.getY();
-	destRect.h = heigth;
-	destRect.w = width;
-	tex->render(destRect);
+	MovingObject::render();
 }
 
 void Ball::update()
 {
 	//colision con bloques
 	Vector2D collision_vector;
+	Vector2D pos = getPos();
+	Vector2D velocity = getDir();
+
 	//bool coli;
 	//coli = game->collides(pos, heigth, collision_vector);
-	if (game->collides(pos, heigth, collision_vector, velocity))
+	if (game->collides(pos, getRect().w, collision_vector, velocity))
 	{
 		// aqui va la formula de reflexión
 		// velocidad = velocidad - 2 * (velocidad * colisión * colisión)
@@ -37,14 +35,13 @@ void Ball::update()
 		//Vector2D segundaOp = velocity * primeraOp;
 		//velocity = velocity - segundaOp*2;
 
-		velocity.normalize();
-
+		setDir(velocity);
 	}
-    pos = pos + velocity;
+	MovingObject::update();
 }
 
 void Ball::setIni()
 {
-	pos = iniPos;
-	velocity = iniVel;
+	setPos(iniPos);
+	setDir(iniVel);
 }

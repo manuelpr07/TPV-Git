@@ -32,8 +32,10 @@ void BlockMap::render()
 void BlockMap::readMap(int level)
 {
     //string s = "../Mapas/level0" + std::to_string(level) + ".DAT";
-    std::ifstream myfile("../Mapas/level0" + std::to_string(level) + ".DAT");
-    if (myfile.fail())
+    string s = "../Mapas/level01.DAT";
+    std::ifstream myfile;
+    myfile.open(s.c_str());
+    if (!myfile.is_open())
         throw std::string(" fichero de mapa de bloques no encontrado o no valido " );
     int aux;
     std::cin >> nFilas >> nColumnas;

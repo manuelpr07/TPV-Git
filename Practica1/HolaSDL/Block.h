@@ -1,5 +1,4 @@
-#pragma once
-
+ 
 #include "ArcanoidObject.h"
 class Block: public ArcanoidObject {
 private:

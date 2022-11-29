@@ -1,4 +1,3 @@
-#pragma once
 
 #include "GameObject.h"
 //#include <iostream>
@@ -34,7 +33,8 @@ public:
 
 	//quitar el virtual de estos??
 	virtual SDL_Rect getRect();
+	virtual Vector2D getPos();
 	virtual Texture* getText();
-	virtual void setPos(Vector2D pos);
+	void setPos(Vector2D pos);
 
 };
