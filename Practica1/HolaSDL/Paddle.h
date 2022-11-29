@@ -2,8 +2,8 @@
 
 #include "Vector2D.h"
 #include "Texture.h"
-
-class reward; 
+#include "Reward.h"
+//class reward; 
 
 class Paddle
 {
@@ -21,5 +21,5 @@ public:
 	void update();
 	bool collides(Vector2D _pos, int size, Vector2D& collision_vector, const Vector2D& velocity);
 	void handdleEvents(SDL_Event event);
-	//void GetReward(rewardType type);
+	void GetReward(rewardType type);
 };

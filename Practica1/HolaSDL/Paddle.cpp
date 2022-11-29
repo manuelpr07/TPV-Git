@@ -1,6 +1,6 @@
 #include "Paddle.h"
 #include "Game.h"
-#include "Reward.h"
+
 void Paddle::render()
 {
 	SDL_Rect destRect;
@@ -37,6 +37,7 @@ void Paddle::handdleEvents(SDL_Event event)
     }
 }
 
+
 bool Paddle::collides(Vector2D _pos, int size, Vector2D& collision_vector, const Vector2D& velocity)
 {
     if ((_pos.getX() + size >= pos.getX() && _pos.getX() <= pos.getX()) ||
@@ -54,6 +55,6 @@ bool Paddle::collides(Vector2D _pos, int size, Vector2D& collision_vector, const
     return false;
 }
 
-/*void Paddle::GetReward(rewardType type)
+void Paddle::GetReward(rewardType type)
 {
-}*/
+}
