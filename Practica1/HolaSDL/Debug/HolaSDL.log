@@ -1,9 +1,1 @@
-﻿  Wall.cpp
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Wall.cpp(5,1): error C2653: 'sWall': no es un nombre de clase o espacio de nombres
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Wall.cpp(5,22): error C2146: error de sintaxis: falta ')' delante del identificador 'position'
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Wall.cpp(5,22): error C2146: error de sintaxis: falta ';' delante del identificador 'position'
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Wall.cpp(5,30): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Wall.cpp(5,32): error C2062: tipo 'unsigned int' inesperado
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Wall.cpp(5,77): error C2059: error de sintaxis: ')'
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Wall.cpp(6,1): error C2143: error de sintaxis: falta ';' delante de '{'
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Wall.cpp(6,1): error C2447: '{': falta el encabezado de función (¿lista formal de estilo anterior?)
+﻿  HolaSDL.vcxproj -> C:\Users\pk\Desktop\TPV-Git\Practica1\bin\HolaSDLDebug.exe
