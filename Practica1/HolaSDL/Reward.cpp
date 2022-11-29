@@ -2,6 +2,10 @@
 #include "Paddle.h"
 
 
+Reward::~Reward()
+{
+}
+
 void Reward::render()
 {
 	//life, nextLevel, longP, shortP
@@ -22,7 +26,7 @@ void Reward::update()
 
 	if (paddle->collides(pos, heigth, Vector2D{0,0}, velocity))
 	{
-		paddle->GetReward(type);
+		//paddle->GetReward(type);
 		delete this;
 	}
 	pos = pos + velocity;

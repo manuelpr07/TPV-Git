@@ -14,8 +14,9 @@ private:
 
 public:
 	//constructora
-	ArcanoidObject(Vector2D position, unsigned int h, unsigned int w, Texture* text);
 	ArcanoidObject() {};
+	ArcanoidObject(Vector2D position, unsigned int h, unsigned int w, Texture* text);
+
 	virtual ~ArcanoidObject();
 
 	//metodos de gameObject
