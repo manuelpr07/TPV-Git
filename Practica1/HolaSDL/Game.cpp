@@ -31,7 +31,7 @@ Game::Game() {
 	paddle = new Paddle(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 20), 20, 100, textures[4]);
 	blockMap = new BlockMap(10, 10, textures[bricks]);
 
-	blockMap->readMap(level);
+	//blockMap->readMap(level);
 
 	//gObjects.push_back(walls[0]);
 	//gObjects.push_back(walls[1]);
@@ -57,7 +57,7 @@ void Game::run()
 		if (nextLevel)
 		{
 			ball->setIni();
-			blockMap->readMap(level);
+			//blockMap->readMap(level);
 			nextLevel = false;
 		}
 		frameTime = SDL_GetTicks();
@@ -76,12 +76,15 @@ void Game::render() {
 	ball->render();
 	//Paddle
 	paddle->render();
-
-
-	for each (auto it in gObjects)
+	for (int i = 0; i < 3; i++)
 	{
-		it->render();
+		walls[i]->render();
 	}
+
+	//for each (auto it in gObjects)
+	//{
+	//	it->render();
+	//}
 
 	SDL_RenderPresent(renderer);
 }
@@ -118,20 +121,20 @@ bool Game::collides(Vector2D pos, int size, Vector2D& collision_vector, const Ve
 	}
 
 	//colision con bloques
-	colisiona = blockMap->collides(pos, size, collision_vector, velocity);
+	//colisiona = blockMap->collides(pos, size, collision_vector, velocity);
 
 	if (!colisiona)
 	{
 		//colision con la pala
 		colisiona = paddle->collides(pos, size, collision_vector, velocity);
 	}
-	if (blockMap->getBlocks() == 0)
-	{
-		//win = true;
-		level++;
-		nextLevel = true;
-		
-	}
+	//if (blockMap->getBlocks() == 0)
+	//{
+	//	//win = true;
+	//	level++;
+	//	nextLevel = true;
+	//	
+	//}
 	return colisiona;
 }
 void Game::handleEvents() {

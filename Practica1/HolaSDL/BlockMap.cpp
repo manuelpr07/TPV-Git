@@ -9,7 +9,7 @@ BlockMap::BlockMap(unsigned int nfil, unsigned int ncol, Texture* text) : Arcano
     nColumnas = ncol;
     texture = text;
     for (int i = 0; i < nColumnas; i++) {
-        matriz[i] = new Block * [nFilas];
+        matriz[i] = new Block*[nFilas];
     }
 }
 
@@ -31,9 +31,9 @@ void BlockMap::render()
 }
 void BlockMap::readMap(int level)
 {
-    std::ifstream in("../Mapas/level0" + std::to_string(level)+".DAT");
-    auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
-    if (in.fail())
+    //string s = "../Mapas/level0" + std::to_string(level) + ".DAT";
+    std::ifstream myfile("../Mapas/level0" + std::to_string(level) + ".DAT");
+    if (myfile.fail())
         throw std::string(" fichero de mapa de bloques no encontrado o no valido " );
     int aux;
     std::cin >> nFilas >> nColumnas;
@@ -50,7 +50,7 @@ void BlockMap::readMap(int level)
             else matriz[j][i] = nullptr;
         }
     } //Block(Vector2D position, unsigned int h, unsigned int w, unsigned int cl, unsigned int fil, unsigned int col, Texture* text)
-    std::cin.rdbuf(cinbuf); 
+    myfile.close();
 }
 int BlockMap::getBlocks()
 {

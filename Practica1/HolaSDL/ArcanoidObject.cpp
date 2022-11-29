@@ -49,3 +49,14 @@ SDL_Rect ArcanoidObject::getRect()
 
 	return rect;
 }
+
+Texture* ArcanoidObject::getText()
+{
+	return texture;
+}
+
+void ArcanoidObject::setPos(Vector2D pos)
+{
+	rect.x = pos.getX();
+	rect.y = pos.getY();
+}

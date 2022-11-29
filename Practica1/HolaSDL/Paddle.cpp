@@ -26,14 +26,17 @@ void Paddle::update()
 }
 void Paddle::handdleEvents(SDL_Event event)
 {
+    if (event.type == SDL_KEYUP) {
+        dir = Vector2D(0, 0);
+        return;
+    }
     if (event.key.keysym.sym == SDLK_a) {
         dir = Vector2D(-1, 0);
+        return;
     }
-    else if (event.key.keysym.sym == SDLK_d) {
+    if (event.key.keysym.sym == SDLK_d) {
         dir = Vector2D(1, 0);
-    }
-    else if (event.type == SDL_KEYUP) {
-        dir = Vector2D(0, 0);
+        return;
     }
 }
 

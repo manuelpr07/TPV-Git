@@ -1,9 +1,2 @@
 ﻿  Game.cpp
-  Paddle.cpp
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Paddle.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Paddle.cpp(8,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Reward.cpp
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Reward.cpp(14,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Reward.cpp(15,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Generando código...
-  HolaSDL.vcxproj -> C:\Users\pk\Desktop\TPV-Git\Practica1\bin\HolaSDLDebug.exe
+  HolaSDL.vcxproj -> C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\bin\HolaSDLDebug.exe

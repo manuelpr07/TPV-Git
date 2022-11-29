@@ -31,6 +31,10 @@ public:
 	//metodos de la propia clase
 	virtual string loadFromFile(string str);
 	virtual void saveToFile(string level);
+
+	//quitar el virtual de estos??
 	virtual SDL_Rect getRect();
+	virtual Texture* getText();
+	virtual void setPos(Vector2D pos);
 
 };
