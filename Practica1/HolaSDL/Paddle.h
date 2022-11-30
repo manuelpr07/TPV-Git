@@ -6,9 +6,12 @@ class Paddle : public MovingObject
 private:
 
 	Game* game;
+	int live = 1;
 public:
 
 	Paddle(Vector2D position, unsigned int h, unsigned w, Texture* text) : MovingObject(position, h, w, text, Vector2D( 0,0 )){};
+	void setLives(int life);
+	int getLive();
 	void render();
 	void update();
 	bool collides(SDL_Rect* rect, Vector2D& collision_vector, const Vector2D& velocity);

@@ -125,6 +125,12 @@ bool Game::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& v
 	else if (rect.y >= WIN_HEIGTH - BALL_SIZE)//perder
 	{
 		collision_vector = { 0, -1 };
+
+		if (paddle->getLive() > 1)
+		{
+			paddle->setLives()
+		}
+		else
 		//gameOver = true;
 		return true;
 	}
