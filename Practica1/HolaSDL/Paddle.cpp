@@ -40,7 +40,7 @@ void Paddle::getReward(rewardType type)
 
         case nextLevel:game->NextLevel(); Size(0); break;//E fila  2
 
-        case longP: Size(1);//C fila 3
+        case longP: Size(1); break;//C fila 3
 
         case shortP: Size(-1); break;//S fila 4
     }
@@ -53,7 +53,7 @@ void Paddle::Size(int change)
     {
         change = PADDLE_WIDTH * 1.5;
     }
-    if (change == -1)
+    else if (change == -1)
     {
         change = PADDLE_WIDTH * 0.75;
     }

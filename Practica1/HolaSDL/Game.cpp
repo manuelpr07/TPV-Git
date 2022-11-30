@@ -149,7 +149,7 @@ bool Game::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& v
 	if (blockMap->getBlocks() == 0)
 	{
 		win = true;
-		//level++;
+		level++;
 	}
 	return colisiona;
 }
@@ -179,7 +179,24 @@ void Game::handleEvents() {
 
 void Game::createReward(Vector2D position)
 {
-	Reward* r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], life, paddle);
+	Reward* r = nullptr;
+	int aux1 = rand() %4;
+	if (aux1 == 0)
+	{
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], life, paddle);
+	}
+	else if (aux1 == 1)
+	{
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], longP, paddle);
+	}
+	else if (aux1 == 2)
+	{
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], shortP, paddle);
+	}
+	else if (aux1 == 3)
+	{
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], nextLevel, paddle);
+	}
 	gObjects.push_back(r);
 }
 void Game::NextLevel()
