@@ -1,13 +1,8 @@
-#include "Vector2D.h"
-#include "Texture.h"
-#include "Block.h"
-#include <iostream>
-#include <fstream>
-#include <string>
-class BlockMap
+#include"ArcanoidObject.h"
+#include"Block.h"
+class BlockMap: public ArcanoidObject
 {
 private:
-	Vector2D pos = { 0, 0 };
 	unsigned int cellHeigth;
 	unsigned int cellWidth;
 	unsigned int winHeigth;
@@ -16,14 +11,14 @@ private:
 	unsigned int nFilas;
 	unsigned int color;
 	Block*** matriz = new Block** [nColumnas];
-	Texture* tex = nullptr;
 
 
 public:
 
-	BlockMap(unsigned int nfil, unsigned int ncol, Texture* text) :nFilas(nfil), nColumnas(ncol), tex(text)
+	BlockMap(unsigned int nfil, unsigned int ncol, Texture* text) : ArcanoidObject(Vector2D{0,0}, 0, 0, text)
 	{
-
+		nFilas = nfil;
+		nColumnas = ncol;
 		for (int i = 0; i < nColumnas; i++) {
 			matriz[i] = new Block*[nFilas];
 		}

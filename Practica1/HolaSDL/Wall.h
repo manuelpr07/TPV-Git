@@ -1,6 +1,6 @@
-#include "Vector2D.h"
-#include "Texture.h"
-class Wall
+#pragma once
+#include "ArcanoidObject.h"
+class Wall : public ArcanoidObject
 {
 private:
 	Vector2D pos;
@@ -9,6 +9,8 @@ private:
 	Texture* texture = nullptr;
 public:
 	Wall(){};
-	Wall(Vector2D position, unsigned int h, unsigned int w, Texture* text) : pos(position), heigth(h), width(w), texture(text) {}
+	Wall(Vector2D position, unsigned int h, unsigned int w, Texture* text) : ArcanoidObject(position, h, w, text) {};
 	void render();
+	void update() {};
+	void handdleEvents(SDL_Event event) {};
 };

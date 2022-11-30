@@ -25,7 +25,7 @@ void BlockMap::readMap(int level)
             std::cin >> aux;
             if (aux != 0)
             {
-                matriz[j][i] = new Block(Vector2D(cellWidth * j + BLOCK_HEIGHT, cellHeigth * i + BLOCK_WIDTH), cellHeigth, cellWidth, aux, i, j, tex);
+                matriz[j][i] = new Block(Vector2D(cellWidth * j + BLOCK_HEIGHT, cellHeigth * i + BLOCK_WIDTH), cellHeigth, cellWidth, aux, i, j, getText());
             }
             else matriz[j][i] = nullptr;
         }
