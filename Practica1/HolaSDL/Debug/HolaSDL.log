@@ -1,8 +1,39 @@
-﻿  Ball.cpp
+﻿  ArcanoidObject.cpp
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(5,24): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(6,24): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(64,19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(65,19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+  Ball.cpp
 C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
 C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(8,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(18,28): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(18,28): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(18,40): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(18,40): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(18,44): warning C4838: la conversión de 'unsigned int' en 'int' requiere una conversión de restricción
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(18,52): warning C4838: la conversión de 'unsigned int' en 'int' requiere una conversión de restricción
+  Block.cpp
+  BlockMap.cpp
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(29,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(35,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(5,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(6,27): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(23,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(24,27): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(38,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(39,27): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(50,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(51,27): warning C4018: '<': no coinciden signed/unsigned
   Game.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(22,21): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(28,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(29,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(35,21): warning C4018: '<': no coinciden signed/unsigned
+  main.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\crtdbg.h(307,1): warning C4005: '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\malloc.h(124): message : vea la definición anterior de '_malloca'
+  MovingObject.cpp
+  Paddle.cpp
+  Reward.cpp
+  Wall.cpp
   Generando código...
+C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(59): warning C4172: devolución de dirección de la variable local o temporal
   HolaSDL.vcxproj -> C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\bin\HolaSDLDebug.exe

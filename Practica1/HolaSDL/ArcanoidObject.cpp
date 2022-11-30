@@ -43,10 +43,10 @@ void ArcanoidObject::render()
 //	//MyFile.close();
 //}
 
-SDL_Rect ArcanoidObject::getRect()
+SDL_Rect* ArcanoidObject::getRect()
 {
 
-	return rect;
+	return &rect;
 }
 
 Texture* ArcanoidObject::getText()
@@ -54,9 +54,9 @@ Texture* ArcanoidObject::getText()
 	return texture;
 }
 
-Vector2D ArcanoidObject::getPos()
+Vector2D* ArcanoidObject::getPos()
 {
-	return Vector2D(rect.x, rect.y);
+	return &Vector2D(rect.x, rect.y);
 }
 
 void ArcanoidObject::setPos(Vector2D pos)

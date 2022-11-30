@@ -1,5 +1,10 @@
+#pragma once
 #include"ArcanoidObject.h"
 #include"Block.h"
+#include"Reward.h"
+
+class Game;
+
 class BlockMap: public ArcanoidObject
 {
 private:
@@ -10,15 +15,17 @@ private:
 	unsigned int nColumnas;
 	unsigned int nFilas;
 	unsigned int color;
-	Block*** matriz = new Block** [nColumnas];
-
+	Block*** matriz;
+	Game* game = nullptr;
 
 public:
 
-	BlockMap(unsigned int nfil, unsigned int ncol, Texture* text) : ArcanoidObject(Vector2D{0,0}, 0, 0, text)
+	BlockMap(unsigned int nfil, unsigned int ncol, Texture* text, Game* game_) : ArcanoidObject(Vector2D{0,0}, 0, 0, text)
 	{
 		nFilas = nfil;
 		nColumnas = ncol;
+		game = game_;
+		matriz = new Block **[nColumnas];
 		for (int i = 0; i < nColumnas; i++) {
 			matriz[i] = new Block*[nFilas];
 		}
@@ -33,7 +40,8 @@ public:
 	void render();
 	void readMap(int level);
 	int getBlocks();
-	bool colides(Vector2D pos, int size, Vector2D& collision_vector, const Vector2D& velocity);
+	bool colides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& velocity);
+	void breakBlock(int i, int j);
 	//void update();
 
 };

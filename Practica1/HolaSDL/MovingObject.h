@@ -16,7 +16,7 @@ public:
 	virtual void update();
 	virtual void handdleEvents(SDL_Event event) {};
 
-	virtual Vector2D getDir();
+	virtual Vector2D* getDir();
 	virtual void setDir(Vector2D dir_);
 	
 	//virtual string loadFromFile(string str) { return" "; };

@@ -15,9 +15,10 @@ void Ball::update()
 {
 	//colision con bloques
 	Vector2D collision_vector;
+	SDL_Rect rect = { pos.getX(), pos.getY(), heigth, width };
 	//bool coli;
 	//coli = game->collides(pos, heigth, collision_vector);
-	if (game->collides(pos, heigth, collision_vector, velocity))
+	if (game->collides(rect, collision_vector, velocity))
 	{
 		// aqui va la formula de reflexión
 		// velocidad = velocidad - 2 * (velocidad * colisión * colisión)

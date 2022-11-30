@@ -76,6 +76,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MovingObject.cpp" />
     <ClCompile Include="Paddle.cpp" />
+    <ClCompile Include="Reward.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Vector2D.cpp" />
     <ClCompile Include="Wall.cpp" />
@@ -89,6 +90,7 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="MovingObject.h" />
     <ClInclude Include="Paddle.h" />
+    <ClInclude Include="Reward.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Wall.h" />

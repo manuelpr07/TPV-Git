@@ -33,9 +33,11 @@ public:
 	//virtual void saveToFile(string level);
 
 	//quitar el virtual de estos??
-	SDL_Rect getRect();
+	SDL_Rect* getRect();
 	Texture* getText();
-	Vector2D getPos();
+	Vector2D* getPos();
 	void setPos(Vector2D pos);
+
+	virtual bool eliminar() { return false; };
 
 };

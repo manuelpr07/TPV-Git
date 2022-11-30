@@ -12,12 +12,12 @@ void MovingObject::render()
 
 void MovingObject::update()
 {
-	setPos(Vector2D(getRect().x + dir.getX(), getRect().y + dir.getY()));
+	setPos(*getPos() + *getDir());
 }
 
-Vector2D MovingObject::getDir()
+Vector2D* MovingObject::getDir()
 {
-	return dir;
+	return &dir;
 }
 
 void MovingObject::setDir(Vector2D dir_)

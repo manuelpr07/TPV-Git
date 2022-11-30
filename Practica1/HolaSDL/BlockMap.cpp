@@ -44,7 +44,7 @@ int BlockMap::getBlocks()
     return n;
 }
 
-bool BlockMap::colides(Vector2D pos, int size, Vector2D& collision_vector, const Vector2D& velocity)
+bool BlockMap::colides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& velocity)
 {
     Vector2D bloque;
     for (int i = 0; i < nColumnas; i++) {
@@ -52,42 +52,46 @@ bool BlockMap::colides(Vector2D pos, int size, Vector2D& collision_vector, const
             if (matriz[j][i] != nullptr) {
                 bloque = Vector2D(cellWidth * j + BLOCK_WIDTH, cellHeigth * i + BLOCK_HEIGHT);
                 //arriba o abajo
-                if ((pos.getX() + size >= bloque.getX() && pos.getX() <= bloque.getX()) ||
-                    (pos.getX() >= bloque.getX() && pos.getX() + size <= bloque.getX() + cellWidth) ||
-                    (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth))
+                if ((rect.x + rect.w >= bloque.getX() && rect.x <= bloque.getX()) ||
+                    (rect.x >= bloque.getX() && rect.x + rect.w <= bloque.getX() + cellWidth) ||
+                    (rect.x <= bloque.getX() + cellWidth && rect.x + rect.w >= bloque.getX() + cellWidth))
                 {
-                    if (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth &&
+                    if (rect.y <= bloque.getY() + cellHeigth && rect.y + rect.w >= bloque.getY() + cellHeigth &&
                         velocity.getY() < 0)// golpea por abajo
                     {
                        
                         collision_vector = { 0, 1 };
-                        matriz[j][i] = nullptr;
+                        game->createReward(Vector2D(cellWidth * j + BLOCK_HEIGHT / 2, cellHeigth * i + BLOCK_WIDTH / 2));
+                        matriz[i][j] = nullptr;
                         return true;
                     }
-                    else if (pos.getY() + size >= bloque.getY() && pos.getY() <= bloque.getY() &&
+                    else if (rect.y + rect.w >= bloque.getY() && rect.y <= bloque.getY() &&
                         velocity.getY() > 0)// golpea por arriba
                     {
                         collision_vector = { 0, -1 };
-                        matriz[j][i] = nullptr;
+                        game->createReward(Vector2D(cellWidth * j + BLOCK_HEIGHT / 2, cellHeigth * i + BLOCK_WIDTH / 2));
+                        matriz[i][j] = nullptr;
                         return true;
                     }
                 }
                 //derecha o izquierda
-                if ((pos.getY() <= bloque.getY() && pos.getY() + size >= bloque.getY()) ||
-                    (pos.getY() >= bloque.getY() && pos.getY() + size <= bloque.getY() + cellHeigth) ||
-                    (pos.getY() <= bloque.getY() + cellHeigth && pos.getY() + size >= bloque.getY() + cellHeigth))
+                if ((rect.y <= bloque.getY() && rect.y + rect.w >= bloque.getY()) ||
+                    (rect.y >= bloque.getY() && rect.y + rect.w <= bloque.getY() + cellHeigth) ||
+                    (rect.y <= bloque.getY() + cellHeigth && rect.y + rect.w >= bloque.getY() + cellHeigth))
                     {
 
-                        if (pos.getX() <= bloque.getX() && pos.getX() + size >= bloque.getX())// golpea por izquieda
+                        if (rect.x <= bloque.getX() && rect.x + rect.w >= bloque.getX())// golpea por izquieda
                         {
-                            collision_vector = { 1, 0 };
-                            matriz[j][i] = nullptr;
+                            collision_vector = { -1, 0 };
+                            game->createReward(Vector2D(cellWidth * j + BLOCK_HEIGHT / 2, cellHeigth * i + BLOCK_WIDTH / 2));
+                            matriz[i][j] = nullptr;
                             return true;
                         }
-                        else if (pos.getX() <= bloque.getX() + cellWidth && pos.getX() + size >= bloque.getX() + cellWidth)// golpea por derecha
+                        else if (rect.x <= bloque.getX() + cellWidth && rect.x + rect.w >= bloque.getX() + cellWidth)// golpea por derecha
                         {
                             collision_vector = { 1, 0 };
-                            matriz[j][i] = nullptr;
+                            game->createReward(Vector2D(cellWidth * j + BLOCK_HEIGHT / 2, cellHeigth * i + BLOCK_WIDTH / 2));
+                            matriz[i][j] = nullptr;
                             return true;
                         }
                     }
@@ -95,4 +99,9 @@ bool BlockMap::colides(Vector2D pos, int size, Vector2D& collision_vector, const
         }
     }
     return false;
+}
+
+void BlockMap::breakBlock(int i, int j)
+{
+
 }

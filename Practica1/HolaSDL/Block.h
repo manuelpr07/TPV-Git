@@ -1,14 +1,11 @@
 #include"ArcanoidObject.h"
-class Block : ArcanoidObject
+class Block : public ArcanoidObject
 {
 private:
-	Vector2D pos;
-	unsigned int heigth;
-	unsigned int width;
+
 	unsigned int color;
 	unsigned int fila;
 	unsigned int columna;
-	Texture* tex = nullptr;
 
 public:
 	Block() {};
@@ -18,8 +15,10 @@ public:
 		fila = fil;
 		columna = col;
 	}
+	~Block() {};
 	bool colides(Vector2D pos, int size, Vector2D& collision_vector);
 	void render();
+	Vector2D* getPos();
 	//void update();
 
 };

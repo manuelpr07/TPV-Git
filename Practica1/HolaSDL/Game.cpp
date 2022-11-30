@@ -2,6 +2,7 @@
 #include"Ball.h"
 #include"Paddle.h"
 #include"BlockMap.h"
+#include"Reward.h"
 #include<iostream>
 
 
@@ -30,8 +31,16 @@ Game::Game() {
 
 	ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50),20,20,Vector2D(1,1), textures[ballT], this);
 	paddle = new Paddle(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 20), 20, 100, textures[4]);
-	blockMap = new BlockMap(10, 10, textures[bricks]);
+	blockMap = new BlockMap(10, 10, textures[bricks], this);
 	blockMap->readMap(level);
+
+	gObjects.push_back(&walls[0]);
+	gObjects.push_back(&walls[1]);
+	gObjects.push_back(&walls[2]);
+	gObjects.push_back(blockMap);
+	gObjects.push_back(paddle);
+	//gObjects.push_back(ball);
+
 }
 Game::~Game() {
 	delete(paddle);
@@ -64,40 +73,56 @@ void Game::render() {
 	//Ball;
 	ball->render();
 	//Paddle
-	paddle->render();
-	//BlockMap
-	blockMap->render();
+	//paddle->render();
+	////BlockMap
+	//blockMap->render();
 
-
+	for each (ArcanoidObject * var in gObjects)
+	{
+		var->render();
+	}
 
 	SDL_RenderPresent(renderer);
 }
 void Game::update() {
 
-	paddle->update();
+	//paddle->update();
 	ball->update();
+	for each (ArcanoidObject* var in gObjects)
+	{
+		var->update();
+		if (var->eliminar())
+		{
+			gObjectsDestroy.push_back(var);
+		}
+	}
+
+	for each (ArcanoidObject * var in gObjectsDestroy)
+	{
+		gObjects.remove(var);
+	}
 }
-bool Game::collides(Vector2D pos, int size, Vector2D& collision_vector, const Vector2D& velocity) {
+bool Game::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& velocity) {
 
 	bool colisiona = false;
 
 	// Paredes
-	if (pos.getX() <= WALL_WIDTH)//golpea pared izq
+	if (rect.x <= WALL_WIDTH)//golpea pared izq
 	{
 		collision_vector = { 1, 0 };
 		return true;
 	}
-	else if (pos.getX() >= WIN_WIDTH - WALL_WIDTH - BALL_SIZE)//golpea pared drc
+	else if (rect.x >= WIN_WIDTH - WALL_WIDTH - BALL_SIZE)//golpea pared drc
 	{
 		collision_vector = { -1, 0 };
 		return true;
 	}
-	else if (pos.getY() <= 0)//golpea pared arriba
+	else if (rect.y <= 0)//golpea pared arriba
 	{
 		collision_vector = { 0, 1 };
 		return true;
 	}
-	else if (pos.getY() >= WIN_HEIGTH - BALL_SIZE)//perder
+	else if (rect.y >= WIN_HEIGTH - BALL_SIZE)//perder
 	{
 		collision_vector = { 0, -1 };
 		//gameOver = true;
@@ -105,12 +130,12 @@ bool Game::collides(Vector2D pos, int size, Vector2D& collision_vector, const Ve
 	}
 
 	//colision con bloques
-	colisiona = blockMap->colides(pos, size, collision_vector, velocity);
+	colisiona = blockMap->colides(rect, collision_vector, velocity);
 
 	if (!colisiona)
 	{
 		//colision con la pala
-		colisiona = paddle->colides(pos, size, collision_vector, velocity);
+		colisiona = paddle->collides(&rect, collision_vector, velocity);
 	}
 	if (blockMap->getBlocks() == 0)
 	{
@@ -141,6 +166,10 @@ void Game::handleEvents() {
 			paddle->handdleEvents(0);
 		}
 	}
-
-
 }
+
+void Game::createReward(Vector2D position)
+{
+	Reward* r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], life, paddle);
+	gObjects.push_back(r);
+}	
