@@ -1,95 +1,11 @@
-﻿  ArcanoidObject.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(5,24): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(6,24): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(65,19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(66,19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Ball.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.h(20,3): warning C4150: eliminación de puntero a tipo 'Game' incompleto; no se ha llamado a un destructor
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.h(3): message : vea la declaración de 'Game'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(5,1): error C2011: 'GameObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(4): message : vea la declaración de 'GameObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(7,21): error C2011: 'ArcanoidObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(7): message : vea la declaración de 'ArcanoidObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(5,2): error C2504: 'ArcanoidObject': clase base sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(10,75): error C2614: 'Wall': inicialización de miembro no válida: 'ArcanoidObject' no es una base o miembro
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(45,2): error C3861: 'setPos': no se encontró el identificador
-  Block.cpp
-  BlockMap.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(5,1): error C2011: 'GameObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(4): message : vea la declaración de 'GameObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(7,21): error C2011: 'ArcanoidObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(7): message : vea la declaración de 'ArcanoidObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Block.h(3,36): error C2504: 'ArcanoidObject': clase base sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(5,1): error C2504: 'ArcanoidObject': clase base sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(5,2): error C2504: 'ArcanoidObject': clase base sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Wall.h(10,75): error C2614: 'Wall': inicialización de miembro no válida: 'ArcanoidObject' no es una base o miembro
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(6,75): error C2614: 'BlockMap': inicialización de miembro no válida: 'ArcanoidObject' no es una base o miembro
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(11,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(18,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(25,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(26,27): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(45,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(46,27): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(60,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(61,27): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(72,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(73,27): warning C4018: '<': no coinciden signed/unsigned
-  Game.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(5,1): error C2011: 'GameObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(4): message : vea la declaración de 'GameObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(7,21): error C2011: 'ArcanoidObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(7): message : vea la declaración de 'ArcanoidObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\MovingObject.h(5,1): error C2504: 'ArcanoidObject': clase base sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Block.h(3,36): error C2504: 'ArcanoidObject': clase base sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(5,1): error C2504: 'ArcanoidObject': clase base sin definir
-  GameObject.cpp
-  MovingObject.cpp
+﻿  Game.cpp
   Paddle.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(5,1): error C2011: 'GameObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(4): message : vea la declaración de 'GameObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(7,21): error C2011: 'ArcanoidObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(7): message : vea la declaración de 'ArcanoidObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(8,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(8,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
   Reward.cpp
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.h(4,17): error C2011: 'rewardType': nueva definición del tipo 'enum'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.h(4): message : vea la declaración de 'rewardType'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.h(6,1): error C2011: 'Reward': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.h(5): message : vea la declaración de 'Reward'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(5,10): error C2027: uso del tipo 'Reward' sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.h(5): message : vea la declaración de 'Reward'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(6,1): error C4430: falta el especificador de tipo; se presupone int. Nota: C++ no admite default-int
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(7,1): warning C4508: '{dtor}': la función debe devolver un valor; se supone que el tipo de valor devuelto es 'void'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(9,14): error C2027: uso del tipo 'Reward' sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.h(5): message : vea la declaración de 'Reward'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(14,15): error C2065: 'pos': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(15,15): error C2065: 'pos': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(16,15): error C2065: 'heigth': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(17,15): error C2065: 'width': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(18,2): error C2065: 'tex': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(18,29): error C2065: 'fil': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(18,34): error C2065: 'col': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(20,2): error C2065: 'col': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(21,6): error C2065: 'col': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(22,3): error C2065: 'col': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(24,14): error C2027: uso del tipo 'Reward' sin definir
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.h(5): message : vea la declaración de 'Reward'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(27,6): error C2065: 'paddle': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(27,23): error C2065: 'pos': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(27,28): error C2065: 'heigth': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(27,51): error C2065: 'velocity': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(29,3): error C2065: 'paddle': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(29,21): error C2065: 'type': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(30,10): error C2355: 'this': solo se puede hacer referencia a this en funciones miembro no estáticas o inicializadores de miembro de datos no estáticos
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(32,2): error C2065: 'pos': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(32,8): error C2065: 'pos': identificador no declarado
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(32,14): error C2065: 'velocity': identificador no declarado
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(14,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Reward.cpp(15,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+  MovingObject.cpp
   Wall.cpp
-  main.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\crtdbg.h(307,1): warning C4005: '_malloca': redefinición de macro
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\malloc.h(124): message : vea la definición anterior de '_malloca'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(5,1): error C2011: 'GameObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\GameObject.h(4): message : vea la declaración de 'GameObject'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(7,21): error C2011: 'ArcanoidObject': nueva definición del tipo 'class'
-C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\HolaSDL\ArcanoidObject.h(7): message : vea la declaración de 'ArcanoidObject'
   Generando código...
+  HolaSDL.vcxproj -> C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\bin\HolaSDLDebug.exe

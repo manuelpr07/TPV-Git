@@ -1,7 +1,7 @@
-
+#pragma once
 #include "ArcanoidObject.h"
 
-class Wall: public ArcanoidObject
+class Wall : public ArcanoidObject
  {
 private:
 
