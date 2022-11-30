@@ -22,8 +22,7 @@ void Ball::update()
 	{
 		// aqui va la formula de reflexión
 		// velocidad = velocidad - 2 * (velocidad * colisión * colisión)
-		
-		
+				
 		velocity = velocity - (velocity * collision_vector * collision_vector)*2;
 		
 		//Vector2D primeraOp = collision_vector * collision_vector;

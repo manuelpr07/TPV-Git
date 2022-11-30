@@ -24,5 +24,9 @@ void MovingObject::setDir(Vector2D dir_)
 {
 	dir = dir_;
 }
+void MovingObject::Size(int change)
+{
+	ArcanoidObject::Size(change);
+}
 
 

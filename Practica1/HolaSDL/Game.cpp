@@ -30,7 +30,7 @@ Game::Game() {
 	walls[2] = Wall(Vector2D(0, 0), WALL_WIDTH, WIN_WIDTH, textures[topWall]);
 
 	ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50),20,20,Vector2D(1,1), textures[ballT], this);
-	paddle = new Paddle(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 20), 20, 100, textures[4]);
+	paddle = new Paddle(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 20), 20, 100, textures[4], this);
 	blockMap = new BlockMap(10, 10, textures[bricks], this);
 	blockMap->readMap(level);
 
@@ -126,12 +126,15 @@ bool Game::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& v
 	{
 		collision_vector = { 0, -1 };
 
-		if (paddle->getLive() > 1)
+		if (paddle->getLive() >= 1)
 		{
-			paddle->setLives()
+			paddle->setLives(-1);
 		}
-		else
-		//gameOver = true;
+		if(paddle->getLive() == 0)
+		{
+			//gameOver = true;
+		}
+
 		return true;
 	}
 
@@ -178,4 +181,10 @@ void Game::createReward(Vector2D position)
 {
 	Reward* r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], life, paddle);
 	gObjects.push_back(r);
-}	
+}
+void Game::NextLevel()
+{
+	level++;
+}
+
+

@@ -64,3 +64,8 @@ void ArcanoidObject::setPos(Vector2D pos)
 	rect.x = pos.getX();
 	rect.y = pos.getY();
 }
+
+void ArcanoidObject::Size(int change)
+{
+	rect.w = change;
+}

@@ -1,5 +1,13 @@
 #include "Paddle.h"
 #include "Game.h"
+void Paddle::setLives(int life)
+{
+    live += life;
+}
+int Paddle::getLive()
+{
+    return live;
+}
 void Paddle::render()
 {
     MovingObject::render();
@@ -26,7 +34,33 @@ void Paddle::handdleEvents(int n)
 
 void Paddle::getReward(rewardType type)
 {
+    switch (type)
+    {
+        case life:setLives(1); Size(0); break;//L fila 1 
 
+        case nextLevel:game->NextLevel(); Size(0); break;//E fila  2
+
+        case longP: Size(1);//C fila 3
+
+        case shortP: Size(-1); break;//S fila 4
+    }
+
+}
+
+void Paddle::Size(int change)
+{
+    if (change == 1)
+    {
+        change = PADDLE_WIDTH * 1.5;
+    }
+    if (change == -1)
+    {
+        change = PADDLE_WIDTH * 0.75;
+    }
+    else
+    {
+        change = PADDLE_WIDTH;
+    }
 }
 
 bool Paddle::collides(SDL_Rect* rect, Vector2D& collision_vector, const Vector2D& velocity)

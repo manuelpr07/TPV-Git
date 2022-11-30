@@ -37,7 +37,7 @@ public:
 	Texture* getText();
 	Vector2D* getPos();
 	void setPos(Vector2D pos);
-
+	virtual void Size(int change);
 	virtual bool eliminar() { return false; };
 
 };
