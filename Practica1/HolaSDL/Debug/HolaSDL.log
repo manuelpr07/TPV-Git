@@ -1,4 +1,46 @@
-﻿  Game.cpp
+﻿  Ball.cpp
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,29): error C2327: 'Game::NUMMENU': no es un nombre de tipo, elemento estático o enumerador
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,22): error C2065: 'NUMMENU': identificador no declarado
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,43): error C2078: hay demasiados inicializadores
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(8,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(18,28): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(18,28): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(18,40): warning C4838: la conversión de 'double' en 'int' requiere una conversión de restricción
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(18,40): warning C4244: 'inicializando': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(18,44): warning C4838: la conversión de 'unsigned int' en 'int' requiere una conversión de restricción
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Ball.cpp(18,52): warning C4838: la conversión de 'unsigned int' en 'int' requiere una conversión de restricción
+  BlockMap.cpp
 C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(29,21): warning C4018: '<': no coinciden signed/unsigned
 C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(35,21): warning C4018: '<': no coinciden signed/unsigned
-  HolaSDL.vcxproj -> C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\bin\HolaSDLDebug.exe
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,29): error C2327: 'Game::NUMMENU': no es un nombre de tipo, elemento estático o enumerador
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,22): error C2065: 'NUMMENU': identificador no declarado
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,43): error C2078: hay demasiados inicializadores
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(5,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(6,27): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(23,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(24,27): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(38,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(39,27): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(50,23): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(51,27): warning C4018: '<': no coinciden signed/unsigned
+  Game.cpp
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,29): error C2327: 'Game::NUMMENU': no es un nombre de tipo, elemento estático o enumerador
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,22): error C2065: 'NUMMENU': identificador no declarado
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,43): error C2078: hay demasiados inicializadores
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(29,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\BlockMap.h(35,21): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.cpp(212,6): error C2065: 'start': identificador no declarado
+  Paddle.cpp
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,29): error C2327: 'Game::NUMMENU': no es un nombre de tipo, elemento estático o enumerador
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,22): error C2065: 'NUMMENU': identificador no declarado
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,43): error C2078: hay demasiados inicializadores
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(54,31): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Paddle.cpp(58,31): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+  main.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\crtdbg.h(307,1): warning C4005: '_malloca': redefinición de macro
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\malloc.h(124): message : vea la definición anterior de '_malloca'
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,29): error C2327: 'Game::NUMMENU': no es un nombre de tipo, elemento estático o enumerador
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,22): error C2065: 'NUMMENU': identificador no declarado
+C:\Users\pkn\Desktop\segundo-de-videojuegos\TPV\TPV-Git\Practica1\HolaSDL\Game.h(51,43): error C2078: hay demasiados inicializadores
+  Generando código...

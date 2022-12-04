@@ -6,6 +6,7 @@
 #include<iostream>
 
 
+
 Game::Game() {
 
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Check Memory Leaks
@@ -24,6 +25,7 @@ Game::Game() {
 		const TextureDescription& desc = TEXT_DESCRIPT[i];
 		textures[i] = new Texture(renderer, desc.filename, desc.vframes, desc.hframes);
 	}
+	Button =  Button(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH / 3), 20, 40, textures[start]);
 
 	walls[0] = Wall(Vector2D(WIN_WIDTH-20, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
 	walls[1] = Wall(Vector2D(5, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
@@ -202,6 +204,25 @@ void Game::createReward(Vector2D position)
 void Game::NextLevel()
 {
 	level++;
+}
+
+void Game::Menu()
+{
+	//SDL_Surface* menus[NUMMENU];
+	//SDL_Color color[2] = { {255,255,255},{255,0,0} };
+	//menus[0] =
+	//menus[1] =
+
+	if (start)
+	{
+		run();
+	}
+	else
+	{
+		//cargar partida
+	}
+
+
 }
 
 
