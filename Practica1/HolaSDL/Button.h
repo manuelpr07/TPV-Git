@@ -1,17 +1,17 @@
 #pragma once
-class Button
+#include "ArcanoidObject.h"
+class Button : public ArcanoidObject
 {
 private:
+	Vector2D pos;
+	unsigned int heigth;
+	unsigned int width;
 	Texture* texture = nullptr;
-	SDL_Texture* texture;
-	SDL_Rect sRect, dRect;
 	bool selected;
 public:
 
-	Button(Vector2D position, unsigned int h, unsigned int w, Texture* text) {};
-	Button(int x, int y);
+	Button(Vector2D position, unsigned int h, unsigned int w, Texture* text) : ArcanoidObject(position, h, w, text) {};
 	~Button() {};
-	void SetY(int x, int y);
 	void render();
 	void update() {};
 	void handdleEvents(SDL_Event event) {};

@@ -44,6 +44,7 @@ private:
 		Paddle* paddle = nullptr;
 		Ball* ball = nullptr;
 		BlockMap* blockMap = nullptr;
+		Button* button = nullptr;
 		Wall walls[3];
 		Texture* textures[NUM_TEXTURES];
 		int level = 1;
