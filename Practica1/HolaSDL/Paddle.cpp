@@ -34,42 +34,73 @@ void Paddle::handdleEvents(int n)
 
 void Paddle::getReward(rewardType type)
 {
-    switch (type)
+    currentType = type;
+    switch (currentType)
     {
-        case life:setLives(1); Size(0); break;//L fila 1 
+        case life:setLives(1); currentType = none; break;//L fila 1 
 
-        case nextLevel:game->NextLevel(); Size(0); break;//E fila  2
+        case nextLevel:game->NextLevel(); currentType = none; break;//E fila  2
 
         case longP: Size(1); break;//C fila 3
 
         case shortP: Size(-1); break;//S fila 4
     }
-
+    if (!(currentType == longP || currentType == shortP))
+        Size(0);
 }
 
 void Paddle::Size(int change)
 {
     if (change == 1)
     {
-        change = PADDLE_WIDTH * 1.5;
+        if(getRect()->w < PADDLE_WIDTH)
+            change = PADDLE_WIDTH;
+        else change = PADDLE_WIDTH * 1.5;
     }
     else if (change == -1)
     {
-        change = PADDLE_WIDTH * 0.75;
+        if (getRect()->w > PADDLE_WIDTH)
+            change = PADDLE_WIDTH;
+        else change = PADDLE_WIDTH * 0.75;
     }
     else
     {
         change = PADDLE_WIDTH;
     }
+    ArcanoidObject::Size(change);
 }
 
-bool Paddle::collides(SDL_Rect* rect, Vector2D& collision_vector, const Vector2D& velocity)
+void Paddle::loadFromFile()
 {
-    if (SDL_HasIntersection(rect ,getRect()))
+    int posX, posY;
+    string sType;
+    std::cin >> posX >> posY >> sType;
+    setPos(Vector2D(posX, posY));
+    if (sType == "life")
+        currentType = life;
+    else if (sType == "nextLevel")
+        currentType = nextLevel;
+    else if (sType == "longP")
+        currentType = longP;
+    else if (sType == "shortP")
+        currentType = shortP;
+    else currentType = none;
+
+}
+
+string Paddle::saveToFile()
+{
+    string datos = std::to_string(getRect()->x) + ' ' + std::to_string(getRect()->y) + ' ' + std::to_string(currentType);
+    return datos;
+}
+
+bool Paddle::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& velocity)
+{
+    if (SDL_HasIntersection(&rect ,getRect()))
     {
         {
-            double objectPos = rect->x + (rect->w / 2);
-            double angle = (objectPos - (getRect()->x + getRect()->w / 2)) / (getRect()->w / 2); //Cálculo del ángulo de reflexión
+            double center = rect.x + (rect.w / 2);
+            double angle = (center - (getRect()->x + getRect()->w / 2)) / (getRect()->w / 2); //Cálculo del ángulo de reflexión
             collision_vector = { angle, -2.5 };
             collision_vector.normalize();
             return true;

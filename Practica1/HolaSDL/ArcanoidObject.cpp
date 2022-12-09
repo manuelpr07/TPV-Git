@@ -38,9 +38,9 @@ void ArcanoidObject::render()
 //
 //void ArcanoidObject::saveToFile(string level)
 //{
-//	//ofstream MyFile("../Mapas/saveFile.txt");
-//	//MyFile << level;
-//	//MyFile.close();
+//	ofstream MyFile("../Mapas/saveFile.txt");
+//	MyFile << level;
+//	MyFile.close();
 //}
 
 SDL_Rect* ArcanoidObject::getRect()

@@ -19,7 +19,8 @@ public:
 	virtual Vector2D* getDir();
 	virtual void setDir(Vector2D dir_);
 	virtual void Size(int change);
-	//virtual string loadFromFile(string str) { return" "; };
-	//virtual void saveToFile(string level) {};
+
+	virtual void loadFromFile() = 0;
+	virtual string saveToFile() = 0;
 
 };

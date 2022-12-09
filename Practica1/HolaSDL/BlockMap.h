@@ -44,4 +44,8 @@ public:
 	void breakBlock(int i, int j);
 	//void update();
 
+	virtual void loadFromFile();
+	virtual string saveToFile();
+	string saveLineByLine(int line);
+
 };

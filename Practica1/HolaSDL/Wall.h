@@ -13,4 +13,6 @@ public:
 	void render();
 	void update() {};
 	void handdleEvents(SDL_Event event) {};
+	virtual void loadFromFile() {};
+	virtual string saveToFile() { return "*"; };
 };

@@ -4,3 +4,4 @@ void Wall::render()
 {
 	ArcanoidObject::render();
 }
+

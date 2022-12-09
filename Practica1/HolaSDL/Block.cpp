@@ -23,6 +23,11 @@ Vector2D* Block::getPos()
 	return ArcanoidObject::getPos();
 }
 
+int Block::getCol()
+{
+	return color;
+}
+
 bool Block::colides(Vector2D pos, int size, Vector2D& collision_vector)
 {
 	return false;

@@ -19,6 +19,9 @@ public:
 	bool colides(Vector2D pos, int size, Vector2D& collision_vector);
 	void render();
 	Vector2D* getPos();
+	int getCol();
 	//void update();
+	virtual void loadFromFile() {};
+	virtual string saveToFile() { return "*"; };
 
 };

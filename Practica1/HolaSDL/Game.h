@@ -21,7 +21,7 @@ const uint PADDLE_HEIGHT = 20;
 const uint PADDLE_WIDTH = 100;
 const int NUMMENU = 2;
 
-enum TextureName{ballT, bricks, digit, gameOver, paddle, sideWall, topWall, winner, rewardT, start, load};
+enum TextureName{ballT, bricks, digit, gameOver, paddle, sideWall, topWall, winnerT, rewardT, startT, loadT};
 
 typedef struct {
 	string filename;
@@ -65,5 +65,6 @@ public:
 	void createReward(Vector2D position);
 	void NextLevel();
 	void Menu();
-
+	void loadFromFile();
+	void saveToFile();
 };

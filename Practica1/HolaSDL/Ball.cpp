@@ -3,34 +3,36 @@
 
 void Ball::render()
 {
-	SDL_Rect destRect;
-	destRect.x = pos.getX();
-	destRect.y = pos.getY();
-	destRect.h = heigth;
-	destRect.w = width;
-	tex->render(destRect);
+	SDL_Rect* destRect = getRect();
+	Texture* tex = getText();
+	tex->render(*destRect);
 }
 
 void Ball::update()
 {
 	//colision con bloques
 	Vector2D collision_vector;
-	SDL_Rect rect = { pos.getX(), pos.getY(), heigth, width };
-	//bool coli;
-	//coli = game->collides(pos, heigth, collision_vector);
-	if (game->collides(rect, collision_vector, velocity))
+	if (game->collides(*getRect(), collision_vector, *getDir()))
 	{
-		// aqui va la formula de reflexión
-		// velocidad = velocidad - 2 * (velocidad * colisión * colisión)
 				
-		velocity = velocity - (velocity * collision_vector * collision_vector)*2;
-		
-		//Vector2D primeraOp = collision_vector * collision_vector;
-		//Vector2D segundaOp = velocity * primeraOp;
-		//velocity = velocity - segundaOp*2;
-
-		velocity.normalize();
+		Vector2D velocity;
+		velocity = *getDir() - (*getDir() * collision_vector * collision_vector)*2;
+		setDir(velocity);
 
 	}
-    pos = pos + velocity;
+    setPos(*getPos() + *getDir());
+}
+
+void Ball::loadFromFile()
+{
+	double posX, posY, dirX, dirY;
+	std::cin >> posX >> posY >> dirX >> dirY;
+	setPos(Vector2D(posX, posY));
+	setDir(Vector2D(dirX, dirY));
+}
+
+string Ball::saveToFile()
+{
+	string datos = std::to_string(getRect()->x) + ' ' + std::to_string(getRect()->y) + ' ' + std::to_string(getDir()->getX()) + ' ' + std::to_string(getDir()->getY());
+	return datos;
 }

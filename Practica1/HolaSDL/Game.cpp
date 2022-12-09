@@ -6,8 +6,6 @@
 #include "Button.h"
 #include<iostream>
 
-
-
 Game::Game() {
 
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF); // Check Memory Leaks
@@ -26,7 +24,7 @@ Game::Game() {
 		const TextureDescription& desc = TEXT_DESCRIPT[i];
 		textures[i] = new Texture(renderer, desc.filename, desc.vframes, desc.hframes);
 	}
-	button = new Button(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH / 3), 20, 40, textures[start]);
+	//button = new Button(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH / 3), 20, 40, textures[startT]);
 
 	walls[0] = Wall(Vector2D(WIN_WIDTH-20, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
 	walls[1] = Wall(Vector2D(5, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
@@ -35,15 +33,17 @@ Game::Game() {
 	ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50),20,20,Vector2D(1,1), textures[ballT], this);
 	paddle = new Paddle(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 20), 20, 100, textures[4], this);
 	blockMap = new BlockMap(10, 10, textures[bricks], this);
-	blockMap->readMap(level);
 
+	//blockMap->readMap(2);
+	
 	gObjects.push_back(&walls[0]);
 	gObjects.push_back(&walls[1]);
 	gObjects.push_back(&walls[2]);
 	gObjects.push_back(blockMap);
 	gObjects.push_back(paddle);
-	//gObjects.push_back(ball);
+	gObjects.push_back(ball);
 
+	loadFromFile();
 }
 Game::~Game() {
 	delete(paddle);
@@ -90,7 +90,6 @@ void Game::render() {
 void Game::update() {
 
 	//paddle->update();
-	ball->update();
 	for each (ArcanoidObject* var in gObjects)
 	{
 		var->update();
@@ -147,7 +146,7 @@ bool Game::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& v
 	if (!colisiona)
 	{
 		//colision con la pala
-		colisiona = paddle->collides(&rect, collision_vector, velocity);
+		colisiona = paddle->collides(rect, collision_vector, velocity);
 	}
 	if (blockMap->getBlocks() == 0)
 	{
@@ -168,6 +167,9 @@ void Game::handleEvents() {
 			}
 			if (event.key.keysym.sym == SDLK_d) {
 				paddle->handdleEvents(1);
+			}
+			if (event.key.keysym.sym == SDLK_s) {
+				saveToFile();
 			}
 			if (event.key.keysym.sym == SDLK_p) {
 				exit = true;
@@ -209,21 +211,102 @@ void Game::NextLevel()
 
 void Game::Menu()
 {
-	//SDL_Surface* menus[NUMMENU];
-	//SDL_Color color[2] = { {255,255,255},{255,0,0} };
+	SDL_Surface* menus[NUMMENU];
+	SDL_Color color[2] = { {255,255,255},{255,0,0} };
 	//menus[0] =
 	//menus[1] =
 
-	if (start)
-	{
 		run();
-	}
-	else
-	{
-		//cargar partida
-	}
+	//if (start)
+	//{
+	//}
+	//else
+	//{
+	//	//cargar partida
+	//}
 
 
 }
 
+void Game::loadFromFile()
+{
+	string s;
+	cin >> s;
+	string name_file = "../Mapas/" + s + ".DAT";
+	std::ifstream in(name_file);
+	auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
+	if (in.fail())
+		throw std::string(" fichero de mapa de bloques no encontrado o no valido ");
+	int aux;
+	cin >> aux;
+	level = aux;
+	for each (ArcanoidObject * var in gObjects)
+	{
+		var->loadFromFile();
+	}
+	while (cin)
+	{
+		string sType;
+		rewardType type;
+		int posX, posY;
+		cin >> posX >> posY >> sType;
+		if (sType == "life")
+			type = life;
+		else if (sType == "nextLevel")
+			type = nextLevel;
+		else if (sType == "longP")
+			type = longP;
+		else if (sType == "shortP")
+			type = shortP;
+		else type = none;
 
+		if (type != none)
+		{
+			Reward* r = new Reward(Vector2D(posX, posY), PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], type, paddle);
+			gObjects.push_back(r);
+		}
+	}
+	std::cin.rdbuf(cinbuf);
+}
+
+void Game::saveToFile()
+{
+
+	string aux;
+	cin >> aux;
+	string name_file= "../Mapas/"+ aux + ".DAT";
+	ofstream myfile(name_file.c_str());
+
+	if (!myfile.is_open())
+		throw std::string(" fichero de mapa de bloques no encontrado o no valido ");
+
+	myfile << level << endl;
+
+	for each (ArcanoidObject * var in gObjects)
+	{
+		string datos = var->saveToFile();
+
+		if (var == blockMap)
+		{
+			myfile << datos << endl;
+			int j = 0;
+			string col;
+			while (datos[j] != ' ')
+			{
+				col.push_back(datos[j]);
+				j++;
+			}
+			int n = std::stoi(datos);
+			for (int i = 0; i < n; i++)
+			{
+				datos = blockMap->saveLineByLine(i);
+				myfile << datos << endl;
+			}
+		}
+		else if (datos != "*")
+			myfile << datos << endl;
+
+	}
+
+	myfile.close();
+}

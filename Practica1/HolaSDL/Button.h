@@ -15,5 +15,7 @@ public:
 	void render();
 	void update() {};
 	void handdleEvents(SDL_Event event) {};
+	virtual void loadFromFile(string str) {};
+	virtual void saveToFile(string level) {};
 };
 

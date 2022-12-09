@@ -3,7 +3,7 @@
 
 class Paddle;
 
-enum rewardType { life, nextLevel, longP, shortP };
+enum rewardType { life, nextLevel, longP, shortP, none};
 
 class Reward : public MovingObject
 {
@@ -24,7 +24,7 @@ public:
 		{
 		case life: fil = 0; break;//L fila 1 
 		case nextLevel: fil = 2; break;//E fila  2
-		case longP: fil = 3;//C fila 3
+		case longP: fil = 3; break;//C fila 3
 		case shortP: fil = 4; break;//S fila 4
 		}
 		col = 0;
@@ -35,5 +35,8 @@ public:
 	virtual void update();
 
 	bool eliminar() { return elim; };
+
+	virtual void loadFromFile() {};
+	virtual string saveToFile();
 
 };

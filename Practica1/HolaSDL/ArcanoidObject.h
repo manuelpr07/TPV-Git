@@ -29,8 +29,8 @@ public:
 	virtual void handdleEvents(SDL_Event event) {};
 
 	//metodos de la propia clase
-	//virtual string loadFromFile(string str);
-	//virtual void saveToFile(string level);
+	virtual void loadFromFile() = 0;
+	virtual string saveToFile() = 0;
 
 	//quitar el virtual de estos??
 	SDL_Rect* getRect();
