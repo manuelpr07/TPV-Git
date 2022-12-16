@@ -9,7 +9,7 @@ Reward::~Reward()
 
 void Reward::render()
 {
-	//life, nextLevel, longP, shortP
+	//lifeP, nextLevel, longP, shortP
 
 	SDL_Rect destRect = *getRect();
 	Texture* tex = getText();
@@ -28,6 +28,7 @@ void Reward::update()
 		elim = true;
 		return;
 	}
+
 	MovingObject::update();
 }
 
@@ -39,8 +40,8 @@ void Reward::update()
 //	setPos(Vector2D(posX, posY));
 //
 //
-//	if (tipo == "life")
-//		type = life;
+//	if (tipo == "lifeP")
+//		type = lifeP;
 //	else if( tipo == "nextLevel") 
 //		type = nextLevel;
 //	else if( tipo == "longP") 
@@ -53,10 +54,10 @@ string Reward::saveToFile()
 {
 	string datos;
 	datos += std::to_string(getRect()->x) + " " + std::to_string(getRect()->y) + " ";
-	if (type == life)
-		datos += "life";
-	else if (type == nextLevel)
-		datos += "nextLevel";
+	if (type == lifeP)
+		datos += "lifeP";
+	else if (type == nextLevelP)
+		datos += "nextLevelP";
 	else if (type == longP)
 		datos += "longP";
 	else if (type == shortP)

@@ -1,8 +1,8 @@
 #include "Paddle.h"
 #include "Game.h"
-void Paddle::setLives(int life)
+void Paddle::setLives(int lifeP)
 {
-    live += life;
+    live += lifeP;
 }
 int Paddle::getLive()
 {
@@ -37,9 +37,9 @@ void Paddle::getReward(rewardType type)
     currentType = type;
     switch (currentType)
     {
-        case life:setLives(1); currentType = none; break;//L fila 1 
+        case lifeP:setLives(1); currentType = none; break;//L fila 1 
 
-        case nextLevel:game->NextLevel(); currentType = none; break;//E fila  2
+        case nextLevelP:game->nextLevel(); currentType = none; break;//E fila  2
 
         case longP: Size(1); break;//C fila 3
 
@@ -76,10 +76,10 @@ void Paddle::loadFromFile()
     string sType;
     std::cin >> posX >> posY >> sType;
     setPos(Vector2D(posX, posY));
-    if (sType == "life")
-        currentType = life;
-    else if (sType == "nextLevel")
-        currentType = nextLevel;
+    if (sType == "lifeP")
+        currentType = lifeP;
+    else if (sType == "nextLevelP")
+        currentType = nextLevelP;
     else if (sType == "longP")
         currentType = longP;
     else if (sType == "shortP")
@@ -94,13 +94,13 @@ string Paddle::saveToFile()
     return datos;
 }
 
-bool Paddle::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& velocity)
+bool Paddle::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& velocity) // comprueba colisiones con la bola o los powerUps
 {
     if (SDL_HasIntersection(&rect ,getRect()))
     {
         {
             double center = rect.x + (rect.w / 2);
-            double angle = (center - (getRect()->x + getRect()->w / 2)) / (getRect()->w / 2); //Cálculo del ángulo de reflexión
+            double angle = (center - (getRect()->x + getRect()->w / 2)) / (getRect()->w / 2); //Cálculo del ángulo
             collision_vector = { angle, -2.5 };
             collision_vector.normalize();
             return true;

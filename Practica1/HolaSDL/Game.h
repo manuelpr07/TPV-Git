@@ -48,7 +48,8 @@ private:
 		Wall walls[3];
 		Texture* textures[NUM_TEXTURES];
 		int level = 1;
-
+		int maxLevels = 4;
+		bool cambioNivel = false;
 		list<ArcanoidObject*> gObjects;
 		list<ArcanoidObject*> gObjectsDestroy;
 
@@ -63,8 +64,8 @@ public:
 	bool collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& velocity);
 	void handleEvents();
 	void createReward(Vector2D position);
-	void NextLevel();
-	void Menu();
+	void nextLevel();
+	int menu();
 	void loadFromFile();
 	void saveToFile();
 };

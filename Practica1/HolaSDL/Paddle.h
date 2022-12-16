@@ -16,7 +16,7 @@ public:
 	{
 		game = _game;
 	}
-	void setLives(int life);
+	void setLives(int lifeP);
 	int getLive();
 	void render();
 	void update();

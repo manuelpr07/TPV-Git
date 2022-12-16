@@ -31,19 +31,22 @@ Game::Game() {
 	walls[2] = Wall(Vector2D(0, 0), WALL_WIDTH, WIN_WIDTH, textures[topWall]);
 
 	ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50),20,20,Vector2D(1,1), textures[ballT], this);
-	paddle = new Paddle(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 20), 20, 100, textures[4], this);
+	paddle = new Paddle(Vector2D(WIN_WIDTH / 4, WIN_HEIGTH - 20), 20, 100, textures[4], this);
 	blockMap = new BlockMap(10, 10, textures[bricks], this);
 
-	//blockMap->readMap(2);
-	
+
 	gObjects.push_back(&walls[0]);
 	gObjects.push_back(&walls[1]);
 	gObjects.push_back(&walls[2]);
 	gObjects.push_back(blockMap);
 	gObjects.push_back(paddle);
 	gObjects.push_back(ball);
+	
+	int decision = menu();
+	if(decision == 1)
+		blockMap->readMap(1);
+	else loadFromFile();
 
-	loadFromFile();
 }
 Game::~Game() {
 	delete(paddle);
@@ -65,16 +68,24 @@ void Game::run()
 			startTime = SDL_GetTicks();
 		}
 		render();
+		if (cambioNivel)
+		{
+			blockMap->readMap(level);
+			ball->setPos(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 50));
+			ball->setDir(Vector2D(1,1));
+			paddle->setPos(Vector2D(WIN_WIDTH / 4, WIN_HEIGTH - 20));
+			cambioNivel = false;
+		}
 	}
 }
 void Game::render() {
 	SDL_RenderClear(renderer);
-	for (int i = 0; i < 3;i++)
-	{
-		walls[i].render();
-	}
+	//for (int i = 0; i < 3;i++)
+	//{
+	//	walls[i].render();
+	//}
 	//Ball;
-	ball->render();
+	//ball->render();
 	//Paddle
 	//paddle->render();
 	////BlockMap
@@ -150,8 +161,8 @@ bool Game::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& v
 	}
 	if (blockMap->getBlocks() == 0)
 	{
-		win = true;
 		level++;
+		cambioNivel = true;
 	}
 	return colisiona;
 }
@@ -188,7 +199,7 @@ void Game::createReward(Vector2D position)
 	int aux1 = rand() %4;
 	if (aux1 == 0)
 	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], life, paddle);
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], lifeP, paddle);
 	}
 	else if (aux1 == 1)
 	{
@@ -200,37 +211,37 @@ void Game::createReward(Vector2D position)
 	}
 	else if (aux1 == 3)
 	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], nextLevel, paddle);
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], nextLevelP, paddle);
 	}
 	gObjects.push_back(r);
 }
-void Game::NextLevel()
+void Game::nextLevel()
 {
 	level++;
+	cambioNivel = true;
 }
 
-void Game::Menu()
+int Game::menu()
 {
 	SDL_Surface* menus[NUMMENU];
 	SDL_Color color[2] = { {255,255,255},{255,0,0} };
-	//menus[0] =
-	//menus[1] =
-
-		run();
-	//if (start)
-	//{
-	//}
-	//else
-	//{
-	//	//cargar partida
-	//}
-
-
+	cout << "pulsa 1 para iniciar nueva partida o 2 para cargar partida";
+	int n;
+	cin >> n;
+	if (n == 1)
+	{
+	}
+	else if (n == 2)
+	{
+	}
+	else throw std::string(" operación invalida, escribe 1 o 2");
+	return n;
 }
 
 void Game::loadFromFile()
 {
 	string s;
+	cout << "escribe el nombre de la partida";
 	cin >> s;
 	string name_file = "../Mapas/" + s + ".DAT";
 	std::ifstream in(name_file);
@@ -250,10 +261,10 @@ void Game::loadFromFile()
 		rewardType type;
 		int posX, posY;
 		cin >> posX >> posY >> sType;
-		if (sType == "life")
-			type = life;
-		else if (sType == "nextLevel")
-			type = nextLevel;
+		if (sType == "lifeP")
+			type = lifeP;
+		else if (sType == "nextLevelP")
+			type = nextLevelP;
 		else if (sType == "longP")
 			type = longP;
 		else if (sType == "shortP")
@@ -310,3 +321,4 @@ void Game::saveToFile()
 
 	myfile.close();
 }
+

@@ -3,7 +3,7 @@
 
 class Paddle;
 
-enum rewardType { life, nextLevel, longP, shortP, none};
+enum rewardType { lifeP, nextLevelP, longP, shortP, none};
 
 class Reward : public MovingObject
 {
@@ -22,8 +22,8 @@ public:
 
 		switch (type)
 		{
-		case life: fil = 0; break;//L fila 1 
-		case nextLevel: fil = 2; break;//E fila  2
+		case lifeP: fil = 0; break;//L fila 1 
+		case nextLevelP: fil = 2; break;//E fila  2
 		case longP: fil = 3; break;//C fila 3
 		case shortP: fil = 4; break;//S fila 4
 		}
