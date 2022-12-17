@@ -1,6 +1,7 @@
 #include "SDL.h"
 #include "checkML.h"
 #include "Game.h"
+#include "ArcanoidExcs.h"
 #include <iostream>
 
 using namespace std;
@@ -18,8 +19,14 @@ int main(int argc, char* argv[]) {
        // game.Menu();
         game.run();
     }
-    catch (const std::string& e) {
-        std::cout << e << '\n';
+    catch (FileNotFoundError& e) {
+        cout << e.what() << endl;
+    }
+    catch (SDLError& e) {
+        cout << e.what() << endl;
+    }
+    catch (...) {
+        cout << "Unknown error" << endl;
     }
 
     return 0;

@@ -4,6 +4,7 @@
 #include"BlockMap.h"
 #include"Reward.h"
 #include "Button.h"
+#include "ArcanoidExcs.h"
 #include<iostream>
 
 Game::Game() {
@@ -32,7 +33,7 @@ Game::Game() {
 
 	ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50),20,20,Vector2D(1,1), textures[ballT], this);
 	paddle = new Paddle(Vector2D(WIN_WIDTH / 4, WIN_HEIGTH - 20), 20, 100, textures[4], this);
-	blockMap = new BlockMap(10, 10, textures[bricks], this);
+	blockMap = new BlockMap(40, 40, textures[bricks], this);
 
 
 	gObjects.push_back(&walls[0]);
@@ -207,7 +208,7 @@ void Game::createReward(Vector2D position)
 	}
 	else if (aux1 == 2)
 	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], shortP, paddle);
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], nextLevelP, paddle);
 	}
 	else if (aux1 == 3)
 	{
@@ -230,82 +231,17 @@ int Game::menu()
 	cin >> n;
 	if (n == 1)
 	{
+
 	}
 	else if (n == 2)
 	{
+
 	}
 	else throw std::string(" operación invalida, escribe 1 o 2");
 	return n;
 
 }
 
-void draw_button(SDL_Rect* rect, const char* text, void(*callback)(), void* callbackArg)
-{
-	SDL_SetRenderDrawColor(g_renderer, 0x80, 0x80, 0x80, 0xFF);
-
-	int oldW = rect->w;
-	int oldX = rect->x;
-
-	if (text)
-	{
-		SDL_Surface* textSurface = get_text_surface(text, "resources/fonts/FreeMono.ttf", 50);
-		SDL_Texture* textTexture = SDL_CreateTextureFromSurface(g_renderer, textSurface);
-		SDL_Rect surfRect;
-		SDL_GetClipRect(textSurface, &surfRect);
-
-		if (surfRect.w + 20 > rect->w)
-		{
-			rect->x = rect->x - (surfRect.w - rect->w) / 2;
-			rect->w = surfRect.w + 20;
-		}
-		surfRect.x = rect->x - (surfRect.w - rect->w) / 2;
-		surfRect.y = rect->y - (surfRect.h - rect->h) / 2;
-
-		SDL_RenderFillRect(g_renderer, rect);
-
-		SDL_RenderCopy(g_renderer, textTexture, NULL, &surfRect);
-		SDL_FreeSurface(textSurface);
-		SDL_DestroyTexture(textTexture);
-	}
-	else
-	{
-		SDL_RenderFillRect(g_renderer, rect);
-	}
-
-
-	int mouseX, mouseY;
-	SDL_GetMouseState(&mouseX, &mouseY);
-	if (rect->x < mouseX && rect->x + rect->w > mouseX &&
-		rect->y < mouseY && rect->y + rect->h > mouseY)
-	{
-		if (MOUSE[MOUSE_LEFT]) callback(callbackArg);
-		SDL_SetRenderDrawColor(g_renderer, 0x00, 0x00, 0x00, 0x30);
-		SDL_RenderFillRect(g_renderer, rect);
-	}
-
-	SDL_SetRenderDrawColor(g_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
-	SDL_RenderDrawRect(g_renderer, rect);
-
-	rect->w = oldW;
-	rect->x = oldX;
-}
-
-void draw_menu()
-{
-	SDL_Rect rect;
-	rect.x = (SCREEN_WIDTH - 200) / 2;
-	rect.y = 100;
-	rect.h = 120;
-	rect.w = 240;
-
-	draw_button(&rect, 0, error, "Goodbye my lover,\nGoodbye my friend!");
-	rect.y += rect.h + 50;
-	draw_button(&rect, "long text button", error, "Goodbye my lover,\nGoodbye my friend!");
-	rect.y += rect.h + 50;
-	draw_button(&rect, "v", error, "Goodbye my lover,\nGoodbye my friend!");
-	rect.y += rect.h + 50;
-	draw_button(&rect, "Quit", EXIT_GAME, NULL);
-}
 
 void Game::loadFromFile()
 {
@@ -313,11 +249,12 @@ void Game::loadFromFile()
 	cout << "escribe el nombre de la partida";
 	cin >> s;
 	string name_file = "../Mapas/" + s + ".DAT";
+
 	std::ifstream in(name_file);
 	auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
-	if (in.fail())
-		throw std::string(" fichero de mapa de bloques no encontrado o no valido ");
 	int aux;
+	if (!in.is_open() || !cinbuf)
+		throw FileNotFoundError(name_file);
 	cin >> aux;
 	level = aux;
 	for each (ArcanoidObject * var in gObjects)
@@ -347,6 +284,7 @@ void Game::loadFromFile()
 		}
 	}
 	std::cin.rdbuf(cinbuf);
+
 }
 
 void Game::saveToFile()

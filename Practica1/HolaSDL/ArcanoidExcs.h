@@ -4,17 +4,53 @@ using namespace std;
 #include <stdexcept>
 #include <sstream>
 #include <stdlib.h>
-#include "Game.h"
 
 //ArkanoidError: hereda de logic error y sirve como superclase de todas las dem´as excepciones que definiremos.
 //SDLError: Hereda de ArkanoidError y se utiliza para todos los errores relacionados con la inicializacion y uso de SDL
 //FileNotFoundError: Hereda de ArkanoidError y se utiliza para todos los errores provocados al no encontrarse un fichero que el programa trata de abrir
 //FileFormatError: Hereda de ArkanoidError y se utiliza para los errores provocados en la lectura de los ficheros de nivel y de partida guardada por formato incorrecto.
 
-class EmptyVectorExc : public logic_error {
+class ArkanoidError : public logic_error {
 public:
-	EmptyVectorExc(const string& m) : logic_error("Empty vector. " + m) {};
+	ArkanoidError(const string& e) : logic_error(what() + e) {};
+	virtual const char* what()
+	{
+		return ("hay un error: ");
+	}
 };
+class SDLError : public ArkanoidError {
+protected:
+	int i;
+
+public:
+	SDLError(const string& e, int i) : ArkanoidError(what() + e) {};
+	const char* what()
+	{ 
+		// i = 0 si es sld_error y otra cosa si es img_error
+		if (i == 0)
+			SDL_GetError();
+		else IMG_GetError();
+	}
+	const char* SDL_GetError()
+	{
+		return ("Error en sdl: ");
+	}
+
+};
+class FileNotFoundError : public ArkanoidError {
+protected:
+	string file;
+
+public:
+	FileNotFoundError(const string& e) : ArkanoidError(what() + e), file(e) {};
+	const char* what()
+	{ 
+		return (char*)("archivo no encontrado: "/* + file.c_str()*/);
+	}
+};
+
+
+
 
 class VectorOutOfRangeExc : public out_of_range {
 protected:
@@ -23,10 +59,21 @@ protected:
 	int rangeEnd;
 public:
 	VectorOutOfRangeExc(const string& m, int i, int rIni, int rEnd) :
-		out_of_range(m + "Invalid access at pos. " + to_string(i) + ". Valid range is [" +
-			to_string(rIni) + "," + to_string(rEnd) + "]"),
-		index(i), rangeIni(rIni), rangeEnd(rEnd) {};
+		out_of_range(m + "Invalid access at pos. " + to_string(i) + ". Valid range is [" +  to_string(rIni) + "," + to_string(rEnd) + "]"), index(i), rangeIni(rIni), rangeEnd(rEnd) {};
 };
+
+
+
+
+
+
+
+
+class EmptyVectorExc : public logic_error {
+public:
+	EmptyVectorExc(const string& m) : logic_error("Empty vector. " + m) {};
+};
+
 
 
 const uint DEFAULT_CAPACITY = 5; // Capacidad inicial por defecto
@@ -69,7 +116,7 @@ Vector<T>::Vector(int initCap) {
 template<class T>
 const T& Vector<T>::at(int i) const {
 	if (i < 0 || i >= count)
-		throw VectorOutOfRangeExc("Error in at", i, 0, count - 1);
+		throw ArkanoidError("Error in at", i, 0, count - 1);
 	return elems[i];
 }
 
