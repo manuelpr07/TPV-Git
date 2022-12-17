@@ -5,13 +5,28 @@ MovingObject::MovingObject(Vector2D position, unsigned int h, unsigned int w, Te
 	dir = dir_;
 }
 
-void MovingObject::update()
+void MovingObject::render()
 {
-	setPos(Vector2D(getRect().x + dir.getX(), getRect().y + dir.getY()));
+	ArcanoidObject::render();
 }
 
-Vector2D MovingObject::getDir()
+void MovingObject::update()
 {
-	return dir;
+	setPos(*getPos() + *getDir());
 }
+
+Vector2D* MovingObject::getDir()
+{
+	return &dir;
+}
+
+void MovingObject::setDir(Vector2D dir_)
+{
+	dir = dir_;
+}
+void MovingObject::Size(int change)
+{
+	ArcanoidObject::Size(change);
+}
+
 

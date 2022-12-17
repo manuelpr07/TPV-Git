@@ -12,4 +12,3 @@ public:
 	virtual void update() = 0;
 	virtual void handdleEvents(SDL_Event event) = 0;
 };
-

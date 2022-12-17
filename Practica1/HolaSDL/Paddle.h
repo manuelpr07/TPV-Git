@@ -1,25 +1,31 @@
-#pragma once
-
-#include "Vector2D.h"
-#include "Texture.h"
+#include "MovingObject.h"
 #include "Reward.h"
-//class reward; 
+class Game;
 
-class Paddle
+class Paddle : public MovingObject
 {
+
 private:
-	Vector2D pos;
-	Vector2D dir = {0,0};
-	unsigned int heigth;
-	unsigned int width;
-	Texture* texture = nullptr;
+
+	Game* game = nullptr;
+	int live = 1;
+	rewardType currentType = none;
 public:
 
-	Paddle(Vector2D position, unsigned int h, unsigned w, Texture* text) : pos(position), heigth(h), width(w), texture(text) {}
-
+	Paddle(Vector2D position, unsigned int h, unsigned w, Texture* text, Game* _game) : MovingObject(position, h, w, text, Vector2D( 0,0 ))
+	{
+		game = _game;
+	}
+	void setLives(int lifeP);
+	int getLive();
 	void render();
 	void update();
-	bool collides(Vector2D _pos, int size, Vector2D& collision_vector, const Vector2D& velocity);
-	void handdleEvents(SDL_Event event);
-	void GetReward(rewardType type);
+	bool collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& velocity);
+	void handdleEvents(int n);
+	void getReward(rewardType type);
+
+	virtual void Size(int change);
+
+	virtual void loadFromFile();
+	virtual string saveToFile();
 };

@@ -1,11 +1,11 @@
 #pragma once
 
 #include "GameObject.h"
-//#include <iostream>
-//#include <fstream>
-//#include <string>
+#include <iostream>
+#include <fstream>
+#include <string>
 
-class ArcanoidObject: public GameObject
+class ArcanoidObject : public GameObject
 {
 private:
 
@@ -29,12 +29,15 @@ public:
 	virtual void handdleEvents(SDL_Event event) {};
 
 	//metodos de la propia clase
-	virtual string loadFromFile(string str);
-	virtual void saveToFile(string level);
+	virtual void loadFromFile() = 0;
+	virtual string saveToFile() = 0;
 
 	//quitar el virtual de estos??
-	virtual SDL_Rect getRect();
-	virtual Texture* getText();
-	virtual void setPos(Vector2D pos);
+	SDL_Rect* getRect();
+	Texture* getText();
+	Vector2D* getPos();
+	void setPos(Vector2D pos);
+	virtual void Size(int change);
+	virtual bool eliminar() { return false; };
 
 };

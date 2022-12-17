@@ -1,5 +1,5 @@
 Manuel Prada Mínguez
 Jose Eduardo Robles Roca
 
--Ligero problema con la colisión lateral con los bloques.
--Dudas de si funciona correctamente el ángulo de rebote con la pala.
+-Carga y guardado implementado pero el menú no está terminado.
+-problemas después del rebote con la pala.

@@ -2,19 +2,17 @@
 #include "Paddle.h"
 
 
+
 Reward::~Reward()
 {
 }
 
 void Reward::render()
 {
-	//life, nextLevel, longP, shortP
+	//lifeP, nextLevel, longP, shortP
 
-	SDL_Rect destRect;
-	destRect.x = pos.getX();
-	destRect.y = pos.getY();
-	destRect.h = heigth;
-	destRect.w = width;
+	SDL_Rect destRect = *getRect();
+	Texture* tex = getText();
 	tex->renderFrame(destRect, fil, col);
 
 	col++;
@@ -24,10 +22,46 @@ void Reward::render()
 void Reward::update()
 {
 
-	if (paddle->collides(pos, heigth, Vector2D{0,0}, velocity))
+	if (paddle->collides(*getRect(), Vector2D{0,0}, *getDir()))
 	{
-		paddle->GetReward(type);
-		delete this;
+		paddle->getReward(type);
+		elim = true;
+		return;
 	}
-	pos = pos + velocity;
+
+	MovingObject::update();
+}
+
+//void Reward::loadFromFile()
+//{
+//	int posX, posY;
+//	string tipo;
+//	std::cin >> posX >> posY >> tipo;
+//	setPos(Vector2D(posX, posY));
+//
+//
+//	if (tipo == "lifeP")
+//		type = lifeP;
+//	else if( tipo == "nextLevel") 
+//		type = nextLevel;
+//	else if( tipo == "longP") 
+//		type = longP;
+//	else if( tipo == "shortP") 
+//		type = shortP;
+//}
+
+string Reward::saveToFile()
+{
+	string datos;
+	datos += std::to_string(getRect()->x) + " " + std::to_string(getRect()->y) + " ";
+	if (type == lifeP)
+		datos += "lifeP";
+	else if (type == nextLevelP)
+		datos += "nextLevelP";
+	else if (type == longP)
+		datos += "longP";
+	else if (type == shortP)
+		datos += "shortP";
+
+	return datos;
 }

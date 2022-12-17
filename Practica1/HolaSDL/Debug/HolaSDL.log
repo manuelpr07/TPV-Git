@@ -1,43 +1,4 @@
-﻿  ArcanoidObject.cpp
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(5,24): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(6,24): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(60,19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\ArcanoidObject.cpp(61,19): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Ball.cpp
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Ball.h(33,3): warning C4150: eliminación de puntero a tipo 'Game' incompleto; no se ha llamado a un destructor
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Ball.h(6): message : vea la declaración de 'Game'
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Ball.cpp(15,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Ball.cpp(16,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Block.cpp
-  BlockMap.cpp
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(11,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(18,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(25,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(26,27): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(43,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(44,27): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(58,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(59,27): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(70,23): warning C4018: '<': no coinciden signed/unsigned
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\BlockMap.cpp(71,27): warning C4018: '<': no coinciden signed/unsigned
-  Game.cpp
-  GameObject.cpp
-  main.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\crtdbg.h(307,1): warning C4005: '_malloca': redefinición de macro
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\ucrt\malloc.h(124): message : vea la definición anterior de '_malloca'
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\main.cpp(17,13): error C2601: 'showmenu': las definiciones de funciones locales no son válidas
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\main.cpp(16): message : esta línea contiene un elemento '{' y no se ha encontrado su elemento de cierre
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\main.cpp(19,13): error C2065: 'Unit32': identificador no declarado
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\main.cpp(19,20): error C2146: error de sintaxis: falta ';' delante del identificador 'time'
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\main.cpp(19,20): warning C4551: la llamada a la función no tiene lista de argumentos
-  Paddle.cpp
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Paddle.cpp(7,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Paddle.cpp(8,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  Reward.cpp
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Reward.cpp(14,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-C:\Users\pk\Desktop\TPV-Git\Practica1\HolaSDL\Reward.cpp(15,23): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
-  MovingObject.cpp
-  Texture.cpp
+﻿  Ball.cpp
   Vector2D.cpp
-  Wall.cpp
   Generando código...
+  HolaSDL.vcxproj -> C:\Users\manue\OneDrive\Escritorio\Desarrollo de Videojuegos\SEGUNDO\TPV\TPV-Git\Practica1\bin\HolaSDLDebug.exe
