@@ -12,7 +12,3 @@ void GameObject::update()
 {
 
 }
-void GameObject::handdleEvents(SDL_Event event)
-{
-
-}

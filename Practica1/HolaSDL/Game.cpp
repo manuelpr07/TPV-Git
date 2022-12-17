@@ -1,11 +1,8 @@
 #include"Game.h"
-#include"Ball.h"
-#include"Paddle.h"
-#include"BlockMap.h"
-#include"Reward.h"
-#include "Button.h"
-#include "ArcanoidExcs.h"
-#include<iostream>
+
+
+//#include "Button.h"
+
 
 Game::Game() {
 
@@ -17,7 +14,7 @@ Game::Game() {
 	if (window == nullptr || renderer == nullptr)
 		cout << "Error cargando SDL" << endl;
 
-	gameOver = win = exit = false;
+	exit = false;
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
 
 	for (int i = 0; i < NUM_TEXTURES; i++) {
@@ -25,33 +22,12 @@ Game::Game() {
 		const TextureDescription& desc = TEXT_DESCRIPT[i];
 		textures[i] = new Texture(renderer, desc.filename, desc.vframes, desc.hframes);
 	}
-	//button = new Button(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH / 3), 20, 40, textures[startT]);
 
-	walls[0] = Wall(Vector2D(WIN_WIDTH-20, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
-	walls[1] = Wall(Vector2D(5, 0), WIN_HEIGTH, WALL_WIDTH, textures[sideWall]);
-	walls[2] = Wall(Vector2D(0, 0), WALL_WIDTH, WIN_WIDTH, textures[topWall]);
-
-	ball = new Ball(Vector2D(WIN_WIDTH/2,WIN_HEIGTH-50),20,20,Vector2D(1,1), textures[ballT], this);
-	paddle = new Paddle(Vector2D(WIN_WIDTH / 4, WIN_HEIGTH - 20), 20, 100, textures[4], this);
-	blockMap = new BlockMap(40, 40, textures[bricks], this);
-
-
-	gObjects.push_back(&walls[0]);
-	gObjects.push_back(&walls[1]);
-	gObjects.push_back(&walls[2]);
-	gObjects.push_back(blockMap);
-	gObjects.push_back(paddle);
-	gObjects.push_back(ball);
-	
-	int decision = menu();
-	if(decision == 1)
-		blockMap->readMap(1);
-	else loadFromFile();
+	gameStateMachine_ = new GameStateMachine();
+	gameStateMachine_->changeState(new PlayState(this));
 
 }
 Game::~Game() {
-	delete(paddle);
-	delete(ball);
 	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -61,112 +37,28 @@ void Game::run()
 {
 	uint32_t  startTime, frameTime;
 	startTime = SDL_GetTicks();
-	while (!exit && !gameOver && !win) {
+	while (!exit) {
 		frameTime = SDL_GetTicks();
-		handleEvents();
+		gameStateMachine_->handleEvents();
 		if (frameTime- startTime >= FRAME_RATE) {
 			update();
 			startTime = SDL_GetTicks();
 		}
 		render();
-		if (cambioNivel)
-		{
-			blockMap->readMap(level);
-			ball->setPos(Vector2D(WIN_WIDTH / 2, WIN_HEIGTH - 50));
-			ball->setDir(Vector2D(1,1));
-			paddle->setPos(Vector2D(WIN_WIDTH / 4, WIN_HEIGTH - 20));
-			cambioNivel = false;
-		}
 	}
 }
 void Game::render() {
 	SDL_RenderClear(renderer);
-	//for (int i = 0; i < 3;i++)
-	//{
-	//	walls[i].render();
-	//}
-	//Ball;
-	//ball->render();
-	//Paddle
-	//paddle->render();
-	////BlockMap
-	//blockMap->render();
-
-	for each (ArcanoidObject * var in gObjects)
-	{
-		var->render();
-	}
-
+	gameStateMachine_->render();
 	SDL_RenderPresent(renderer);
 }
 void Game::update() {
 
-	//paddle->update();
-	for each (ArcanoidObject* var in gObjects)
-	{
-		var->update();
-		if (var->eliminar())
-		{
-			gObjectsDestroy.push_back(var);
-		}
-	}
+	gameStateMachine_->update();
 
-	for each (ArcanoidObject * var in gObjectsDestroy)
-	{
-		gObjects.remove(var);
-	}
+
 }
-bool Game::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& velocity) {
 
-	bool colisiona = false;
-
-	// Paredes
-	if (rect.x <= WALL_WIDTH)//golpea pared izq
-	{
-		collision_vector = { 1, 0 };
-		return true;
-	}
-	else if (rect.x >= WIN_WIDTH - WALL_WIDTH - BALL_SIZE)//golpea pared drc
-	{
-		collision_vector = { -1, 0 };
-		return true;
-	}
-	else if (rect.y <= 0)//golpea pared arriba
-	{
-		collision_vector = { 0, 1 };
-		return true;
-	}
-	else if (rect.y >= WIN_HEIGTH - BALL_SIZE)//perder
-	{
-		collision_vector = { 0, -1 };
-
-		if (paddle->getLive() >= 1)
-		{
-			paddle->setLives(-1);
-		}
-		if(paddle->getLive() == 0)
-		{
-			//gameOver = true;
-		}
-
-		return true;
-	}
-
-	//colision con bloques
-	colisiona = blockMap->colides(rect, collision_vector, velocity);
-
-	if (!colisiona)
-	{
-		//colision con la pala
-		colisiona = paddle->collides(rect, collision_vector, velocity);
-	}
-	if (blockMap->getBlocks() == 0)
-	{
-		level++;
-		cambioNivel = true;
-	}
-	return colisiona;
-}
 void Game::handleEvents() {
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
@@ -174,160 +66,41 @@ void Game::handleEvents() {
 			exit = true;*/
 		if (event.type == SDL_KEYDOWN)
 		{
-			if (event.key.keysym.sym == SDLK_a) {
-				paddle->handdleEvents(-1);
-			}
-			if (event.key.keysym.sym == SDLK_d) {
-				paddle->handdleEvents(1);
-			}
-			if (event.key.keysym.sym == SDLK_s) {
-				saveToFile();
+			if (event.key.keysym.sym == SDLK_k) {
+				gameStateMachine_->changeState(new PlayState(this));
 			}
 			if (event.key.keysym.sym == SDLK_p) {
 				exit = true;
 			}
 		}
-		else if (event.type == SDL_KEYUP)
-		{
-			paddle->handdleEvents(0);
-		}
+		
 	}
 }
 
-void Game::createReward(Vector2D position)
+
+Texture* Game::getTexture(TextureName tex)
 {
-	Reward* r = nullptr;
-	int aux1 = rand() %4;
-	if (aux1 == 0)
-	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], lifeP, paddle);
-	}
-	else if (aux1 == 1)
-	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], longP, paddle);
-	}
-	else if (aux1 == 2)
-	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], nextLevelP, paddle);
-	}
-	else if (aux1 == 3)
-	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], shortP, paddle);
-	}
-	gObjects.push_back(r);
-}
-void Game::nextLevel()
-{
-	level++;
-	cambioNivel = true;
+	return textures[tex];
 }
 
-Menu::Menu()
-{
-	SDL_Surface* menus[NUMMENU];
-	SDL_Color color[2] = { {255,255,255},{255,0,0} };
-	cout << "pulsa 1 para iniciar nueva partida o 2 para cargar partida";
-	int n;
-	cin >> n;
-	if (n == 1)
-	{
-
-	}
-	else if (n == 2)
-	{
-
-	}
-	else throw std::string(" operación invalida, escribe 1 o 2");
-	return n;
-	/*StartButton = new Button(ren, 0, 0);
-	button->srect.x = 0;*/
-
-}
-
-
-void Game::loadFromFile()
-{
-	string s;
-	cout << "escribe el nombre de la partida";
-	cin >> s;
-	string name_file = "../Mapas/" + s + ".DAT";
-
-	std::ifstream in(name_file);
-	auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
-	int aux;
-	if (!in.is_open() || !cinbuf)
-		throw FileNotFoundError(name_file);
-	cin >> aux;
-	level = aux;
-	for each (ArcanoidObject * var in gObjects)
-	{
-		var->loadFromFile();
-	}
-	while (cin)
-	{
-		string sType;
-		rewardType type;
-		int posX, posY;
-		cin >> posX >> posY >> sType;
-		if (sType == "lifeP")
-			type = lifeP;
-		else if (sType == "nextLevelP")
-			type = nextLevelP;
-		else if (sType == "longP")
-			type = longP;
-		else if (sType == "shortP")
-			type = shortP;
-		else type = none;
-
-		if (type != none)
-		{
-			Reward* r = new Reward(Vector2D(posX, posY), PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], type, paddle);
-			gObjects.push_back(r);
-		}
-	}
-	std::cin.rdbuf(cinbuf);
-
-}
-
-void Game::saveToFile()
-{
-
-	string aux;
-	cin >> aux;
-	string name_file= "../Mapas/"+ aux + ".DAT";
-	ofstream myfile(name_file.c_str());
-
-	if (!myfile.is_open())
-		throw std::string(" fichero de mapa de bloques no encontrado o no valido ");
-
-	myfile << level << endl;
-
-	for each (ArcanoidObject * var in gObjects)
-	{
-		string datos = var->saveToFile();
-
-		if (var == blockMap)
-		{
-			myfile << datos << endl;
-			int j = 0;
-			string col;
-			while (datos[j] != ' ')
-			{
-				col.push_back(datos[j]);
-				j++;
-			}
-			int n = std::stoi(datos);
-			for (int i = 0; i < n; i++)
-			{
-				datos = blockMap->saveLineByLine(i);
-				myfile << datos << endl;
-			}
-		}
-		else if (datos != "*")
-			myfile << datos << endl;
-
-	}
-
-	myfile.close();
-}
-
+//Menu::Menu()
+//{
+//	SDL_Surface* menus[NUMMENU];
+//	SDL_Color color[2] = { {255,255,255},{255,0,0} };
+//	cout << "pulsa 1 para iniciar nueva partida o 2 para cargar partida";
+//	int n;
+//	cin >> n;
+//	if (n == 1)
+//	{
+//
+//	}
+//	else if (n == 2)
+//	{
+//
+//	}
+//	else throw std::string(" operación invalida, escribe 1 o 2");
+//	return n;
+//	/*StartButton = new Button(ren, 0, 0);
+//	button->srect.x = 0;*/
+//
+//}

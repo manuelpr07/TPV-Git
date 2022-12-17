@@ -1,11 +1,15 @@
-#include "Wall.h"
+#include "GameStateMachine.h"
 #include "ArcanoidObject.h"
+//#include "ArcanoidExcs.h"
 #include <list>
-#include "Mouse.h"
-class BlockMap;
-class Paddle;
-class Ball;
-class Button;
+#include<iostream>
+
+
+//#include "Mouse.h"
+//class BlockMap;
+//class Paddle;
+//class Ball;
+//class Button;
 
 using namespace std;
 using uint = unsigned int;
@@ -22,7 +26,7 @@ const uint PADDLE_HEIGHT = 20;
 const uint PADDLE_WIDTH = 100;
 const int NUMMENU = 2;
 
-enum TextureName{ballT, bricks, digit, gameOver, paddle, sideWall, topWall, winnerT, rewardT, startT, loadT};
+enum TextureName{ballT, bricks, digit, gameOver, paddleT, sideWall, topWall, winnerT, rewardT, startT, loadT};
 
 typedef struct {
 	string filename;
@@ -41,18 +45,9 @@ private:
 
 		SDL_Window* window = nullptr;
 		SDL_Renderer* renderer = nullptr;
-		bool gameOver, win, exit;
-		Paddle* paddle = nullptr;
-		Ball* ball = nullptr;
-		BlockMap* blockMap = nullptr;
-		Button* button = nullptr;
-		Wall walls[3];
+		bool exit = false;
+		GameStateMachine* gameStateMachine_;
 		Texture* textures[NUM_TEXTURES];
-		int level = 1;
-		int maxLevels = 4;
-		bool cambioNivel = false;
-		list<ArcanoidObject*> gObjects;
-		list<ArcanoidObject*> gObjectsDestroy;
 
 		
 public:
@@ -64,26 +59,7 @@ public:
 	void update();
 	bool collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& velocity);
 	void handleEvents();
-	void createReward(Vector2D position);
-	void nextLevel();
-	int menu();
-	void loadFromFile();
-	void saveToFile();
+	Texture* getTexture(TextureName tex);
+	//int menu();
 };
-class Menu : public Game {
-public:
-	Button* StartButton;
-	Menu();
-	~Menu() {}
-	void enter();
-	void update();
-	void exit();
-};
-class Options : public Game {
-public:
-	Options();
-	~Options();
-	void enter();
-	void update();
-	void exit();
-};
+

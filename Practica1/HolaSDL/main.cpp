@@ -19,12 +19,12 @@ int main(int argc, char* argv[]) {
        // game.Menu();
         game.run();
     }
-    catch (FileNotFoundError& e) {
-        cout << e.what() << endl;
-    }
-    catch (SDLError& e) {
-        cout << e.what() << endl;
-    }
+    //catch (FileNotFoundError& e) {
+    //    cout << e.what() << endl;
+    //}
+    //catch (SDLError& e) {
+    //    cout << e.what() << endl;
+    //}
     catch (...) {
         cout << "Unknown error" << endl;
     }

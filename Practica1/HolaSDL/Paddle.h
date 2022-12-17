@@ -1,18 +1,19 @@
 #include "MovingObject.h"
 #include "Reward.h"
-class Game;
+
+class PlayState;
 
 class Paddle : public MovingObject
 {
 
 private:
 
-	Game* game = nullptr;
+	PlayState* game = nullptr;
 	int live = 1;
 	rewardType currentType = none;
 public:
 
-	Paddle(Vector2D position, unsigned int h, unsigned w, Texture* text, Game* _game) : MovingObject(position, h, w, text, Vector2D( 0,0 ))
+	Paddle(Vector2D position, unsigned int h, unsigned w, Texture* text, PlayState* _game) : MovingObject(position, h, w, text, Vector2D( 0,0 ))
 	{
 		game = _game;
 	}

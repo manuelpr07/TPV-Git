@@ -1,5 +1,5 @@
 ﻿#include "Ball.h"
-#include "Game.h"
+#include "PlayState.h"
 
 void Ball::render()
 {

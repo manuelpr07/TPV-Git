@@ -1,4 +1,5 @@
 #include "BlockMap.h"
+#include "PlayState.h"
 #include "Game.h"
 void BlockMap::render()
 {

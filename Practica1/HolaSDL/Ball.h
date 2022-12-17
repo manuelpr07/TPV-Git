@@ -1,15 +1,16 @@
 #include"MovingObject.h"
 
-class Game;
+class PlayState;
 
 class Ball : public MovingObject
 {
+
 private:
-	Game* game = nullptr;
+	PlayState* game = nullptr;
 
 public:
 	Ball() {};
-	Ball(Vector2D position, unsigned int h, unsigned w, Vector2D vel, Texture* text, Game* _game) : MovingObject(position, h, w, text, vel)
+	Ball(Vector2D position, unsigned int h, unsigned w, Vector2D vel, Texture* text, PlayState* _game) : MovingObject(position, h, w, text, vel)
 	{
 		game = _game;
 	}

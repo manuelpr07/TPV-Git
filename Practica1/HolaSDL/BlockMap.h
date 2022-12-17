@@ -3,7 +3,8 @@
 #include"Block.h"
 #include"Reward.h"
 
-class Game;
+
+class PlayState;
 
 class BlockMap: public ArcanoidObject
 {
@@ -16,11 +17,11 @@ private:
 	unsigned int nFilas;
 	unsigned int color;
 	Block*** matriz;
-	Game* game = nullptr;
+	PlayState* game = nullptr;
 
 public:
 
-	BlockMap(unsigned int nfil, unsigned int ncol, Texture* text, Game* game_) : ArcanoidObject(Vector2D{0,0}, 0, 0, text)
+	BlockMap(unsigned int nfil, unsigned int ncol, Texture* text, PlayState* game_) : ArcanoidObject(Vector2D{0,0}, 0, 0, text)
 	{
 		nFilas = nfil;
 		nColumnas = ncol;
