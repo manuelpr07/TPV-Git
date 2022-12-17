@@ -211,7 +211,7 @@ void Game::createReward(Vector2D position)
 	}
 	else if (aux1 == 3)
 	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], nextLevelP, paddle);
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, textures[rewardT], shortP, paddle);
 	}
 	gObjects.push_back(r);
 }
