@@ -1,6 +1,7 @@
 #include "Wall.h"
 #include "ArcanoidObject.h"
 #include <list>
+#include "Mouse.h"
 class BlockMap;
 class Paddle;
 class Ball;
@@ -68,4 +69,21 @@ public:
 	int menu();
 	void loadFromFile();
 	void saveToFile();
+};
+class Menu : public Game {
+public:
+	Button* StartButton;
+	Menu();
+	~Menu() {}
+	void enter();
+	void update();
+	void exit();
+};
+class Options : public Game {
+public:
+	Options();
+	~Options();
+	void enter();
+	void update();
+	void exit();
 };

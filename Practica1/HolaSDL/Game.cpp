@@ -221,7 +221,7 @@ void Game::nextLevel()
 	cambioNivel = true;
 }
 
-int Game::menu()
+Menu::Menu()
 {
 	SDL_Surface* menus[NUMMENU];
 	SDL_Color color[2] = { {255,255,255},{255,0,0} };
@@ -236,6 +236,8 @@ int Game::menu()
 	}
 	else throw std::string(" operación invalida, escribe 1 o 2");
 	return n;
+	/*StartButton = new Button(ren, 0, 0);
+	button->srect.x = 0;*/
 
 }
 

@@ -93,10 +93,14 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="MovingObject.h" />
     <ClInclude Include="Paddle.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="Reward.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Wall.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HolaSDL.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

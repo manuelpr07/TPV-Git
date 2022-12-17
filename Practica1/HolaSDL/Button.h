@@ -13,10 +13,12 @@ private:
 public:
 
 
-	Button() {};
+	Button(SDL_Renderer* ren, float x, float y) {};
+	~Button() {};
 	void update() {};
+	void setPos(float x, float y);
 	void draw(SDL_Renderer* ren);
-	Button(SDL_Renderer* ren) {};
+
 
 
 	~Button() {};
