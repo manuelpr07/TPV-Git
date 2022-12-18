@@ -2,7 +2,7 @@
 
 
 
-MenuButton::MenuButton(float x, float y, Texture texture)
+MenuButton::MenuButton(int x, int y, Texture* texture)
 {
 	m_currentFrame = MOUSE_OUT; // start at frame 0
 }
@@ -12,12 +12,16 @@ void MenuButton::render()
 }
 void MenuButton::update()
 {
-	Vector2D* pMousePos = TheInputHandler::Instance()->getMousePosition();
-	if (pMousePos->getX() < (m_position.getX() + m_width) && pMousePos->getX() > m_position.getX()
-		&& pMousePos->getY() < (m_position.getY() + m_height) && pMousePos->getY() > m_position.getY())
+	int auxX, auxY;
+	SDL_Event e;
+	SDL_GetMouseState(&auxX,&auxY);
+	Vector2D* pMousePos = new Vector2D(auxX, auxY);
+
+	if (pMousePos->getX() < (rect.x + rect.w) && pMousePos->getX() > rect.x
+		&& pMousePos->getY() < (rect.y + rect.h) && pMousePos->getY() > rect.y)
 	{
 		m_currentFrame = MOUSE_OVER;
-		if (TheInputHandler::Instance()->getMouseButtonState(LEFT))
+		if (mousePress(e.button))
 		{
 			m_currentFrame = CLICKED;
 		}
@@ -27,8 +31,10 @@ void MenuButton::update()
 		m_currentFrame = MOUSE_OUT;
 	}
 }
-void MenuButton::clean()
-{
-	SDLGameObject::clean();
-}
 
+bool MenuButton::mousePress(SDL_MouseButtonEvent& b) {
+	if (b.button == SDL_BUTTON_LEFT) {
+		return true;
+	}
+	return false;
+}

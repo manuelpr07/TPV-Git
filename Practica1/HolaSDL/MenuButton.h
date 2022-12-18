@@ -4,10 +4,10 @@
 class MenuButton : public GameObject
 {
 public:
-	MenuButton(float x, float y, Texture texture);
+	MenuButton(int x, int y, Texture* texture);
 	virtual void render();
 	virtual void update();
-	virtual void clean();
+	bool mousePress(SDL_MouseButtonEvent& b);
 private:
 	enum button_state
 	{
@@ -18,4 +18,5 @@ private:
 	button_state  m_currentFrame;
 	Texture* texture = nullptr;
 	SDL_Rect rect;
+
 };

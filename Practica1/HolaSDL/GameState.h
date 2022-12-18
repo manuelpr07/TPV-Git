@@ -22,6 +22,8 @@ public:
 	virtual std::string getStateID() const = 0;
 	virtual Game* getGame() { return game; };
 	virtual void handleEvents() = 0;
+	list<GameObject*> getGameObjets();
+	void includeGameObjets(GameObject* Objet);
 
 private:
 	list<GameObject*> gObjects;

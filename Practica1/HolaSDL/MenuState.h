@@ -1,6 +1,7 @@
 #pragma once
 #include"GameState.h"
 #include"PlayState.h"
+#include "MenuButton.h"
 class MenuState : public GameState
 {
 private:
@@ -18,6 +19,5 @@ public:
 	virtual bool onExit();
 	void handleEvents();
 	virtual std::string getStateID() const { return s_menuID; }
-
 	void MenuState::s_menuToPlay();
 };
