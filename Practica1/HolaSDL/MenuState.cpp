@@ -1,4 +1,5 @@
 #include "MenuState.h"
+#include "Game.h"
 const std::string MenuState::s_menuID = "MENU";
 void MenuState::update()
 {
@@ -23,13 +24,17 @@ bool MenuState::onExit()
 void MenuState::handleEvents() {
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
-		/*if (event.type == SDL_QUIT)
-			exit = true;*/
+
 		if (event.type == SDL_KEYDOWN)
 		{
-			if (event.key.keysym.sym == SDLK_p) {
-				//cambio para salir
+			if (event.key.keysym.sym == SDLK_s) {
+				s_menuToPlay();
 			}
 		}
 	}
+}
+
+void MenuState::s_menuToPlay()
+{
+	game->getStateMachine()->changeState(new PlayState(game));
 }

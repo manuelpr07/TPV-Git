@@ -29,6 +29,12 @@ void Reward::update()
 		return;
 	}
 
+	if (getPos()->getY() > WIN_HEIGTH)
+	{
+		elim = true;
+		return;
+	}
+
 	MovingObject::update();
 }
 

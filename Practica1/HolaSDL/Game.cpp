@@ -24,7 +24,7 @@ Game::Game() {
 	}
 
 	gameStateMachine_ = new GameStateMachine();
-	gameStateMachine_->changeState(new PlayState(this));
+	gameStateMachine_->changeState(new MenuState(this));
 
 }
 Game::~Game() {
@@ -59,30 +59,30 @@ void Game::update() {
 
 }
 
-void Game::handleEvents() {
-	SDL_Event event;
-	while (SDL_PollEvent(&event)) {
-		/*if (event.type == SDL_QUIT)
-			exit = true;*/
-		if (event.type == SDL_KEYDOWN)
-		{
-			if (event.key.keysym.sym == SDLK_k) {
-				gameStateMachine_->changeState(new PlayState(this));
-			}
-			if (event.key.keysym.sym == SDLK_p) {
-				exit = true;
-			}
-		}
-		
-	}
-}
-
 
 Texture* Game::getTexture(TextureName tex)
 {
 	return textures[tex];
 }
 
+//
+//void Game::handleEvents() {
+//	SDL_Event event;
+//	while (SDL_PollEvent(&event)) {
+//		/*if (event.type == SDL_QUIT)
+//			exit = true;*/
+//		if (event.type == SDL_KEYDOWN)
+//		{
+//			if (event.key.keysym.sym == SDLK_k) {
+//				gameStateMachine_->changeState(new PlayState(this));
+//			}
+//			if (event.key.keysym.sym == SDLK_p) {
+//				exit = true;
+//			}
+//		}
+//		
+//	}
+//}
 //Menu::Menu()
 //{
 //	SDL_Surface* menus[NUMMENU];
