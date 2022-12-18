@@ -3,21 +3,44 @@
 const std::string MenuState::s_menuID = "MENU";
 void MenuState::update()
 {
-	//llamar al update de los botones, checkear eventos
+	for (int i = 0; i < m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->update();
+	}
 }
 void MenuState::render()
 {
-	//llamar al render de los botones
+	for (int i = 0; i < m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->draw();
+	}
 }
 bool MenuState::onEnter()
 {
-	//generar los botones
+	if (!TheTextureManager::Instance()->load("assets/button.png","playbutton", TheGame::Instance()->getRenderer()))
+	{
+		return false;
+	}
+	if (!TheTextureManager::Instance()->load("assets/exit.png","exitbutton", TheGame::Instance()->getRenderer()))
+	{
+		return false;
+	}
+	GameObject* button1 = new MenuButton(100, 100,"playbutton");
+	GameObject* button2 = new MenuButton(100, 100, "exitbutton");
+	m_gameObjects.push_back(button1);
+	m_gameObjects.push_back(button2);
 	std::cout << "entering MenuState\n";
 	return true;
 }
 bool MenuState::onExit()
 {
-	//destruir los botones
+	for (int i = 0; i < m_gameObjects.size(); i++)
+	{
+		m_gameObjects[i]->clean();
+	}
+	m_gameObjects.clear();
+	TheTextureManager::Instance()->clearFromTextureMap("playbutton");
+	TheTextureManager::Instance()->clearFromTextureMap("exitbutton");
 	std::cout << "exiting MenuState\n";
 	return true;
 }
