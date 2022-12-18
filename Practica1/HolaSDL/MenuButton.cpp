@@ -1,9 +1,11 @@
 #include "MenuButton.h"
+#include "MenuState.h"
+#include "Game.h"
 
-
-
-MenuButton::MenuButton(int x, int y, Texture* texture_)
+MenuButton::MenuButton(int x, int y, Texture* texture_, Game* game_, void (*callback)(Game* game))
 {
+	game = game_;
+	m_callback = callback;
 	m_currentFrame = MOUSE_OUT; // start at frame 0
 	rect.w = 180;
 	rect.h = 60;
@@ -11,6 +13,7 @@ MenuButton::MenuButton(int x, int y, Texture* texture_)
 	rect.x = x - rect.w /2;
 	texture = texture_;
 }
+
 void MenuButton::render()
 {
 	if (m_currentFrame == 0)
@@ -28,10 +31,8 @@ void MenuButton::update()
 		&& pMousePos->getY() < (rect.y + rect.h) && pMousePos->getY() > rect.y)
 	{
 		m_currentFrame = MOUSE_OVER;
-		if (mousePress(e.button))
-		{
-			m_currentFrame = CLICKED;
-		}
+		m_callback(game);
+
 	}
 	else
 	{

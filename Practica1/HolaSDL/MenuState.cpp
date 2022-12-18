@@ -19,9 +19,9 @@ void MenuState::render()
 }
 bool MenuState::onEnter()
 {
-	GameObject* button1 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4, game->getTexture(startT));
-	GameObject* button2 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4*2, game->getTexture(loadT));
-	GameObject* button3 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4*3, game->getTexture(ExitT));
+	GameObject* button1 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4, game->getTexture(startT), game, play);
+	GameObject* button2 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4*2, game->getTexture(loadT), game, load);
+	GameObject* button3 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4*3, game->getTexture(ExitT),game, exit);
 	includeGameObjets(button1);
 	includeGameObjets(button2);
 	includeGameObjets(button3);
@@ -47,13 +47,20 @@ void MenuState::handleEvents() {
 		if (event.type == SDL_KEYDOWN)
 		{
 			if (event.key.keysym.sym == SDLK_s) {
-				s_menuToPlay();
 			}
 		}
 	}
 }
+void MenuState::play(Game* game) {
 
-void MenuState::s_menuToPlay()
-{
-	game->getStateMachine()->changeState(new PlayState(game));
+	game->getStateMachine()->changeState(new PlayState(game, false));
 }
+void MenuState::load(Game* game)
+{
+	game->getStateMachine()->changeState(new PlayState(game, true));
+}
+void MenuState::exit(Game* game)
+{
+	std::cout << "Exit button clicked\n";
+}
+

@@ -34,7 +34,6 @@ void PlayState::render()
 }
 bool PlayState::onEnter()
 {
-
 	walls[0] = Wall(Vector2D(WIN_WIDTH - 20, 0), WIN_HEIGTH, WALL_WIDTH, getGame()->getTexture(sideWall));
 	walls[1] = Wall(Vector2D(5, 0), WIN_HEIGTH, WALL_WIDTH, getGame()->getTexture(sideWall));
 	walls[2] = Wall(Vector2D(0, 0), WALL_WIDTH, WIN_WIDTH, getGame()->getTexture(topWall));
@@ -51,7 +50,9 @@ bool PlayState::onEnter()
 	gObjects.push_back(paddle);
 	gObjects.push_back(ball);
 
-	blockMap->readMap(1);
+	if (!load)
+		blockMap->readMap(1);
+	else loadFromFile();
 
 	std::cout << "entering PlayState\n";
 	return true;
@@ -171,16 +172,16 @@ void PlayState::handleEvents() {
 void PlayState::loadFromFile()
 {
 	string s;
-	cout << "escribe el nombre de la partida";
+	cout << "escribe el nombre de la partida ";
 	cin >> s;
 	string name_file = "../Mapas/" + s + ".DAT";
 
 	std::ifstream in(name_file);
 	auto cinbuf = std::cin.rdbuf(in.rdbuf()); //save old buf and redirect std::cin to casos.txt
 	int aux;
-	if (!in.is_open() || !cinbuf)
+	//if (!in.is_open() || !cinbuf)
 		//throw FileNotFoundError(name_file);
-		cin >> aux;
+	cin >> aux;
 	level = aux;
 	for each (ArcanoidObject * var in gObjects)
 	{

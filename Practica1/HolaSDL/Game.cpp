@@ -52,11 +52,9 @@ void Game::render() {
 	gameStateMachine_->render();
 	SDL_RenderPresent(renderer);
 }
+
 void Game::update() {
-
 	gameStateMachine_->update();
-
-
 }
 
 
