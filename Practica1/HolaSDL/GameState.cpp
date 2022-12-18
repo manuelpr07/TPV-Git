@@ -10,3 +10,8 @@ void GameState::includeGameObjets(GameObject* Objet)
 {
 	gObjects.push_back(Objet);
 }
+
+void GameState::removeGameObjets(GameObject* Objet)
+{
+	gObjects.remove(Objet);
+}

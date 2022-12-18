@@ -20,7 +20,7 @@ void PlayState::update()
 
 	for each (ArcanoidObject * var in gObjectsDestroy)
 	{
-		getGameObjets().remove(var);
+		removeGameObjets(var);
 	}
 
 	if(cambioNivel)
@@ -70,7 +70,8 @@ bool PlayState::onExit()
 {
 	for each (ArcanoidObject * var in getGameObjets())
 	{
-		getGameObjets().remove(var);
+		//getGameObjets().remove(var);
+		removeGameObjets(var);
 	}
 
 	std::cout << "exiting PlayState\n";
@@ -134,15 +135,15 @@ void PlayState::createReward(Vector2D position)
 	int aux1 = rand() % 4;
 	if (aux1 == 0)
 	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), nextLevelP, paddle);
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), shortP, paddle);
 	}
 	else if (aux1 == 1)
 	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), nextLevelP, paddle);
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), longP, paddle);
 	}
 	else if (aux1 == 2)
 	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), nextLevelP, paddle);
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), lifeP, paddle);
 	}
 	else if (aux1 == 3)
 	{

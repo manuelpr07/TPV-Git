@@ -24,6 +24,7 @@ public:
 	virtual void handleEvents() = 0;
 	list<GameObject*> getGameObjets();
 	void includeGameObjets(GameObject* Objet);
+	void removeGameObjets(GameObject* Objet);
 
 private:
 	list<GameObject*> gObjects;
