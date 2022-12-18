@@ -9,7 +9,7 @@ const std::string PlayState::s_playID = "PLAY";
 void PlayState::update()
 {
 	handleEvents();
-	for each (ArcanoidObject* var in gObjects)
+	for each (ArcanoidObject* var in getGameObjets())
 	{
 		var->update();
 		if (var->eliminar())
@@ -20,13 +20,22 @@ void PlayState::update()
 
 	for each (ArcanoidObject * var in gObjectsDestroy)
 	{
-		gObjects.remove(var);
+		getGameObjets().remove(var);
+	}
+
+	if(cambioNivel)
+	{
+		if (level > maxLevels)
+			getGame()->getStateMachine()->pushState(new EndState(getGame(), true));
+		else
+			blockMap->readMap(level);
+		cambioNivel = false;
 	}
 }
 void PlayState::render()
 {
 
-	for each (ArcanoidObject * var in gObjects)
+	for each (ArcanoidObject * var in getGameObjets())
 	{
 		var->render();
 	}
@@ -43,12 +52,12 @@ bool PlayState::onEnter()
 	blockMap = new BlockMap(40, 40, getGame()->getTexture(bricks), this);
 
 
-	gObjects.push_back(&walls[0]);
-	gObjects.push_back(&walls[1]);
-	gObjects.push_back(&walls[2]);
-	gObjects.push_back(blockMap);
-	gObjects.push_back(paddle);
-	gObjects.push_back(ball);
+	includeGameObjets(&walls[0]);
+	includeGameObjets(&walls[1]);
+	includeGameObjets(&walls[2]);
+	includeGameObjets(blockMap);
+	includeGameObjets(paddle);
+	includeGameObjets(ball);
 
 	if (!load)
 		blockMap->readMap(1);
@@ -59,6 +68,11 @@ bool PlayState::onEnter()
 }
 bool PlayState::onExit()
 {
+	for each (ArcanoidObject * var in getGameObjets())
+	{
+		getGameObjets().remove(var);
+	}
+
 	std::cout << "exiting PlayState\n";
 	return true;
 }
@@ -93,7 +107,7 @@ bool PlayState::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector
 		}
 		if (paddle->getLive() == 0)
 		{
-			//gameOver = true;
+			//getGame()->getStateMachine()->pushState(new EndState(getGame(), false));
 		}
 
 		return true;
@@ -120,11 +134,11 @@ void PlayState::createReward(Vector2D position)
 	int aux1 = rand() % 4;
 	if (aux1 == 0)
 	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), lifeP, paddle);
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), nextLevelP, paddle);
 	}
 	else if (aux1 == 1)
 	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), longP, paddle);
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), nextLevelP, paddle);
 	}
 	else if (aux1 == 2)
 	{
@@ -132,9 +146,9 @@ void PlayState::createReward(Vector2D position)
 	}
 	else if (aux1 == 3)
 	{
-		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), shortP, paddle);
+		r = new Reward(position, PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), nextLevelP, paddle);
 	}
-	gObjects.push_back(r);
+	includeGameObjets(r);
 }
 
 void PlayState::nextLevel()
@@ -158,8 +172,8 @@ void PlayState::handleEvents() {
 			if (event.key.keysym.sym == SDLK_s) {
 				saveToFile();
 			}
-			if (event.key.keysym.sym == SDLK_p) {
-				//cambio para salir
+			if (event.key.keysym.sym == SDLK_ESCAPE) {
+				getGame()->getStateMachine()->pushState(new PauseState(getGame()));
 			}
 		}
 		else if (event.type == SDL_KEYUP)
@@ -183,7 +197,7 @@ void PlayState::loadFromFile()
 		//throw FileNotFoundError(name_file);
 	cin >> aux;
 	level = aux;
-	for each (ArcanoidObject * var in gObjects)
+	for each (ArcanoidObject * var in getGameObjets())
 	{
 		var->loadFromFile();
 	}
@@ -206,7 +220,7 @@ void PlayState::loadFromFile()
 		if (type != none)
 		{
 			Reward* r = new Reward(Vector2D(posX, posY), PADDLE_HEIGHT, PADDLE_WIDTH / 2, getGame()->getTexture(rewardT), type, paddle);
-			gObjects.push_back(r);
+			includeGameObjets(r);
 		}
 	}
 	std::cin.rdbuf(cinbuf);
@@ -226,7 +240,7 @@ void PlayState::saveToFile()
 
 	myfile << level << endl;
 
-	for each (ArcanoidObject * var in gObjects)
+	for each (ArcanoidObject * var in getGameObjets())
 	{
 		string datos = var->saveToFile();
 

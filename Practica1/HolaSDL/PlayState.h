@@ -2,6 +2,8 @@
 #include "GameState.h"
 #include"Reward.h"
 #include"Wall.h"
+#include"PauseState.h"
+#include"EndState.h"
 
 class BlockMap;
 class Paddle;
@@ -19,10 +21,9 @@ private:
 
 	bool load = false;
 	int level = 1;
-	int maxLevels = 4;
+	int maxLevels = 2;
 	bool cambioNivel = false;
-	list<ArcanoidObject*> gObjects;
-	list<ArcanoidObject*> gObjectsDestroy;
+	list<GameObject*> gObjectsDestroy;
 
 public:
 

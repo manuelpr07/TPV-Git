@@ -40,7 +40,7 @@ void Paddle::getReward(rewardType type)
     {
         case lifeP:setLives(1); currentType = none; break;//L fila 1 
 
-        //case nextLevelP:game->nextLevel(); currentType = none; break;//E fila  2
+        case nextLevelP:game->nextLevel(); currentType = none; break;//E fila  2
 
         case longP: Size(1); break;//C fila 3
 

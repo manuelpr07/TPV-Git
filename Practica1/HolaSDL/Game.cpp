@@ -57,6 +57,11 @@ void Game::update() {
 	gameStateMachine_->update();
 }
 
+void Game::setExit()
+{
+	exit = true;
+}
+
 
 Texture* Game::getTexture(TextureName tex)
 {

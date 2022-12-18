@@ -1,8 +1,8 @@
 #include "MenuState.h"
 #include "Game.h"
 
-
 const std::string MenuState::s_menuID = "MENU";
+
 void MenuState::update()
 {
 	for each (GameObject * var in getGameObjets())
@@ -19,9 +19,9 @@ void MenuState::render()
 }
 bool MenuState::onEnter()
 {
-	GameObject* button1 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4, game->getTexture(startT), game, play);
-	GameObject* button2 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4*2, game->getTexture(loadT), game, load);
-	GameObject* button3 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4*3, game->getTexture(ExitT),game, exit);
+	GameObject* button1 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4, getGame()->getTexture(startT), getGame(), play);
+	GameObject* button2 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4*2, getGame()->getTexture(loadT), getGame(), load);
+	GameObject* button3 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4*3, getGame()->getTexture(ExitT), getGame(), exit);
 	includeGameObjets(button1);
 	includeGameObjets(button2);
 	includeGameObjets(button3);
@@ -35,8 +35,6 @@ bool MenuState::onExit()
 		getGameObjets().remove(var);
 	}
 	getGameObjets().clear();
-	//TheTextureManager::Instance()->clearFromTextureMap("playbutton");
-	//TheTextureManager::Instance()->clearFromTextureMap("exitbutton");
 	std::cout << "exiting MenuState\n";
 	return true;
 }
@@ -46,7 +44,8 @@ void MenuState::handleEvents() {
 
 		if (event.type == SDL_KEYDOWN)
 		{
-			if (event.key.keysym.sym == SDLK_s) {
+			if (event.key.keysym.sym == SDLK_ESCAPE) {
+				//salir del juego
 			}
 		}
 	}
@@ -61,6 +60,7 @@ void MenuState::load(Game* game)
 }
 void MenuState::exit(Game* game)
 {
+	game->setExit();
 	std::cout << "Exit button clicked\n";
 }
 
