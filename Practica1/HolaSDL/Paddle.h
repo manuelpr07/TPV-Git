@@ -9,7 +9,7 @@ class Paddle : public MovingObject
 private:
 
 	PlayState* game = nullptr;
-	int live = 1;
+	int live = 3;
 	rewardType currentType = none;
 public:
 

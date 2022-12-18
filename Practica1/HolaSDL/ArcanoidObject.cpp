@@ -1,7 +1,8 @@
 #include "ArcanoidObject.h"
 
-ArcanoidObject::ArcanoidObject(Vector2D position, unsigned int h, unsigned int w, Texture* text)
+ArcanoidObject::ArcanoidObject(Vector2D _position, unsigned int h, unsigned int w, Texture* text)
 {
+	position = _position;
 	rect.x = position.getX();
 	rect.y = position.getY();
 	rect.w = w;
@@ -56,11 +57,13 @@ Texture* ArcanoidObject::getText()
 
 Vector2D* ArcanoidObject::getPos()
 {
-	return &Vector2D(rect.x, rect.y);
+
+	return &position;
 }
 
 void ArcanoidObject::setPos(Vector2D pos)
 {
+	position = pos;
 	rect.x = pos.getX();
 	rect.y = pos.getY();
 }

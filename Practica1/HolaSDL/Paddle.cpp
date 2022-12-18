@@ -100,13 +100,8 @@ bool Paddle::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D&
     if (SDL_HasIntersection(&rect ,getRect()))
     {
         {
-            //double center = rect.x + (rect.w / 2);
-            //double angle = (center - (getRect()->x + getRect()->w / 2)) / (getRect()->w / 2); //Cálculo del ángulo
-            //collision_vector = { angle, -1 };
-            //collision_vector.normalize();
-            //return true;
             double angle;
-            float dif = (rect.x + (rect.w / 2)) - (getRect()->x + (getRect()->w / 2));
+            float dif = (rect.x + (rect.w / 2)) - (getPos()->getX() + (getRect()->w / 2));
             if (dif < 0)
             {
                 angle = 1 + ((getRect()->w / 2) * dif) / 10000;
@@ -120,7 +115,7 @@ bool Paddle::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D&
             {
                 angle = 1;
             }
-            collision_vector = { angle, -2.5 };
+            collision_vector = { angle, -1000.5 };
             collision_vector.normalize();
             return true;
         }

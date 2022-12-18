@@ -71,7 +71,6 @@
     <ClCompile Include="Ball.cpp" />
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="BlockMap.cpp" />
-    <ClCompile Include="Button.cpp" />
     <ClCompile Include="EndState.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -96,7 +95,6 @@
     <ClInclude Include="Ball.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="BlockMap.h" />
-    <ClInclude Include="Button.h" />
     <ClInclude Include="EndState.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />

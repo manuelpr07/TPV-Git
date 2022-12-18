@@ -1,5 +1,3 @@
 Manuel Prada Mínguez
 Jose Eduardo Robles Roca
 
--Carga y guardado implementado pero el menú no está terminado.
--problemas después del rebote con la pala.

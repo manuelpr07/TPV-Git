@@ -10,6 +10,7 @@ class ArcanoidObject : public GameObject
 private:
 
 	SDL_Rect rect;
+	Vector2D position;
 	Texture* texture = nullptr;
 
 public:

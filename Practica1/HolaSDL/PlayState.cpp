@@ -70,7 +70,6 @@ bool PlayState::onExit()
 {
 	for each (ArcanoidObject * var in getGameObjets())
 	{
-		//getGameObjets().remove(var);
 		removeGameObjets(var);
 	}
 
@@ -108,7 +107,7 @@ bool PlayState::collides(SDL_Rect rect, Vector2D& collision_vector, const Vector
 		}
 		if (paddle->getLive() == 0)
 		{
-			//getGame()->getStateMachine()->pushState(new EndState(getGame(), false));
+			getGame()->getStateMachine()->pushState(new EndState(getGame(), false));
 		}
 
 		return true;
