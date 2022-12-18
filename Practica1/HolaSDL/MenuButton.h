@@ -4,7 +4,7 @@
 class MenuButton : public GameObject
 {
 public:
-	MenuButton(int x, int y, Texture* texture);
+	MenuButton(int x, int y, Texture* texture_);
 	virtual void render();
 	virtual void update();
 	bool mousePress(SDL_MouseButtonEvent& b);

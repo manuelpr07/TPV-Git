@@ -1,8 +1,8 @@
+#pragma once
 #include "GameStateMachine.h"
-#include "ArcanoidObject.h"
-//#include "ArcanoidExcs.h"
 #include <list>
-#include<iostream>
+#include <iostream>
+//#include "ArcanoidExcs.h"
 
 
 //#include "Mouse.h"
@@ -36,7 +36,7 @@ const TextureDescription TEXT_DESCRIPT[NUM_TEXTURES]
 {
 	{"../images/ball2.png",1,1},{"../images/bricks2.png",3,2},{"../images/digits2.jpeg",3,4},{"../images/gameover1.png",1,1},
 	{"../images/paddle2.png",2,3},{"../images/side2.png",1,10},{"../images/topside.png",10,1},{"../images/youwin.png",1,1},
-	{"../images/rewards.png", 8, 10},{"../images/start.png", 1, 1},{"../images/load.png", 1, 1},{"../images/exit.png", 1, 1}	
+	{"../images/rewards.png", 8, 10},{"../images/botonstart.PNG", 2, 1},{"../images/botonload.PNG", 2, 1},{"../images/botonexit.PNG", 2, 1}	
 };
 class Game {
 

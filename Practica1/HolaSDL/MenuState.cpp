@@ -19,10 +19,12 @@ void MenuState::render()
 }
 bool MenuState::onEnter()
 {
-	GameObject* button1 = new MenuButton(100, 100, game->getTexture(startT));
-	GameObject* button2 = new MenuButton(100, 100, game->getTexture(ExitT));
+	GameObject* button1 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4, game->getTexture(startT));
+	GameObject* button2 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4*2, game->getTexture(loadT));
+	GameObject* button3 = new MenuButton(WIN_WIDTH/2, WIN_HEIGTH/4*3, game->getTexture(ExitT));
 	includeGameObjets(button1);
 	includeGameObjets(button2);
+	includeGameObjets(button3);
 	std::cout << "entering MenuState\n";
 	return true;
 }
