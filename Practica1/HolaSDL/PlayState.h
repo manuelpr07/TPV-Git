@@ -17,6 +17,7 @@ private:
 	Wall walls[3];
 	static const std::string s_playID;
 
+	bool load = false;
 	int level = 1;
 	int maxLevels = 4;
 	bool cambioNivel = false;
@@ -25,7 +26,7 @@ private:
 
 public:
 
-	PlayState(Game* game) : GameState(game) {};
+	PlayState(Game* game, bool load_) : GameState(game), load(load_) {};
 
 	virtual void update();
 	virtual void render();

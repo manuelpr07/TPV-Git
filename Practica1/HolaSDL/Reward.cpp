@@ -1,7 +1,6 @@
 #include "Reward.h"
 #include "Paddle.h"
-
-
+#include"Game.h"
 
 Reward::~Reward()
 {

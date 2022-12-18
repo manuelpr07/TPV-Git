@@ -6,7 +6,7 @@ private:
 	Vector2D pos;
 	unsigned int heigth;
 	unsigned int width;
-	Texture* texture = nullptr;
+	//Texture* texture = nullptr;
 public:
 	Wall(){};
 	Wall(Vector2D position, unsigned int h, unsigned int w, Texture* text) : ArcanoidObject(position, h, w, text) {};
