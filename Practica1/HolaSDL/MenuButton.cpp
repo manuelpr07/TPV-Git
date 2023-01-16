@@ -22,21 +22,43 @@ void MenuButton::render()
 }
 void MenuButton::update()
 {
+	
+	handdleEvents();
+	
 	int auxX, auxY;
 	SDL_Event e;
-	SDL_GetMouseState(&auxX,&auxY);
+	SDL_GetMouseState(&auxX, &auxY);
 	Vector2D* pMousePos = new Vector2D(auxX, auxY);
+	
 
 	if (pMousePos->getX() < (rect.x + rect.w) && pMousePos->getX() > rect.x
 		&& pMousePos->getY() < (rect.y + rect.h) && pMousePos->getY() > rect.y)
 	{
 		m_currentFrame = MOUSE_OVER;
-		m_callback(game);
-
 	}
 	else
 	{
 		m_currentFrame = MOUSE_OUT;
+	}
+
+}
+
+void MenuButton::handdleEvents() {
+
+	
+
+
+	SDL_Event event;
+	while (SDL_PollEvent(&event)) {
+		cout << event.type;
+
+		if (event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP)
+		{
+			if (event.button.button == SDL_BUTTON_LEFT)
+			{
+				m_callback(game);
+			}
+		}
 	}
 }
 

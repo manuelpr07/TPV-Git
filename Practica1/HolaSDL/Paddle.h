@@ -24,7 +24,7 @@ public:
 	bool collides(SDL_Rect rect, Vector2D& collision_vector, const Vector2D& velocity);
 	void handdleEvents(int n);
 	void getReward(rewardType type);
-
+	void handdleEvents() {};
 	virtual void Size(int change);
 
 	virtual void loadFromFile();

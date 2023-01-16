@@ -39,6 +39,7 @@ bool MenuState::onExit()
 	return true;
 }
 void MenuState::handleEvents() {
+	
 	SDL_Event event;
 	while (SDL_PollEvent(&event)) {
 
@@ -48,6 +49,7 @@ void MenuState::handleEvents() {
 				//salir del juego
 			}
 		}
+
 	}
 }
 void MenuState::play(Game* game) {

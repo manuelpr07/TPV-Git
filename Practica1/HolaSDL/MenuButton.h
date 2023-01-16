@@ -11,6 +11,7 @@ public:
 	virtual void render();
 	virtual void update();
 	bool mousePress(SDL_MouseButtonEvent& b);
+	void handdleEvents();
 private:
 	enum button_state
 	{
