@@ -11,6 +11,15 @@ private:
 	static void play(Game* game);
 	static void load(Game* game);
 	static void exit(Game* game);
+
+	MenuButton* button1;
+	MenuButton* button2;
+	MenuButton* button3;
+
+	SDL_Rect button1Rec;
+	SDL_Rect button2Rec;
+	SDL_Rect button3Rec;
+
 public:
 
 	MenuState(Game* game_) : GameState(game_) {};

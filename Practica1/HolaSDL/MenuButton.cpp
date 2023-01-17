@@ -2,15 +2,12 @@
 #include "MenuState.h"
 #include "Game.h"
 
-MenuButton::MenuButton(int x, int y, Texture* texture_, Game* game_, void (*callback)(Game* game))
+MenuButton::MenuButton(SDL_Rect rec, Texture* texture_, Game* game_, void (*callback)(Game* game))
 {
 	game = game_;
 	m_callback = callback;
 	m_currentFrame = MOUSE_OUT; // start at frame 0
-	rect.w = 180;
-	rect.h = 60;
-	rect.y = y;
-	rect.x = x - rect.w /2;
+	rect = rec;
 	texture = texture_;
 }
 
@@ -22,9 +19,7 @@ void MenuButton::render()
 }
 void MenuButton::update()
 {
-	
-	handdleEvents();
-	
+		
 	int auxX, auxY;
 	SDL_Event e;
 	SDL_GetMouseState(&auxX, &auxY);
@@ -43,23 +38,19 @@ void MenuButton::update()
 
 }
 
-void MenuButton::handdleEvents() {
+void MenuButton::handleEvents() {
 
-	
+	m_callback(game);
+}
 
+SDL_Rect* MenuButton::getRect()
+{
+	return &rect;
+}
 
-	SDL_Event event;
-	while (SDL_PollEvent(&event)) {
-		cout << event.type;
-
-		if (event.type == SDL_MOUSEBUTTONDOWN || event.type == SDL_MOUSEBUTTONUP)
-		{
-			if (event.button.button == SDL_BUTTON_LEFT)
-			{
-				m_callback(game);
-			}
-		}
-	}
+int MenuButton::GetBState()
+{
+	return m_currentFrame;
 }
 
 bool MenuButton::mousePress(SDL_MouseButtonEvent& b) {
